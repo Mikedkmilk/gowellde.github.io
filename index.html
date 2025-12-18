@@ -107,7 +107,7 @@
                     <!-- 语言切换占位符 -->
                     <div id="google_translate_element" class="border border-gray-600 rounded px-2"></div>
 
-                    <!-- 下载目录按钮 (已更新链接) -->
+                    <!-- 下载目录按钮 -->
                     <a href="https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/pdf/GOWELLDE.pdf" target="_blank" class="text-sm text-gray-300 hover:text-white flex items-center">
                         <i class="fas fa-file-pdf mr-1"></i> Catalog
                     </a>
@@ -136,12 +136,7 @@
         </div>
     </nav>
 
-    <!-- ================= 1. 首页大图 (已修复遮挡问题) ================= -->
-    <!-- 
-       🔴 关键修改点：
-       我在下面的 class 里添加了 "pt-20"。
-       pt-20 代表 padding-top: 5rem (80px)，正好抵消了导航栏的高度。
-    -->
+    <!-- ================= 1. 首页大图 ================= -->
     <section id="home" class="relative h-screen flex items-center justify-center text-center text-white bg-black pt-20">
         <!-- 背景图变暗处理，突出文字 -->
         <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
@@ -182,6 +177,14 @@
             <!-- 产品网格 -->
             <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Javascript 将自动填充 -->
+            </div>
+
+            <!-- 产品列表底部的免责声明 -->
+            <div class="mt-12 text-center p-4 bg-orange-50 rounded-lg border border-brand-orange/20 max-w-3xl mx-auto">
+                <p class="text-brand-orange font-bold text-sm">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    Prices are for reference only and subject to change based on raw material costs.
+                </p>
             </div>
         </div>
     </section>
@@ -231,7 +234,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 
-                <!-- 联系方式 -->
+                <!-- 联系方式 (左侧栏) -->
                 <div>
                     <h2 class="text-4xl font-bold mb-8">Start Your Inquiry</h2>
                     <p class="text-gray-400 mb-10">
@@ -267,9 +270,36 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- ============ 社交媒体按钮 ============ -->
+                    <div class="mt-12 pt-10 border-t border-gray-800">
+                        <p class="text-sm text-gray-400 mb-4 uppercase tracking-wider font-bold">Follow Us On Social Media</p>
+                        <div class="flex space-x-4">
+                            <!-- YouTube -->
+                            <a href="https://www.youtube.com/@GowelldeWeld" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-red-600 hover:scale-110 transition duration-300" title="YouTube">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                            
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/people/Gowellde-Weld-Tech-Factory/61584937718348/" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-blue-600 hover:scale-110 transition duration-300" title="Facebook">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            
+                            <!-- Instagram -->
+                            <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:scale-110 transition duration-300" title="Instagram">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            
+                            <!-- TikTok -->
+                            <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black hover:scale-110 transition duration-300" title="TikTok">
+                                <i class="fab fa-tiktok text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- 询盘表单 (action已更新) -->
+                <!-- 询盘表单 -->
                 <div class="bg-white text-gray-800 p-8 rounded-lg shadow-2xl">
                     <h3 class="text-2xl font-bold mb-6">Send Message</h3>
                     <form action="mailto:jackie007hello@gmail.com" method="post" enctype="text/plain" class="space-y-4">
@@ -309,41 +339,18 @@
     <footer class="bg-black text-gray-500 py-10 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-4 text-center">
             
-            <!-- 社交媒体图标 (Updated: 统一的小圆按钮风格) -->
-            <div class="flex justify-center items-center space-x-4 mb-8">
-                <!-- YouTube -->
-                <a href="https://www.youtube.com/@GowelldeWeld" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-red-600 transition duration-300" title="YouTube">
-                    <i class="fab fa-youtube text-lg"></i>
-                </a>
-                
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/people/Gowellde-Weld-Tech-Factory/61584937718348/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-blue-600 transition duration-300" title="Facebook">
-                    <i class="fab fa-facebook-f text-lg"></i>
-                </a>
-                
-                <!-- Instagram (Placeholder) -->
-                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition duration-300" title="Instagram">
-                    <i class="fab fa-instagram text-lg"></i>
-                </a>
-                
-                <!-- TikTok (Placeholder) -->
-                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-100 hover:text-black transition duration-300" title="TikTok">
-                    <i class="fab fa-tiktok text-lg"></i>
-                </a>
-            </div>
-
             <!-- 认证图标 -->
-            <div class="flex justify-center space-x-6 mb-8 grayscale hover:grayscale-0 transition opacity-70">
+            <div class="flex justify-center space-x-6 mb-6 grayscale hover:grayscale-0 transition opacity-70">
                 <div class="border border-gray-600 px-3 py-1 rounded text-xl font-bold text-white">CE</div>
                 <div class="border border-gray-600 px-3 py-1 rounded text-xl font-bold text-white">ISO9001</div>
                 <div class="border border-gray-600 px-3 py-1 rounded text-xl font-bold text-white">CCC</div>
             </div>
 
-            <p>&copy; 2024 GOWELLDE Welding Technology. All Rights Reserved.</p>
+            <p class="text-sm">&copy; 2024 GOWELLDE Welding Technology. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp 悬浮按钮 (链接已更新) -->
+    <!-- WhatsApp 悬浮按钮 -->
     <a href="https://wa.me/8618235335022" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -377,8 +384,7 @@
         }
 
         /**
-         * 4. 产品数据中心 (已更新为您提供的真实图片链接)
-         * 15款产品，一一对应
+         * 4. 产品数据中心
          */
         const products = [
             {
@@ -390,7 +396,8 @@
                 weight: "4.1 KG",
                 dimension: "300*155*250",
                 config: "IGBT: 4*25N120, CAP: 4*560UF",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-315E.png" 
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-315E.png",
+                price: "$3X"
             },
             {
                 id: 2,
@@ -401,7 +408,9 @@
                 weight: "5.4 KG",
                 dimension: "330*165*315",
                 config: "IGBT: 4*40N120, CAP: 4*680UF",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-315A.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-315A.png",
+                price: "$4X",
+                hotSale: true 
             },
             {
                 id: 3,
@@ -412,7 +421,8 @@
                 weight: "6.6 KG",
                 dimension: "355*180*350",
                 config: "IGBT: 4*40N120, CAP: 5*680UF",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400B.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400B.png",
+                price: "$5X"
             },
             {
                 id: 4,
@@ -423,7 +433,8 @@
                 weight: "10.6 KG",
                 dimension: "405*205*385",
                 config: "IGBT: 4*40N120, CAP: 5*680UF",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400A.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400A.png",
+                price: "$6X"
             },
             {
                 id: 5,
@@ -434,7 +445,8 @@
                 weight: "19 KG",
                 dimension: "515*270*465",
                 config: "Module: 2*75A/1200V, Rect: 1*50A",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400.png",
+                price: "$1XX"
             },
             {
                 id: 6,
@@ -445,7 +457,8 @@
                 weight: "25 KG",
                 dimension: "570*290*555",
                 config: "Module: 2*100A/1200V, Rect: 1*75A",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-500.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-500.png",
+                price: "$1XX"
             },
              {
                 id: 7,
@@ -456,7 +469,8 @@
                 weight: "28 KG",
                 dimension: "600*310*580",
                 config: "Module: 2*100A, Upgrade Cooling",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-500B.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-500B.png",
+                price: "$1XX"
             },
             {
                 id: 8,
@@ -467,7 +481,8 @@
                 weight: "35.5 KG",
                 dimension: "655*315*610",
                 config: "Module: 2*100A/1200V, Rect: 1*100A",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-630.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-630.png",
+                price: "$2XX"
             },
             {
                 id: 9,
@@ -478,7 +493,8 @@
                 weight: "12 KG",
                 dimension: "480*225*360",
                 config: "IGBT: 4*40N120, Integrated Feeder",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-315y.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-315y.png",
+                price: "$1XX"
             },
             {
                 id: 10,
@@ -489,7 +505,8 @@
                 weight: "14 KG",
                 dimension: "490*225*380",
                 config: "IGBT: 4*60N100, Integrated Feeder",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-400.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-400.png",
+                price: "$2XX"
             },
             {
                 id: 11,
@@ -500,7 +517,8 @@
                 weight: "22 KG",
                 dimension: "515*270*465",
                 config: "IGBT: 2*75N120, Split/Int Feeder",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-400CI.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-400CI.png",
+                price: "$2XX"
             },
             {
                 id: 12,
@@ -511,7 +529,9 @@
                 weight: "31 KG",
                 dimension: "570*290*555",
                 config: "IGBT: 2*100N120, Heavy Duty",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-500.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-500.png",
+                price: "$3XX",
+                hotSale: true 
             },
             {
                 id: 13,
@@ -522,7 +542,8 @@
                 weight: "32 KG",
                 dimension: "570*290*555",
                 config: "IGBT: 2*100N120, High Duty Cycle",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-500CI.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-500CI.png",
+                price: "$3XX"
             },
             {
                 id: 14,
@@ -533,7 +554,8 @@
                 weight: "43 KG",
                 dimension: "655*315*610",
                 config: "IGBT: 2*100N120, Shipyard Ready",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-630.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-630.png",
+                price: "$4XX"
             },
             {
                 id: 15,
@@ -544,7 +566,8 @@
                 weight: "45 KG",
                 dimension: "655*315*610",
                 config: "IGBT: 2*100N120, Ultimate Power",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-630B.png"
+                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-630B.png",
+                price: "$3XX"
             }
         ];
 
@@ -554,20 +577,25 @@
             let html = '';
 
             products.forEach(product => {
+                const hotSaleBadge = product.hotSale 
+                    ? `<div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl shadow z-10 animate-pulse">HOT SALE</div>` 
+                    : '';
+
                 html += `
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 group relative">
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 group relative flex flex-col">
                     <div class="h-64 bg-gray-50 relative overflow-hidden p-6 flex items-center justify-center">
                         <img src="${product.image}" alt="${product.model}" 
                              class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition duration-500">
                         <div class="absolute top-0 left-0 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-br shadow">
                             ${product.tag}
                         </div>
+                        ${hotSaleBadge}
                     </div>
                     
-                    <div class="p-6">
+                    <div class="p-6 flex-1 flex flex-col">
                         <h3 class="text-2xl font-black text-brand-dark mb-4 group-hover:text-brand-orange transition">${product.model}</h3>
                         
-                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                        <div class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
                             <div class="flex justify-between border-b border-gray-100 pb-1">
                                 <span>Voltage:</span> <span class="font-bold text-gray-800">${product.voltage}</span>
                             </div>
@@ -579,9 +607,17 @@
                             </div>
                         </div>
 
-                        <a href="mailto:jackie007hello@gmail.com?subject=Inquiry for ${product.model}" class="block w-full text-center bg-brand-dark text-white py-3 rounded font-bold hover:bg-brand-orange transition duration-300 shadow-md">
-                            INQUIRE PRICE
-                        </a>
+                        <div class="mt-auto">
+                            <div class="flex items-baseline mb-3">
+                                <span class="text-3xl font-extrabold text-brand-orange mr-2">${product.price}</span>
+                                <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">FOB Reference</span>
+                                <span class="text-xs text-gray-500 ml-2 border-l border-gray-300 pl-2">MOQ: 10 Sets</span>
+                            </div>
+
+                            <a href="mailto:jackie007hello@gmail.com?subject=Inquiry for ${product.model}" class="block w-full text-center bg-brand-dark text-white py-3 rounded font-bold hover:bg-brand-orange transition duration-300 shadow-md">
+                                INQUIRE PRICE
+                            </a>
+                        </div>
                     </div>
                 </div>
                 `;
