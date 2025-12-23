@@ -83,6 +83,15 @@
             transition: all 0.3s;
         }
         .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
+
+        #google_translate_element select {
+        background: transparent !important;
+        color: white !important;
+        cursor: pointer;
+        }
+        #google_translate_element option {
+        color: black;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-brand-light">
@@ -105,7 +114,10 @@
                     <button onclick="scrollToSection('about')" class="hover:text-brand-orange transition font-medium">Factory</button>
                     
                     <!-- 语言切换占位符 -->
-                    <div id="google_translate_element" class="border border-gray-600 rounded px-2"></div>
+                    <div id="google_translate_element" class="flex items-center space-x-2 border border-gray-600 rounded px-3 py-1 cursor-pointer hover:border-brand-orange transition">
+                        <img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto">
+                        <span class="text-sm font-medium text-white">English</span>
+                    </div>
 
                     <!-- 下载目录按钮 -->
                     <a href="https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/pdf/GOWELLDE.pdf" target="_blank" class="text-sm text-gray-300 hover:text-white flex items-center">
