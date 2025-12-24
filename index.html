@@ -4,34 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO 核心优化 -->
-    <title>GOWELLDE | Leading Welding Machine Manufacturer & IGBT Inverter Supplier</title>
-    <meta name="description" content="GOWELLDE is a professional welding machine factory specializing in high-quality IGBT inverter MMA, MIG/MAG, and Plasma cutters. Wholesale industrial welding solutions with 15+ years of export experience to Egypt, India, Pakistan.">
-    <meta name="keywords" content="welding machine manufacturer, inverter welder factory, MIG MAG welding supplier, MMA welding machine wholesale, IGBT inverter technology, GOWELLDE, industrial cutting equipment, China welding factory">
+    <!-- SEO 深度优化 (参考竞品架构) -->
+    <title>China Inverter Welding Machine Manufacturer | MIG MMA Welder Factory - GOWELLDE</title>
+    <meta name="description" content="GOWELLDE is a leading China welding equipment manufacturer. We supply wholesale Inverter MIG, MMA, TIG welders and Plasma Cutters. ISO certified factory, OEM service for global brands. Exporting to Egypt, India, Vietnam.">
+    <meta name="keywords" content="Inverter MIG MMA Welder, China Welding Equipment, Welding Machine Supplier, Arc Welding Machine Factory, Portable Welding Inverter, Heavy Duty MIG Welder, GOWELLDE, IGBT Welder Price">
     <meta name="author" content="GOWELLDE Welding Technology">
     <link rel="canonical" href="https://www.812818.xyz/" />
 
-    <!-- Open Graph / Facebook (社交媒体优化) -->
-    <meta property="og:type" content="website">
+    <!-- Open Graph (社交媒体分享优化) -->
+    <meta property="og:type" content="product.group">
     <meta property="og:url" content="https://www.812818.xyz/">
-    <meta property="og:title" content="GOWELLDE - Professional Industrial Welding & Cutting Technology">
-    <meta property="og:description" content="High-performance IGBT inverter welding machines for global distributors. Factory-direct pricing and reliable quality.">
+    <meta property="og:title" content="Buy Direct from GOWELLDE Welding Machine Factory">
+    <meta property="og:description" content="Professional IGBT Inverter Welders (MMA/MIG/TIG). Factory direct wholesale pricing.">
     <meta property="og:image" content="https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-315E.png">
 
-    <!-- Twitter 优化 -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="GOWELLDE | Advanced Inverter Welding Solutions">
-    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- 字体图标库 -->
+    <!-- 字体图标库 (FontAwesome) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <!-- Google 字体 (Roboto - 工业风) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-    <!-- 自定义颜色配置 -->
+    <!-- 自定义配置 -->
     <script>
         tailwind.config = {
             theme: {
@@ -41,10 +37,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            orange: '#F57C00', 
+                            orange: '#F57C00', // 品牌主色
                             dark: '#1A1A1A',   
                             gray: '#333333',   
-                            light: '#F8F9FA'   
+                            light: '#F8F9FA',
+                            blue: '#0056b3'    // 工业蓝辅助色
                         }
                     }
                 }
@@ -56,6 +53,7 @@
         html { scroll-behavior: smooth; }
         section { scroll-margin-top: 5rem; }
         
+        /* 谷歌翻译样式覆盖 */
         .goog-te-gadget-simple {
             background-color: transparent !important;
             border: none !important;
@@ -63,12 +61,15 @@
         }
         .goog-te-gadget-icon { display: none !important; }
 
+        /* 产品卡片动效 */
         .product-card { transition: all 0.3s ease; }
         .product-card:hover { 
             transform: translateY(-8px); 
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #F57C00;
         }
 
+        /* 按钮呼吸灯效果 */
         @keyframes pulse-orange {
             0% { box-shadow: 0 0 0 0 rgba(245, 124, 0, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(245, 124, 0, 0); }
@@ -76,6 +77,7 @@
         }
         .btn-pulse:hover { animation: pulse-orange 2s infinite; }
         
+        /* WhatsApp 悬浮按钮 */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -96,13 +98,11 @@
         }
         .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
 
-        #google_translate_element select {
-            background: transparent !important;
+        /* 分类 Tab 激活状态 */
+        .tab-active {
+            background-color: #F57C00 !important;
             color: white !important;
-            cursor: pointer;
-        }
-        #google_translate_element option {
-            color: black;
+            border-color: #F57C00 !important;
         }
     </style>
 </head>
@@ -112,22 +112,26 @@
     <nav class="bg-brand-dark text-white shadow-lg fixed w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
                     <span class="text-3xl font-black tracking-tighter text-white hover:text-brand-orange transition italic">
                         <i class="fas fa-bolt text-brand-orange mr-1"></i>GOWELLDE
                     </span>
                 </div>
                 
+                <!-- PC 菜单 -->
                 <div class="hidden md:flex items-center space-x-6">
                     <button onclick="scrollToSection('home')" class="hover:text-brand-orange transition font-medium">Home</button>
                     <button onclick="scrollToSection('products')" class="hover:text-brand-orange transition font-medium">Products</button>
                     <button onclick="scrollToSection('about')" class="hover:text-brand-orange transition font-medium">Factory</button>
                     
+                    <!-- 语言翻译 -->
                     <div id="google_translate_element" class="flex items-center space-x-2 border border-gray-600 rounded px-3 py-1 cursor-pointer hover:border-brand-orange transition">
-                        <img src="https://flagcdn.com/w20/us.png" alt="English Language Switch" class="w-5 h-auto">
+                        <img src="https://flagcdn.com/w20/us.png" alt="Language" class="w-5 h-auto">
                         <span class="text-sm font-medium text-white">English</span>
                     </div>
 
+                    <!-- 目录下载 -->
                     <a href="https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/pdf/GOWELLDE.pdf" target="_blank" class="text-sm text-gray-300 hover:text-white flex items-center">
                         <i class="fas fa-file-pdf mr-1"></i> Catalog
                     </a>
@@ -137,12 +141,14 @@
                     </button>
                 </div>
 
+                <!-- 手机菜单 Toggle -->
                 <div class="md:hidden text-2xl cursor-pointer hover:text-brand-orange" onclick="toggleMobileMenu()">
                     <i class="fas fa-bars"></i>
                 </div>
             </div>
         </div>
 
+        <!-- 手机下拉菜单 -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-gray border-t border-gray-700">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <button onclick="mobileLinkClick('home')" class="block w-full text-left px-3 py-2 text-white hover:bg-gray-700">Home</button>
@@ -153,89 +159,123 @@
         </div>
     </nav>
 
-    <!-- ================= 1. 首页大图 ================= -->
+    <!-- ================= 1. 首页大图 (Banner) ================= -->
     <section id="home" class="relative h-screen flex items-center justify-center text-center text-white bg-black pt-20">
         <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-dark"></div>
         
         <div class="relative z-10 max-w-5xl px-4 fade-in">
             <div class="inline-block px-3 py-1 mb-4 border border-brand-orange text-brand-orange rounded-full text-sm font-bold tracking-wide uppercase">
-                Exporting Welding Equipment to Egypt, Vietnam, Pakistan, India...
+                Direct From China Factory • OEM Available
             </div>
             <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight">
-                POWER YOUR <span class="text-brand-orange">WELDING</span><br>BUSINESS
+                ADVANCED <span class="text-brand-orange">INVERTER</span><br>WELDING SOLUTIONS
             </h1>
             <p class="text-xl md:text-2xl mb-10 text-gray-300 font-light max-w-3xl mx-auto">
-                Premium IGBT Inverter Technology Manufacturer. Reliable MMA, MIG/MAG & Plasma Cutting Solutions for Global Distribution.
+                Professional Manufacturer of MMA, MIG/MAG & TIG Machines. Powering industries in Egypt, India, Pakistan & Vietnam.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-5">
                 <button onclick="scrollToSection('products')" class="bg-brand-orange text-white px-10 py-4 rounded font-bold text-lg hover:bg-orange-600 transition shadow-xl transform hover:scale-105">
-                    View Product Line
+                    View Machines
                 </button>
                 <button onclick="scrollToSection('contact')" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded font-bold text-lg hover:bg-white hover:text-brand-dark transition shadow-xl">
-                    Partner With Our Factory
+                    Become Distributor
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- ================= 2. 产品展示区 ================= -->
+    <!-- ================= 2. 产品展示区 (核心升级) ================= -->
     <section id="products" class="py-24 bg-brand-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-brand-dark mb-4 uppercase">Featured Welding Machines</h2>
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-black text-brand-dark mb-4 uppercase">Our Product Range</h2>
                 <div class="w-20 h-1.5 bg-brand-orange mx-auto mb-6"></div>
                 <p class="text-gray-600 max-w-2xl mx-auto">
-                    Explore our comprehensive range of industrial welding equipment. GOWELLDE machines are built for performance, durability and extreme efficiency.
+                    Choose from our high-performance series. All machines feature advanced IGBT technology and heavy-duty cycle testing.
                 </p>
             </div>
 
+            <!-- 分类过滤器 (Tabs) - 新增功能 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterProducts('all')" id="tab-all" class="filter-btn tab-active px-6 py-2 rounded-full border border-gray-300 font-bold hover:border-brand-orange hover:text-brand-orange transition">
+                    All Products
+                </button>
+                <button onclick="filterProducts('mma')" id="tab-mma" class="filter-btn px-6 py-2 rounded-full border border-gray-300 font-bold text-gray-600 hover:border-brand-orange hover:text-brand-orange transition">
+                    MMA / ARC Series
+                </button>
+                <button onclick="filterProducts('mig')" id="tab-mig" class="filter-btn px-6 py-2 rounded-full border border-gray-300 font-bold text-gray-600 hover:border-brand-orange hover:text-brand-orange transition">
+                    MIG / MAG Series
+                </button>
+            </div>
+
+            <!-- 产品网格 -->
             <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Javascript fills this -->
+                <!-- JS 动态填充 -->
             </div>
-
-            <div class="mt-12 text-center p-4 bg-orange-50 rounded-lg border border-brand-orange/20 max-w-3xl mx-auto">
-                <p class="text-brand-orange font-bold text-sm">
-                    <i class="fas fa-exclamation-triangle mr-2"></i>
-                    Wholesale prices are for reference only. Contact our sales team for bulk order discounts.
-                </p>
+            
+            <div class="mt-12 text-center">
+                 <p class="text-gray-500 italic text-sm mb-4">
+                     * Specifications are subject to change without notice. Contact us for detailed technical sheets.
+                 </p>
+                 <a href="https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/pdf/GOWELLDE.pdf" target="_blank" class="inline-flex items-center text-brand-orange font-bold hover:underline">
+                     <i class="fas fa-download mr-2"></i> Download Full Catalog (PDF)
+                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ================= 3. 为什么选择我们 ================= -->
+    <!-- ================= 3. 工厂实力与证书 (信任增强) ================= -->
     <section id="about" class="py-20 bg-white border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <!-- 证书与介绍 -->
                 <div>
-                    <h2 class="text-3xl font-bold mb-6 text-brand-dark">GOWELLDE: Built for Global Industry</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-brand-dark">Why Choose GOWELLDE?</h2>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        As a professional welding machine manufacturer, we engineer reliability into every circuit. Our products are rigorously tested to withstand harsh industrial environments, making us a trusted partner for distributors in 20+ countries.
+                        With over 15 years of experience in welding equipment manufacturing, GOWELLDE has become a trusted name in the industry. We operate a 10,000㎡ facility dedicated to producing reliable, cost-effective inverters for the global market.
                     </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded border-l-4 border-brand-orange">
-                            <h4 class="font-bold text-brand-dark">100% Aging Test</h4>
-                            <p class="text-xs text-gray-500">Every machine tested for peak performance</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border-l-4 border-brand-orange">
-                            <h4 class="font-bold text-brand-dark">Advanced IGBT</h4>
-                            <p class="text-xs text-gray-500">High efficiency inverter tech</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border-l-4 border-brand-orange">
-                            <h4 class="font-bold text-brand-dark">OEM/ODM Service</h4>
-                            <p class="text-xs text-gray-500">Custom branding for distributors</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border-l-4 border-brand-orange">
-                            <h4 class="font-bold text-brand-dark">Global Export</h4>
-                            <p class="text-xs text-gray-500">Fast shipping & logistics support</p>
+                    
+                    <!-- 核心优势 -->
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-brand-orange mr-3"></i> 100% Aging Test for Every Board
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-brand-orange mr-3"></i> Top-Grade IGBT Components
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-brand-orange mr-3"></i> Flexible OEM/ODM Branding
+                        </li>
+                    </ul>
+
+                    <!-- 证书展示区 (新增) -->
+                    <div class="border-t border-gray-100 pt-6">
+                        <p class="text-sm font-bold text-gray-400 uppercase mb-4">Quality Certifications</p>
+                        <div class="flex space-x-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-16 h-16 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-xl mb-1">CE</div>
+                                <span class="text-xs text-gray-500">Euro Standard</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-16 h-16 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm mb-1 text-center leading-tight">ISO<br>9001</div>
+                                <span class="text-xs text-gray-500">Quality System</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-16 h-16 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-xl mb-1">CCC</div>
+                                <span class="text-xs text-gray-500">Safety Cert</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="GOWELLDE Welding Machine Manufacturing Factory" class="rounded shadow-2xl">
-                    <div class="absolute -bottom-6 -right-6 bg-brand-orange text-white p-6 rounded shadow-lg hidden md:block">
-                        <p class="text-2xl font-bold">15+ Years</p>
-                        <p class="text-sm">Factory Expertise</p>
+
+                <!-- 工厂图片 -->
+                <div class="relative group">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="GOWELLDE Welding Machine Production Line" class="rounded shadow-2xl transition transform group-hover:scale-[1.02]">
+                    <div class="absolute -bottom-6 -right-6 bg-brand-dark text-white p-6 rounded shadow-lg hidden md:block border-b-4 border-brand-orange">
+                        <p class="text-2xl font-bold text-brand-orange">15+</p>
+                        <p class="text-sm">Years Experience</p>
                     </div>
                 </div>
             </div>
@@ -247,29 +287,30 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 
+                <!-- 联系信息 -->
                 <div>
-                    <h2 class="text-4xl font-bold mb-8">Inquire Wholesale Pricing</h2>
+                    <h2 class="text-4xl font-bold mb-8">Start Your Inquiry</h2>
                     <p class="text-gray-400 mb-10">
-                        Looking for a reliable welding machine supplier? Contact our export team today for the latest price list and industrial catalog.
+                        Looking for a reliable factory partner? Send us your requirements. We offer competitive wholesale pricing for distributors and importers.
                     </p>
                     
-                    <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center mr-4">
+                    <div class="space-y-8">
+                        <div class="flex items-center group cursor-pointer" onclick="window.location.href='mailto:jackie007hello@gmail.com'">
+                            <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition">
                                 <i class="fas fa-envelope text-xl"></i>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-400">Email Our Team</p>
-                                <p class="text-xl font-bold break-all">jackie007hello@gmail.com</p>
+                                <p class="text-sm text-gray-400">Sales Email</p>
+                                <p class="text-xl font-bold break-all group-hover:text-brand-orange transition">jackie007hello@gmail.com</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-phone-alt text-xl"></i>
+                        <div class="flex items-center group cursor-pointer" onclick="window.open('https://wa.me/8618235335022')">
+                            <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4 group-hover:bg-green-600 transition">
+                                <i class="fab fa-whatsapp text-2xl"></i>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-400">Call / WhatsApp (24/7)</p>
-                                <p class="text-xl font-bold">+86 18235335022</p>
+                                <p class="text-sm text-gray-400">WhatsApp / WeChat</p>
+                                <p class="text-xl font-bold group-hover:text-green-500 transition">+86 18235335022</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -284,45 +325,50 @@
                     </div>
 
                     <div class="mt-12 pt-10 border-t border-gray-800">
-                        <p class="text-sm text-gray-400 mb-4 uppercase tracking-wider font-bold">Connect With Us</p>
+                        <p class="text-sm text-gray-400 mb-4 uppercase tracking-wider font-bold">Follow Us</p>
                         <div class="flex space-x-4">
-                            <a href="https://www.youtube.com/@GowelldeWeld" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-red-600 hover:scale-110 transition duration-300" title="GOWELLDE YouTube">
+                            <a href="https://www.youtube.com/@GowelldeWeld" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-red-600 hover:scale-110 transition duration-300">
                                 <i class="fab fa-youtube text-xl"></i>
                             </a>
-                            <a href="https://www.facebook.com/people/Gowellde-Weld-Tech-Factory/61584937718348/" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-blue-600 hover:scale-110 transition duration-300" title="GOWELLDE Facebook">
+                            <a href="https://www.facebook.com/people/Gowellde-Weld-Tech-Factory/61584937718348/" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-blue-600 hover:scale-110 transition duration-300">
                                 <i class="fab fa-facebook-f text-xl"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- 询盘表单 -->
                 <div class="bg-white text-gray-800 p-8 rounded-lg shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-6">Send Factory Inquiry</h3>
+                    <div class="flex items-center justify-between mb-6">
+                         <h3 class="text-2xl font-bold">Send Message</h3>
+                         <span class="text-xs text-brand-orange font-bold border border-brand-orange px-2 py-1 rounded">Fast Reply</span>
+                    </div>
+                   
                     <form action="mailto:jackie007hello@gmail.com" method="post" enctype="text/plain" class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Full Name *</label>
-                                <input type="text" name="name" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange" required>
+                                <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Name *</label>
+                                <input type="text" name="name" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition" required>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Company Country</label>
-                                <input type="text" name="country" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange">
+                                <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Country</label>
+                                <input type="text" name="country" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Business Email *</label>
-                            <input type="email" name="email" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange" required>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Email *</label>
+                            <input type="email" name="email" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition" required>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Required Welder Model</label>
-                            <input type="text" name="model" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange" placeholder="e.g. ARC-315A Wholesale">
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Interested Model / Qty</label>
+                            <input type="text" name="model" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition" placeholder="e.g. ARC-400 x 50pcs">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Inquiry Message *</label>
-                            <textarea name="message" rows="4" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange" required placeholder="Tell us your quantity requirements..."></textarea>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Message</label>
+                            <textarea name="message" rows="4" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition" required placeholder="Please send me your price list..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-brand-dark text-white font-bold py-4 rounded hover:bg-brand-orange transition duration-300">
-                            SUBMIT INQUIRY
+                        <button type="submit" class="w-full bg-brand-dark text-white font-bold py-4 rounded hover:bg-brand-orange transition duration-300 flex items-center justify-center">
+                            SUBMIT INQUIRY <i class="fas fa-paper-plane ml-2"></i>
                         </button>
                     </form>
                 </div>
@@ -331,24 +377,28 @@
     </section>
 
     <!-- ================= Footer ================= -->
-    <footer class="bg-black text-gray-500 py-10 border-t border-gray-900">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="flex justify-center space-x-6 mb-6 grayscale hover:grayscale-0 transition opacity-70">
-                <div class="border border-gray-600 px-3 py-1 rounded text-xl font-bold text-white">CE</div>
-                <div class="border border-gray-600 px-3 py-1 rounded text-xl font-bold text-white">ISO9001</div>
-                <div class="border border-gray-600 px-3 py-1 rounded text-xl font-bold text-white">CCC</div>
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <p class="text-sm">&copy; 2024 GOWELLDE Welding Technology. All Rights Reserved.</p>
+                <p class="text-xs text-gray-600 mt-1">Professional Inverter Welder Manufacturer China.</p>
             </div>
-            <p class="text-sm">&copy; 2024 GOWELLDE Welding Technology Factory. Expert Inverter Welder Manufacturer.</p>
+            <div class="flex space-x-4 text-sm">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/8618235335022" class="whatsapp-float" target="_blank" title="Inquire on WhatsApp">
+    <!-- 悬浮工具栏 -->
+    <a href="https://wa.me/8618235335022" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
+        // 1. Google Translate
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
         }
@@ -356,212 +406,66 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
+        // 2. 导航逻辑
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         }
-
         function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
         function mobileLinkClick(sectionId) {
             scrollToSection(sectionId);
             toggleMobileMenu();
         }
 
+        // 3. 产品数据 (增加 category 字段)
         const products = [
-            {
-                id: 1,
-                model: "ARC-315E",
-                tag: "BEST SELLER",
-                voltage: "AC 220V/380V",
-                current: "160A",
-                weight: "4.1 KG",
-                dimension: "300*155*250",
-                config: "IGBT: 4*25N120, CAP: 4*560UF",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-315E.png",
-                price: "$3X"
-            },
-            {
-                id: 2,
-                model: "ARC-315A",
-                tag: "IGBT MMA",
-                voltage: "AC 220V/380V",
-                current: "180A",
-                weight: "5.4 KG",
-                dimension: "330*165*315",
-                config: "IGBT: 4*40N120, CAP: 4*680UF",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-315A.png",
-                price: "$4X",
-                hotSale: true 
-            },
-            {
-                id: 3,
-                model: "ARC-400B",
-                tag: "HEAVY DUTY",
-                voltage: "AC 220V/380V",
-                current: "200A",
-                weight: "6.6 KG",
-                dimension: "355*180*350",
-                config: "IGBT: 4*40N120, CAP: 5*680UF",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400B.png",
-                price: "$5X"
-            },
-            {
-                id: 4,
-                model: "ARC-400A",
-                tag: "INDUSTRIAL",
-                voltage: "AC 220V/380V",
-                current: "200-250A",
-                weight: "10.6 KG",
-                dimension: "405*205*385",
-                config: "IGBT: 4*40N120, CAP: 5*680UF",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400A.png",
-                price: "$6X"
-            },
-            {
-                id: 5,
-                model: "ARC-400",
-                tag: "3-PHASE",
-                voltage: "3P 380V",
-                current: "400A",
-                weight: "19 KG",
-                dimension: "515*270*465",
-                config: "Module: 2*75A/1200V, Rect: 1*50A",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400.png",
-                price: "$1XX"
-            },
-            {
-                id: 6,
-                model: "ARC-500",
-                tag: "HIGH POWER",
-                voltage: "3P 380V",
-                current: "450A",
-                weight: "25 KG",
-                dimension: "570*290*555",
-                config: "Module: 2*100A/1200V, Rect: 1*75A",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-500.png",
-                price: "$1XX"
-            },
-             {
-                id: 7,
-                model: "ARC-500B",
-                tag: "NEW MODEL",
-                voltage: "3P 380V",
-                current: "500A",
-                weight: "28 KG",
-                dimension: "600*310*580",
-                config: "Module: 2*100A, Upgrade Cooling",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-500B.png",
-                price: "$1XX"
-            },
-            {
-                id: 8,
-                model: "ARC-630",
-                tag: "EXTREME",
-                voltage: "3P 380V",
-                current: "500A",
-                weight: "35.5 KG",
-                dimension: "655*315*610",
-                config: "Module: 2*100A/1200V, Rect: 1*100A",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-630.png",
-                price: "$2XX"
-            },
-            {
-                id: 9,
-                model: "MIG/MMA-315Y",
-                tag: "MULTI-FUNC",
-                voltage: "AC 220V/380V",
-                current: "315A",
-                weight: "12 KG",
-                dimension: "480*225*360",
-                config: "IGBT: 4*40N120, Integrated Feeder",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-315y.png",
-                price: "$1XX"
-            },
-            {
-                id: 10,
-                model: "MIG/MMA-400",
-                tag: "DUAL VOLT",
-                voltage: "AC 220V/380V",
-                current: "400A",
-                weight: "14 KG",
-                dimension: "490*225*380",
-                config: "IGBT: 4*60N100, Integrated Feeder",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-400.png",
-                price: "$2XX"
-            },
-            {
-                id: 11,
-                model: "MIG/MMA-400CI",
-                tag: "COMPACT",
-                voltage: "3P 380V",
-                current: "400A",
-                weight: "22 KG",
-                dimension: "515*270*465",
-                config: "IGBT: 2*75N120, Split/Int Feeder",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-400CI.png",
-                price: "$2XX"
-            },
-            {
-                id: 12,
-                model: "MIG/MMA-500",
-                tag: "HEAVY MIG",
-                voltage: "3P 380V",
-                current: "500A",
-                weight: "31 KG",
-                dimension: "570*290*555",
-                config: "IGBT: 2*100N120, Heavy Duty",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-500.png",
-                price: "$3XX",
-                hotSale: true 
-            },
-            {
-                id: 13,
-                model: "MIG/MMA-500CI",
-                tag: "INDUSTRIAL",
-                voltage: "3P 380V",
-                current: "500A",
-                weight: "32 KG",
-                dimension: "570*290*555",
-                config: "IGBT: 2*100N120, High Duty Cycle",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-500CI.png",
-                price: "$3XX"
-            },
-            {
-                id: 14,
-                model: "MIG/MMA-630",
-                tag: "POWERHOUSE",
-                voltage: "3P 380V",
-                current: "630A",
-                weight: "43 KG",
-                dimension: "655*315*610",
-                config: "IGBT: 2*100N120, Shipyard Ready",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-630.png",
-                price: "$4XX"
-            },
-            {
-                id: 15,
-                model: "MIG/MMA-630B",
-                tag: "FLAGSHIP",
-                voltage: "3P 380V",
-                current: "630A",
-                weight: "45 KG",
-                dimension: "655*315*610",
-                config: "IGBT: 2*100N120, Ultimate Power",
-                image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-630B.png",
-                price: "$3XX"
-            }
+            // MMA Series
+            { id: 1, category: 'mma', model: "ARC-315E", tag: "BEST SELLER", voltage: "220V/380V", current: "160A", weight: "4.1 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-315E.png", price: "$3X" },
+            { id: 2, category: 'mma', model: "ARC-315A", tag: "IGBT MMA", voltage: "220V/380V", current: "180A", weight: "5.4 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-315A.png", price: "$4X", hotSale: true },
+            { id: 3, category: 'mma', model: "ARC-400B", tag: "HEAVY DUTY", voltage: "220V/380V", current: "200A", weight: "6.6 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400B.png", price: "$5X" },
+            { id: 4, category: 'mma', model: "ARC-400A", tag: "INDUSTRIAL", voltage: "220V/380V", current: "200-250A", weight: "10.6 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400A.png", price: "$6X" },
+            { id: 5, category: 'mma', model: "ARC-400", tag: "3-PHASE", voltage: "3P 380V", current: "400A", weight: "19 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-400.png", price: "$1XX" },
+            { id: 6, category: 'mma', model: "ARC-500", tag: "HIGH POWER", voltage: "3P 380V", current: "450A", weight: "25 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-500.png", price: "$1XX" },
+            { id: 7, category: 'mma', model: "ARC-500B", tag: "NEW MODEL", voltage: "3P 380V", current: "500A", weight: "28 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-500B.png", price: "$1XX" },
+            { id: 8, category: 'mma', model: "ARC-630", tag: "EXTREME", voltage: "3P 380V", current: "500A", weight: "35.5 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/ARC-630.png", price: "$2XX" },
+            
+            // MIG Series
+            { id: 9, category: 'mig', model: "MIG/MMA-315Y", tag: "MULTI-FUNC", voltage: "220V/380V", current: "315A", weight: "12 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-315y.png", price: "$1XX" },
+            { id: 10, category: 'mig', model: "MIG/MMA-400", tag: "DUAL VOLT", voltage: "220V/380V", current: "400A", weight: "14 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-400.png", price: "$2XX" },
+            { id: 11, category: 'mig', model: "MIG/MMA-400CI", tag: "COMPACT", voltage: "3P 380V", current: "400A", weight: "22 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-400CI.png", price: "$2XX" },
+            { id: 12, category: 'mig', model: "MIG/MMA-500", tag: "HEAVY MIG", voltage: "3P 380V", current: "500A", weight: "31 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-500.png", price: "$3XX", hotSale: true },
+            { id: 13, category: 'mig', model: "MIG/MMA-500CI", tag: "INDUSTRIAL", voltage: "3P 380V", current: "500A", weight: "32 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-500CI.png", price: "$3XX" },
+            { id: 14, category: 'mig', model: "MIG/MMA-630", tag: "POWERHOUSE", voltage: "3P 380V", current: "630A", weight: "43 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-630.png", price: "$4XX" },
+            { id: 15, category: 'mig', model: "MIG/MMA-630B", tag: "FLAGSHIP", voltage: "3P 380V", current: "630A", weight: "45 KG", image: "https://raw.githubusercontent.com/Mikedkmilk/gowellde/refs/heads/main/MIG%20MMA-630B.png", price: "$3XX" }
         ];
 
-        function renderProducts() {
+        // 4. 筛选与渲染逻辑
+        function filterProducts(category) {
+            // 更新按钮样式
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('tab-active', 'bg-brand-orange', 'text-white'));
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.add('text-gray-600')); // Reset text color
+            
+            const activeBtn = document.getElementById(`tab-${category}`);
+            activeBtn.classList.add('tab-active');
+            activeBtn.classList.remove('text-gray-600');
+
+            // 过滤数据
+            const filteredData = category === 'all' 
+                ? products 
+                : products.filter(p => p.category === category);
+            
+            renderGrid(filteredData);
+        }
+
+        function renderGrid(data) {
             const grid = document.getElementById('product-grid');
             let html = '';
 
-            products.forEach(product => {
+            data.forEach(product => {
                 const hotSaleBadge = product.hotSale 
                     ? `<div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl shadow z-10 animate-pulse">HOT SALE</div>` 
                     : '';
@@ -569,7 +473,7 @@
                 html += `
                 <div class="product-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 group relative flex flex-col">
                     <div class="h-64 bg-gray-50 relative overflow-hidden p-6 flex items-center justify-center">
-                        <img src="${product.image}" alt="GOWELLDE ${product.model} Inverter Welding Machine" 
+                        <img src="${product.image}" alt="GOWELLDE ${product.model} Inverter Welding Machine China" 
                              class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition duration-500">
                         <div class="absolute top-0 left-0 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-br shadow">
                             ${product.tag}
@@ -580,27 +484,34 @@
                     <div class="p-6 flex-1 flex flex-col">
                         <h3 class="text-2xl font-black text-brand-dark mb-4 group-hover:text-brand-orange transition">${product.model}</h3>
                         
-                        <div class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
-                            <div class="flex justify-between border-b border-gray-100 pb-1">
-                                <span>Voltage:</span> <span class="font-bold text-gray-800">${product.voltage}</span>
+                        <!-- 优化的参数展示区 (使用图标) -->
+                        <div class="grid grid-cols-2 gap-3 mb-6 flex-grow">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-bolt w-6 text-brand-orange opacity-80"></i>
+                                <span>${product.voltage}</span>
                             </div>
-                            <div class="flex justify-between border-b border-gray-100 pb-1">
-                                <span>Current:</span> <span class="font-bold text-brand-orange">${product.current}</span>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-tachometer-alt w-6 text-brand-orange opacity-80"></i>
+                                <span>${product.current}</span>
                             </div>
-                             <div class="flex justify-between border-b border-gray-100 pb-1">
-                                <span>Weight:</span> <span class="font-bold text-gray-800">${product.weight}</span>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-weight-hanging w-6 text-brand-orange opacity-80"></i>
+                                <span>${product.weight}</span>
+                            </div>
+                            <div class="flex items-center text-sm text-brand-blue cursor-pointer hover:underline" onclick="scrollToSection('contact')">
+                                <i class="fas fa-info-circle w-6"></i>
+                                <span>Get Specs</span>
                             </div>
                         </div>
 
-                        <div class="mt-auto">
+                        <div class="mt-auto pt-4 border-t border-gray-100">
                             <div class="flex items-baseline mb-3">
                                 <span class="text-3xl font-extrabold text-brand-orange mr-2">${product.price}</span>
-                                <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">FOB Reference</span>
-                                <span class="text-xs text-gray-500 ml-2 border-l border-gray-300 pl-2">MOQ: 10 Sets</span>
+                                <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">FOB Price</span>
                             </div>
 
                             <a href="mailto:jackie007hello@gmail.com?subject=Wholesale Inquiry for ${product.model}" class="block w-full text-center bg-brand-dark text-white py-3 rounded font-bold hover:bg-brand-orange transition duration-300 shadow-md">
-                                INQUIRE WHOLESALE PRICE
+                                INQUIRE NOW
                             </a>
                         </div>
                     </div>
@@ -608,10 +519,17 @@
                 `;
             });
 
-            grid.innerHTML = html;
+            if(data.length === 0) {
+                grid.innerHTML = '<div class="col-span-3 text-center py-10 text-gray-400">No products found in this category.</div>';
+            } else {
+                grid.innerHTML = html;
+            }
         }
 
-        window.onload = renderProducts;
+        // 初始化
+        window.onload = function() {
+            filterProducts('all');
+        };
 
     </script>
 </body>
