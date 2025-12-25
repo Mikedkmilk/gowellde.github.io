@@ -110,45 +110,26 @@
         html { scroll-behavior: smooth; }
         section { scroll-margin-top: 5rem; }
         
-        /* 谷歌翻译样式优化 - 修复版 */
-        #google_translate_element {
-            display: inline-block;
-            min-width: 80px;
-        }
+        /* 翻译组件样式优化 (参考 index Good.html) */
         .goog-te-gadget-simple {
             background-color: transparent !important;
             border: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
+            color: white !important;
             font-size: 14px !important;
-            display: flex !important;
-            align-items: center;
-        }
-        .goog-te-gadget-simple span {
-            color: white !important;
-            font-family: 'Roboto', sans-serif !important;
-            font-weight: 500 !important;
-            vertical-align: middle !important;
-        }
-        /* 移除 Google 默认的边框和分隔符 */
-        .goog-te-gadget-simple .goog-te-menu-value {
-            color: white !important;
-            padding-right: 0 !important;
-        }
-        .goog-te-gadget-simple .goog-te-menu-value span {
-            border-left: none !important;
+            padding: 0 !important;
         }
         /* 隐藏 Google 图标 */
-        .goog-te-gadget-icon {
-            display: none !important;
-        }
-        .goog-te-gadget-simple img {
-            display: none !important;
-        }
+        .goog-te-gadget-icon { display: none !important; }
         
-        /* 下拉菜单颜色修复 */
-        .goog-te-menu-frame {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+        /* 强制翻译组件文字颜色为白色，确保在黑色导航栏可见 */
+        .goog-te-gadget-simple span {
+            color: white !important;
+            font-weight: 500 !important;
+        }
+        /* 移除多余边框 */
+        .goog-te-gadget-simple .goog-te-menu-value {
+            border-left: none !important;
+            margin-left: 0 !important;
         }
 
         /* 产品卡片动效 */
@@ -216,8 +197,8 @@
                     <button onclick="scrollToSection('about')" class="hover:text-brand-orange transition font-medium">Factory</button>
                     <button onclick="scrollToSection('blog')" class="hover:text-brand-orange transition font-medium">Blog</button>
                     
-                    <!-- 语言翻译 (修复后) -->
-                    <div class="flex items-center space-x-2 border border-gray-600 rounded px-3 py-1 hover:border-brand-orange transition">
+                    <!-- 语言翻译 (修复功能) -->
+                    <div class="flex items-center space-x-2 border border-gray-600 rounded px-2 py-1 hover:border-brand-orange transition">
                         <img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto">
                         <div id="google_translate_element"></div>
                     </div>
