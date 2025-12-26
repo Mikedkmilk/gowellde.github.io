@@ -110,27 +110,47 @@
         html { scroll-behavior: smooth; }
         section { scroll-margin-top: 5rem; }
         
-        /* 翻译组件样式优化 (参考 index Good.html) */
+        /* === Google 翻译自定义样式 (仿沉浸式翻译风格) === */
+        #google_translate_element {
+            display: inline-block;
+        }
+        
+        /* 隐藏 Google Logo 和 footer */
+        .goog-te-gadget-icon { display: none !important; }
         .goog-te-gadget-simple {
             background-color: transparent !important;
             border: none !important;
-            color: white !important;
-            font-size: 14px !important;
             padding: 0 !important;
+            margin: 0 !important;
+            font-size: 14px !important;
+            cursor: pointer !important;
         }
-        /* 隐藏 Google 图标 */
-        .goog-te-gadget-icon { display: none !important; }
         
-        /* 强制翻译组件文字颜色为白色，确保在黑色导航栏可见 */
+        /* 调整文字颜色为白色，适配黑色导航 */
         .goog-te-gadget-simple span {
             color: white !important;
             font-weight: 500 !important;
+            font-family: 'Roboto', sans-serif !important;
         }
-        /* 移除多余边框 */
+        
+        /* 去掉默认的竖线分隔符 */
         .goog-te-gadget-simple .goog-te-menu-value {
             border-left: none !important;
+            padding-left: 0 !important;
             margin-left: 0 !important;
         }
+        .goog-te-gadget-simple .goog-te-menu-value span:nth-child(1) {
+            margin-right: 4px; /* 在文字和箭头之间加点空隙 */
+        }
+        
+        /* 鼠标悬停变色 */
+        .goog-te-gadget-simple:hover span {
+            color: #F57C00 !important; /* Brand Orange */
+        }
+
+        /* 隐藏不需要的元素 */
+        .goog-te-banner-frame.skiptranslate { display: none !important; } 
+        body { top: 0px !important; }
 
         /* 产品卡片动效 */
         .product-card { transition: all 0.3s ease; }
@@ -197,9 +217,11 @@
                     <button onclick="scrollToSection('about')" class="hover:text-brand-orange transition font-medium">Factory</button>
                     <button onclick="scrollToSection('blog')" class="hover:text-brand-orange transition font-medium">Blog</button>
                     
-                    <!-- 语言翻译 (修复功能) -->
-                    <div class="flex items-center space-x-2 border border-gray-600 rounded px-2 py-1 hover:border-brand-orange transition">
-                        <img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto">
+                    <!-- 语言翻译 (仿 Immersive Translate 风格) -->
+                    <div class="flex items-center space-x-2 border border-gray-600 rounded-full px-3 py-1 hover:border-brand-orange transition cursor-pointer group">
+                        <!-- 地球图标 -->
+                        <i class="fas fa-globe text-white group-hover:text-brand-orange transition text-sm"></i>
+                        <!-- Google 翻译组件 -->
                         <div id="google_translate_element"></div>
                     </div>
 
@@ -482,12 +504,12 @@
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
-        // 1. Google Translate
+        // 1. Google Translate (核心初始化功能)
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
         // 2. 导航逻辑
