@@ -1,0 +1,84 @@
+---
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import '@fontsource/roboto/900.css';
+import '@fontsource/roboto-mono/400.css';
+import '@fontsource/roboto-mono/500.css';
+import '../styles/global.css';
+import { SITE, CONTACT, ANALYTICS } from '../config';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string; // 当前页路径，用于 canonical，如 '/products/arc-400/'
+  ogType?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  preloadImage?: string; // 首屏关键图预加载（如首页轮播首张）
+}
+const {
+  title,
+  description,
+  path = '/',
+  ogType = 'website',
+  ogImage = '/assets/factory/lineup.webp',
+  noindex = false,
+  preloadImage,
+} = Astro.props;
+const canonical = `${SITE.url}${path}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${SITE.url}${ogImage}`} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
+
+    {
+      ANALYTICS.ga4Id && (
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS.ga4Id}`} />
+      )
+    }
+    {
+      ANALYTICS.ga4Id && (
+        <script is:inline define:vars={{ ga4Id: ANALYTICS.ga4Id }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {'{'}
+          dataLayer.push(arguments);
+          {'}'}
+          gtag('js', new Date());
+          gtag('config', ga4Id);
+        </script>
+      )
+    }
+  </head>
+  <body class="font-sans text-gray-800 bg-brand-light">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppFloat />
+  </body>
+</html>

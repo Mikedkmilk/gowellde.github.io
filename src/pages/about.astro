@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { CONTACT } from '../config';
+
+const stats = [
+  { value: '15+', label: 'Years of welding machine manufacturing' },
+  { value: '10,000㎡', label: 'Production facility in Tengzhou, Shandong' },
+  { value: '100%', label: 'Board aging test before assembly' },
+  { value: '20+', label: 'Export markets across Asia, Africa & Middle East' },
+];
+
+const oemSteps = [
+  { title: '1. Requirement', desc: 'Send us your target specs, voltage standards and annual volume.' },
+  { title: '2. Sample', desc: 'We build and test a sample to your configuration for approval.' },
+  { title: '3. Branding', desc: 'Logo silkscreen, casing color, packaging and manual with your brand.' },
+  { title: '4. Mass Production', desc: 'Aging-tested production run with inline QC, typically 15–25 days.' },
+  { title: '5. Export', desc: 'FOB Qingdao shipping with CE-compliant documentation.' },
+];
+---
+
+<BaseLayout
+  title="About GOWELLDE Welding Machine Factory | 15+ Years, OEM/ODM, CE & ISO9001"
+  description="GOWELLDE operates a 10,000㎡ inverter welding machine factory in Tengzhou, Shandong. 15+ years of manufacturing, 100% board aging test, ISO9001 quality system, OEM/ODM services for global distributors."
+  path="/about/"
+  ogImage="/assets/factory/lineup.webp"
+>
+  <section class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Factory' }]} />
+        <h1 class="text-4xl font-black uppercase mb-4">The Factory Behind Every GOWELLDE Welder</h1>
+        <p class="text-gray-300 leading-relaxed">
+          Located in Tengzhou, Shandong — one of China's largest welding equipment manufacturing clusters — GOWELLDE builds IGBT
+          inverter welding machines for distributors and industrial users in more than 20 countries.
+        </p>
+      </div>
+      <img src="/assets/factory/lineup.webp" alt="GOWELLDE inverter welding machine product lineup" width="1200" height="800" class="rounded-lg shadow-2xl w-full" loading="eager" />
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      {stats.map((s) => (
+        <div>
+          <p class="text-4xl font-black text-brand-orange mb-2">{s.value}</p>
+          <p class="text-sm text-gray-500">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <img src="/assets/factory/inside.webp" alt="Inside a GOWELLDE inverter welder: copper-wound inductor and rectifier diode" width="1000" height="750" class="rounded shadow-2xl w-full aspect-[4/3] object-cover" loading="lazy" />
+      <div>
+        <h2 class="text-3xl font-bold text-brand-dark mb-6">Quality You Can Verify</h2>
+        <ul class="space-y-4">
+          <li class="flex gap-3 text-gray-700"><Icon name="check-circle" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" /><span><strong>100% board aging test.</strong> Every inverter board runs under load before assembly — not batch sampling.</span></li>
+          <li class="flex gap-3 text-gray-700"><Icon name="check-circle" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" /><span><strong>Top-grade IGBT components.</strong> G25N120–G150N120 modules with oversized capacitor banks, specified per model on every datasheet.</span></li>
+          <li class="flex gap-3 text-gray-700"><Icon name="check-circle" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" /><span><strong>Duty cycle rated at 40°C.</strong> Published duty cycles are measured at working temperature, not ideal lab conditions.</span></li>
+          <li class="flex gap-3 text-gray-700"><Icon name="check-circle" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" /><span><strong>ISO9001 quality system</strong> with CE-compliant product design.</span></li>
+        </ul>
+        <div class="mt-8 flex gap-4">
+          <a href="/products/" class="bg-brand-orange text-white px-6 py-3 rounded font-bold hover:bg-orange-600 transition">Browse Machines</a>
+          <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener" class="border-2 border-brand-dark text-brand-dark px-6 py-3 rounded font-bold hover:bg-brand-dark hover:text-white transition flex items-center gap-2">
+            <Icon name="whatsapp" class="w-4 h-4" /> Video Tour
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-dark mb-10 text-center">OEM / ODM Process</h2>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        {oemSteps.map((step) => (
+          <div class="bg-brand-light border border-gray-100 rounded-lg p-5">
+            <h3 class="font-bold text-brand-dark mb-2">{step.title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-gray-500 mt-8">
+        Building your own welding machine brand? <a href="/contact/" class="text-brand-orange font-bold hover:underline">Talk to our OEM team</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-brand-dark mb-10">Certifications</h2>
+      <div class="flex flex-wrap justify-center gap-10">
+        <div class="flex flex-col items-center"><div class="w-20 h-20 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-2xl mb-2">CE</div><span class="text-sm text-gray-500">European conformity</span></div>
+        <div class="flex flex-col items-center"><div class="w-20 h-20 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-base mb-2 text-center leading-tight">ISO<br />9001</div><span class="text-sm text-gray-500">Quality management</span></div>
+        <div class="flex flex-col items-center"><div class="w-20 h-20 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-2xl mb-2">CCC</div><span class="text-sm text-gray-500">China safety certification</span></div>
+      </div>
+      <p class="text-gray-400 text-sm mt-6">Certificate scans available on request — <a href="/contact/" class="hover:underline">contact us</a>.</p>
+    </div>
+  </section>
+</BaseLayout>

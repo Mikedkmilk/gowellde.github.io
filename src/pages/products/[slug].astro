@@ -1,0 +1,44 @@
+---
+/**
+ * /products/{slug}/ 的统一路由：slug 是品类 → 品类页；是产品 → 产品详情页。
+ * 产品 URL 保持扁平（/products/arc-400/），不挂品类路径——详见改版方案 4.2。
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductPage from '../../components/ProductPage.astro';
+import CategoryPage from '../../components/CategoryPage.astro';
+import { getCategories, getProducts } from '../../lib/data';
+
+export async function getStaticPaths() {
+  const [cats, prods] = await Promise.all([getCategories(), getProducts()]);
+  return [
+    ...cats.map((c) => ({ params: { slug: c.data.slug }, props: { kind: 'category' as const, slug: c.data.slug } })),
+    ...prods.map((p) => ({ params: { slug: p.id }, props: { kind: 'product' as const, slug: p.id } })),
+  ];
+}
+
+const { kind, slug } = Astro.props;
+const cats = await getCategories();
+const prods = await getProducts();
+
+let title = 'Products | GOWELLDE';
+let description = 'Factory-direct inverter welding machines from GOWELLDE.';
+let ogImage: string | undefined;
+
+if (kind === 'category') {
+  const cat = cats.find((c) => c.data.slug === slug)!;
+  title = cat.data.seoTitle ?? `${cat.data.name} | GOWELLDE`;
+  description = cat.data.seoDescription ?? cat.data.intro.slice(0, 155);
+  ogImage = cat.data.hero || undefined;
+} else {
+  const p = prods.find((x) => x.id === slug)!;
+  title = `${p.data.name} | Wholesale Price - GOWELLDE`;
+  description = p.data.summary || p.data.description || `${p.data.model} inverter welding machine, factory direct wholesale.`;
+  ogImage = p.data.images.length > 0 ? p.data.images[0].src : undefined;
+}
+---
+
+<BaseLayout title={title} description={description} path={`/products/${slug}/`} ogType="product" ogImage={ogImage}>
+  {kind === 'category'
+    ? <CategoryPage category={cats.find((c) => c.data.slug === slug)!} />
+    : <ProductPage product={prods.find((x) => x.id === slug)!} />}
+</BaseLayout>

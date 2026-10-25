@@ -1,0 +1,33 @@
+{
+  "model": "ARC-630",
+  "name": "ARC-630 Flagship MMA Welder 630A",
+  "category": "mma-welders",
+  "series": "ARC",
+  "tags": ["FLAGSHIP"],
+  "status": "active",
+  "badges": [],
+  "featured": true,
+  "sortOrder": 90,
+  "images": [
+    { "src": "/assets/products/arc-630/main.webp", "alt": "GOWELLDE ARC-630 flagship 630A MMA welding machine" },
+    { "src": "/assets/datasheets/arc-630.webp", "alt": "ARC-630 welding equipment info sheet" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "630A",
+    "dutyCycleAt40c": "80",
+    "rodDiameterMm": "2.5–5.0",
+    "dimensionsMm": "655×315×610",
+    "netWeightKg": "46",
+    "igbtConfig": "2×G150N120, T130 transformer"
+  },
+  "summary": "630A flagship stick welder — the top of the GOWELLDE MMA range.",
+  "description": "The ARC-630 tops the MMA range with 630A output from a 2×G150N120 IGBT stage and the T130 transformer. For preheating, thick-section structural work and carbon-arc gouging duty, it is the machine heavy fabricators specify when nothing smaller survives the shift.",
+  "features": ["630A maximum output", "2×G150N120 top-grade IGBT stage", "T130 heavy-duty transformer", "80% duty cycle at rated current", "Reinforced 630-class chassis"],
+  "applications": ["Heavy structural fabrication", "Carbon arc gouging duty", "Large-scale construction projects"],
+  "downloads": [],
+  "related": ["arc-630b", "arc-500"],
+  "priceDisplay": "$2XX",
+  "moq": "20 pcs",
+  "leadTimeDays": "20–30"
+}

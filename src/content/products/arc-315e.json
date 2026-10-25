@@ -1,0 +1,33 @@
+{
+  "model": "ARC-315E",
+  "name": "ARC-315E Portable IGBT MMA Welder 160A",
+  "category": "mma-welders",
+  "series": "ARC",
+  "tags": ["BEST SELLER"],
+  "status": "active",
+  "badges": ["best-seller"],
+  "featured": true,
+  "sortOrder": 10,
+  "images": [
+    { "src": "/assets/products/arc-315e/main.webp", "alt": "GOWELLDE ARC-315E portable IGBT MMA welding machine" },
+    { "src": "/assets/datasheets/arc-315e.webp", "alt": "ARC-315E welding equipment info sheet" }
+  ],
+  "specs": {
+    "inputVoltage": "220V / 380V ±15%",
+    "ratedCurrent": "160A",
+    "dutyCycleAt40c": "60",
+    "rodDiameterMm": "2.5–3.2",
+    "dimensionsMm": "300×155×250",
+    "netWeightKg": "4.1",
+    "igbtConfig": "4×G25N120, 4×560µF/450V, T63 transformer"
+  },
+  "summary": "4.1 kg portable stick welder for site repair and light fabrication. Our best-selling entry model.",
+  "description": "The ARC-315E is the mainstream choice for basic stick welding. At only 4.1 kg it moves easily between workshops, rooftops and remote sites, while the IGBT inverter stage keeps the arc stable on long extension cables and generator power. Handles complex joints and narrow spaces where heavier machines cannot reach.",
+  "features": ["IGBT inverter technology, high power-to-weight ratio", "Hot start & anti-stick for easy rod striking", "Thermal overload protection with indicator", "Works on 220V or 380V supply ±15%", "Generator-compatible for outdoor sites"],
+  "applications": ["Site maintenance & repair", "Light steel fabrication", "Rebar tack welding", "Farm & workshop general use"],
+  "downloads": [],
+  "related": ["arc-315a", "arc-400b"],
+  "priceDisplay": "$3X",
+  "moq": "50 pcs",
+  "leadTimeDays": "15–25"
+}

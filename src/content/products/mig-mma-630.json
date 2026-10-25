@@ -1,0 +1,34 @@
+{
+  "model": "MIG/MMA-630",
+  "name": "MIG/MMA-630 Powerhouse MIG Welder 630A",
+  "category": "mig-mag-welders",
+  "series": "MIG/MMA",
+  "tags": ["POWERHOUSE"],
+  "status": "active",
+  "badges": [],
+  "featured": false,
+  "sortOrder": 70,
+  "images": [
+    { "src": "/assets/products/mig-mma-630/main.webp", "alt": "GOWELLDE MIG/MMA-630 powerhouse MIG welding machine" },
+    { "src": "/assets/datasheets/mig-mma-630.webp", "alt": "MIG/MMA-630 welding equipment info sheet" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "630A",
+    "dutyCycleAt40c": "80",
+    "wireDiameterMm": "0.8–1.6",
+    "dimensionsMm": "655×315×610",
+    "netWeightKg": "48",
+    "igbtConfig": "2×G150N120, T130 transformer",
+    "accessories": "4m 50mm² cable, dual-drive wire feeder, 1.5m 50mm² negative cable, 500A ground clamp, 3m 36KD torch, 220V CO2 heated flowmeter regulator"
+  },
+  "summary": "630A top-of-range MIG welder with the 50mm² cable package.",
+  "description": "The MIG/MMA-630 tops the range at 630A with the 2×G150N120 stage, T130 transformer and 50mm² cables. For the heaviest wire-feed welding — thick structural sections, long flat and horizontal seams — it is the maximum machine in the catalog.",
+  "features": ["630A maximum output", "2×G150N120 IGBT stage", "50mm² heavy cable package", "0.8–1.6 mm wire range", "Reinforced 655mm chassis"],
+  "applications": ["Heavy construction fabrication", "Thick plate welding", "Large equipment manufacturing"],
+  "downloads": [],
+  "related": ["mig-mma-630b", "arc-630"],
+  "priceDisplay": "$4XX",
+  "moq": "20 pcs",
+  "leadTimeDays": "20–30"
+}

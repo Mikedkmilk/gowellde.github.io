@@ -1,0 +1,20 @@
+{
+  "slug": "welding-machines",
+  "name": "Welding Machines",
+  "parent": null,
+  "hero": "/assets/categories/welding-hero.webp",
+  "intro": "GOWELLDE builds IGBT inverter welding machines for distributors and industrial users worldwide. Our range covers MMA (stick) arc welders from 160A to 630A and MIG/MAG welders with dual-drive wire feeders up to 630A. Every board passes a 100% aging test before assembly, and all machines are duty-cycle rated at 40°C. With OEM/ODM support, CE-compliant designs and FOB Qingdao logistics, we supply welding equipment to Egypt, India, Pakistan, Vietnam and 20+ other markets.",
+  "order": 1,
+  "seoTitle": "Inverter Welding Machines Manufacturer - MMA & MIG/MAG | GOWELLDE",
+  "seoDescription": "IGBT inverter welding machines from a Chinese factory: MMA arc welders 160-630A and MIG/MAG welders with dual-drive feeders. 100% board aging test, OEM/ODM, CE compliant.",
+  "specSchema": [
+    { "key": "inputVoltage", "label": "Input Voltage", "unit": "", "filterable": true },
+    { "key": "ratedCurrent", "label": "Rated Current", "unit": "A", "filterable": true },
+    { "key": "dutyCycleAt40c", "label": "Duty Cycle @40°C", "unit": "%", "filterable": true },
+    { "key": "rodDiameterMm", "label": "Rod Diameter", "unit": "mm", "filterable": false },
+    { "key": "wireDiameterMm", "label": "Wire Diameter", "unit": "mm", "filterable": false },
+    { "key": "dimensionsMm", "label": "Dimensions (L×W×H)", "unit": "mm", "filterable": false },
+    { "key": "netWeightKg", "label": "Net Weight", "unit": "kg", "filterable": false },
+    { "key": "igbtConfig", "label": "Power Stage (IGBT)", "unit": "", "filterable": false }
+  ]
+}

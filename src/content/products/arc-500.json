@@ -1,0 +1,33 @@
+{
+  "model": "ARC-500",
+  "name": "ARC-500 High-Power MMA Welder 450A",
+  "category": "mma-welders",
+  "series": "ARC",
+  "tags": ["HIGH POWER"],
+  "status": "active",
+  "badges": [],
+  "featured": true,
+  "sortOrder": 70,
+  "images": [
+    { "src": "/assets/products/arc-500/main.webp", "alt": "GOWELLDE ARC-500 high power MMA welding machine" },
+    { "src": "/assets/datasheets/arc-500.webp", "alt": "ARC-500 welding equipment info sheet" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "450A",
+    "dutyCycleAt40c": "100",
+    "rodDiameterMm": "2.5–5.0",
+    "dimensionsMm": "570×290×555",
+    "netWeightKg": "27",
+    "igbtConfig": "2×G100N120, T105 transformer"
+  },
+  "summary": "450A at 100% duty cycle — designed to weld all day without stopping.",
+  "description": "The ARC-500 delivers 450A at a full 100% duty cycle with a 2×G100N120 IGBT stage and T105 transformer. For production lines where the arc never cools down, this is the machine that keeps running through the shift.",
+  "features": ["100% duty cycle at rated current", "2×G100N120 IGBT stage", "45 kg-class arc stability for thick plate", "5.0 mm rod capability", "Front-mounted digital current display"],
+  "applications": ["Continuous production welding", "Thick plate fabrication", "Structural steel plants"],
+  "downloads": [],
+  "related": ["arc-500b", "arc-630"],
+  "priceDisplay": "$1XX",
+  "moq": "30 pcs",
+  "leadTimeDays": "15–25"
+}

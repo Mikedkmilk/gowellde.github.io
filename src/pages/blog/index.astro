@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getPosts } from '../../lib/data';
+
+const posts = await getPosts();
+---
+
+<BaseLayout
+  title="Welding Machine Guides & Import Tips - GOWELLDE Blog"
+  description="Practical guides for welding machine buyers and distributors: inverter welder selection, IGBT technology, MIG vs TIG vs stick, maintenance, and importing welding machines from China."
+  path="/blog/"
+>
+  <section class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
+      <h1 class="text-4xl font-black uppercase mb-4">Welding Guides & Insights</h1>
+      <p class="text-gray-300 max-w-2xl">For buyers and distributors: how to choose, use and import industrial welding machines.</p>
+    </div>
+  </section>
+
+  <section class="py-14 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map((post) => (
+        <a href={`/blog/${post.id}/`} class="product-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 group flex flex-col">
+          <div class="h-52 bg-gray-100 overflow-hidden">
+            {post.data.image && (
+              <img src={post.data.image} alt={post.data.title} width="1200" height="800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            )}
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-xs text-gray-400 mb-2">
+              {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+            </p>
+            <h2 class="text-lg font-bold text-brand-dark mb-2 group-hover:text-brand-orange transition leading-tight">{post.data.title}</h2>
+            <p class="text-sm text-gray-500 line-clamp-3 flex-1">{post.data.description}</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              {post.data.tags.slice(0, 3).map((t) => (
+                <span class="text-xs text-brand-orange bg-orange-50 px-2 py-1 rounded font-medium">{t}</span>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

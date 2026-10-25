@@ -1,0 +1,32 @@
+{
+  "model": "ARC-630B",
+  "name": "ARC-630B Extreme MMA Welder 500A @ 100% Duty",
+  "category": "mma-welders",
+  "series": "ARC",
+  "tags": ["EXTREME"],
+  "status": "active",
+  "badges": [],
+  "featured": false,
+  "sortOrder": 80,
+  "images": [
+    { "src": "/assets/products/_placeholder/main.webp", "alt": "ARC-630B heavy duty MMA welding machine (photo coming soon)" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "500A",
+    "dutyCycleAt40c": "100",
+    "rodDiameterMm": "2.5–5.0",
+    "dimensionsMm": "655×315×610",
+    "netWeightKg": "40",
+    "igbtConfig": "2×G100N120, T120 transformer"
+  },
+  "summary": "500A at 100% duty cycle in the 630-class chassis. Photos on request.",
+  "description": "The ARC-630B pairs the 630-class chassis and T120 transformer with a 2×G100N120 stage rated 500A at 100% duty cycle — extreme continuous output for the heaviest stick welding work. Contact us for current photos and datasheet.",
+  "features": ["500A at 100% duty cycle", "T120 transformer for sustained load", "630-class reinforced chassis", "5.0 mm rod capability"],
+  "applications": ["Heavy construction", "Large structural fabrication", "Continuous heavy-duty welding"],
+  "downloads": [],
+  "related": ["arc-630", "arc-500"],
+  "priceDisplay": "$2XX",
+  "moq": "20 pcs",
+  "leadTimeDays": "20–30"
+}

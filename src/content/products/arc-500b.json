@@ -1,0 +1,32 @@
+{
+  "model": "ARC-500B",
+  "name": "ARC-500B New-Generation MMA Welder 400A",
+  "category": "mma-welders",
+  "series": "ARC",
+  "tags": ["NEW MODEL"],
+  "status": "active",
+  "badges": ["new"],
+  "featured": false,
+  "sortOrder": 60,
+  "images": [
+    { "src": "/assets/products/arc-500b/main.webp", "alt": "GOWELLDE ARC-500B new generation MMA welding machine" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "400A",
+    "dutyCycleAt40c": "80",
+    "rodDiameterMm": "2.5–5.0",
+    "dimensionsMm": "515×270×465",
+    "netWeightKg": "21",
+    "igbtConfig": "2×G75N120, T100 transformer"
+  },
+  "summary": "400A at 80% duty in the proven 515×270 chassis — updated power stage, same footprint.",
+  "description": "The ARC-500B refreshes the 500-class power stage with two G75N120 IGBTs, delivering 400A at 80% duty cycle in the same compact chassis as the ARC-400. A straightforward upgrade item for existing ARC-400 users who need more headroom for 5.0 mm rods.",
+  "features": ["400A rated at 80% duty cycle", "2×G75N120 IGBT stage", "Same chassis & mounting as ARC-400", "5.0 mm rod capability", "Thermostatic fan control"],
+  "applications": ["Heavy steel fabrication", "Construction of steel structures", "Mining & quarry equipment repair"],
+  "downloads": [],
+  "related": ["arc-500", "arc-400"],
+  "priceDisplay": "$1XX",
+  "moq": "30 pcs",
+  "leadTimeDays": "15–25"
+}

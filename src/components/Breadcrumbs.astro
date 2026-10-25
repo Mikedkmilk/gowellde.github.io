@@ -1,0 +1,45 @@
+---
+/**
+ * 面包屑导航 + BreadcrumbList 结构化数据。
+ * items: [{ label: 'Products', href: '/products/' }, { label: 'ARC-400' }]（最后一级无需 href）
+ */
+import Icon from './Icon.astro';
+import JsonLd from './JsonLd.astro';
+import { SITE } from '../config';
+
+interface Item {
+  label: string;
+  href?: string;
+}
+interface Props {
+  items: Item[];
+}
+const { items } = Astro.props;
+
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.label,
+    ...(item.href ? { item: `${SITE.url}${item.href}` } : {}),
+  })),
+};
+---
+
+<nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-6">
+  <ol class="flex flex-wrap items-center gap-1.5">
+    {items.map((item, i) => (
+      <li class="flex items-center gap-1.5">
+        {i > 0 && <Icon name="chevron-right" class="w-3.5 h-3.5 text-gray-400" />}
+        {item.href ? (
+          <a href={item.href} class="hover:text-brand-orange transition">{item.label}</a>
+        ) : (
+          <span class="text-gray-700 font-medium">{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+<JsonLd data={ld} />

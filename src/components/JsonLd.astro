@@ -1,0 +1,9 @@
+---
+// 输出一段 JSON-LD 结构化数据：<JsonLd data={obj} />
+interface Props {
+  data: Record<string, unknown>;
+}
+const { data } = Astro.props;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(data)} />

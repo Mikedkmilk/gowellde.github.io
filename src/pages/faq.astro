@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqs = [
+  {
+    q: 'What is your MOQ (minimum order quantity)?',
+    a: 'Standard models: 20–50 units depending on the series (each product page shows its MOQ). Mixed containers with several models are welcome — tell us your target volume and we will build a workable plan.',
+  },
+  {
+    q: 'Do you offer OEM / ODM branding?',
+    a: 'Yes. We silkscreen your logo, customize casing color, packaging and manuals. Sample first, then mass production — typically 15–25 days after sample approval.',
+  },
+  {
+    q: 'What are your payment terms?',
+    a: 'T/T (30% deposit, 70% before shipment) is standard for first orders. L/C at sight is accepted for large volumes. We also support Alibaba Trade Assurance if you prefer.',
+  },
+  {
+    q: 'How long is the lead time?',
+    a: '15–25 days for standard models, 20–30 days for heavy series (630 class). Peak-season orders are scheduled on deposit date — confirm early.',
+  },
+  {
+    q: 'What shipping terms do you support?',
+    a: 'FOB Qingdao is standard. We can also quote CIF / CFR to your port, or EXW if you arrange your own forwarder. Sea, rail and air all available.',
+  },
+  {
+    q: 'What certifications do your machines have?',
+    a: 'Products are CE-compliant and CCC certified; the factory runs an ISO9001 quality management system. Certificate scans are available on request.',
+  },
+  {
+    q: 'What is the warranty policy?',
+    a: 'Typically 1 year for the machine with lifetime technical support; warranty terms are negotiable for distributors. Spare parts (boards, torches, feeders) are stocked and shipped with your order.',
+  },
+  {
+    q: 'Can you customize voltage and plug type for my market?',
+    a: 'Yes — 110V/220V/380V/415V and 50/60Hz variants, plus local plug and cable standards. This is a standard OEM option, not an extra fee.',
+  },
+  {
+    q: 'How is quality controlled before shipment?',
+    a: 'Every inverter board passes a 100% aging test under load. Finished machines are duty-cycle tested and inspected per ISO9001 procedures before packing.',
+  },
+  {
+    q: 'Can I get samples before a bulk order?',
+    a: 'Yes, sample orders are accepted at unit price plus shipping. Sample cost is deducted from your first bulk order.',
+  },
+];
+---
+
+<BaseLayout
+  title="FAQ - Welding Machine Orders, OEM, Shipping & Warranty | GOWELLDE"
+  description="Answers to common questions about ordering welding machines from GOWELLDE: MOQ, OEM/ODM, payment terms, lead time, FOB Qingdao shipping, CE certification, warranty and samples."
+  path="/faq/"
+>
+  <section class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
+      <h1 class="text-4xl font-black uppercase mb-4">Frequently Asked Questions</h1>
+      <p class="text-gray-300">Everything distributors ask before their first order. Still unsure? <a href="/contact/" class="text-brand-orange hover:underline">Ask us directly</a>.</p>
+    </div>
+  </section>
+
+  <section class="py-14 bg-brand-light">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {faqs.map((f) => (
+        <details class="faq-item bg-white rounded-lg shadow-sm border border-gray-100">
+          <summary class="flex items-center justify-between gap-4 p-5 font-bold text-brand-dark">
+            {f.q}
+            <Icon name="chevron-down" class="faq-chevron w-5 h-5 text-brand-orange flex-shrink-0" />
+          </summary>
+          <div class="px-5 pb-5 text-gray-600 leading-relaxed">{f.a}</div>
+        </details>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

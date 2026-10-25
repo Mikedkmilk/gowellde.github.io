@@ -1,0 +1,70 @@
+---
+/**
+ * 产品图册：主图 + 缩略图切换（约 10 行原生 JS，无依赖）。
+ * images: [{ src, alt }]
+ */
+interface Img {
+  src: string;
+  alt: string;
+}
+interface Props {
+  images: Img[];
+}
+const { images } = Astro.props;
+const uid = Math.random().toString(36).slice(2, 8);
+---
+
+{
+  images.length > 0 ? (
+    <div>
+      <div class="bg-gray-50 border border-gray-100 rounded-lg overflow-hidden flex items-center justify-center aspect-[4/3]">
+        <img
+          id={`gallery-main-${uid}`}
+          src={images[0].src}
+          alt={images[0].alt}
+          width="1000"
+          height="750"
+          class="max-h-full max-w-full object-contain p-6"
+          loading="eager"
+        />
+      </div>
+      {images.length > 1 && (
+        <div class="flex gap-3 mt-3">
+          {images.map((img, i) => (
+            <button
+              class="gallery-thumb flex-shrink-0 w-20 h-20 bg-gray-50 border-2 rounded overflow-hidden flex items-center justify-center hover:border-brand-orange transition"
+              data-gallery-uid={uid}
+              data-src={img.src}
+              data-alt={img.alt}
+              class:list={[i === 0 ? 'border-brand-orange' : 'border-gray-200']}
+              aria-label={`Show image ${i + 1}`}
+            >
+              <img src={img.src} alt="" width="80" height="80" class="max-h-full max-w-full object-contain p-1" loading="lazy" />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  ) : (
+    <div class="bg-gray-100 border border-gray-200 rounded-lg aspect-[4/3] flex items-center justify-center text-gray-400">
+      Photo on request
+    </div>
+  )
+}
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.gallery-thumb').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const uid = btn.dataset.galleryUid;
+      const main = document.getElementById(`gallery-main-${uid}`);
+      if (main) {
+        main.setAttribute('src', btn.dataset.src || '');
+        main.setAttribute('alt', btn.dataset.alt || '');
+      }
+      document
+        .querySelectorAll(`.gallery-thumb[data-gallery-uid="${uid}"]`)
+        .forEach((b) => ((b as HTMLElement).style.borderColor = ''));
+      btn.style.borderColor = '#F57C00';
+    });
+  });
+</script>

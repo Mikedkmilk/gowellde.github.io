@@ -1,0 +1,33 @@
+{
+  "model": "MIG/MMA-630B",
+  "name": "MIG/MMA-630B Production MIG Welder 500A @ 100% Duty",
+  "category": "mig-mag-welders",
+  "series": "MIG/MMA",
+  "tags": ["FLAGSHIP"],
+  "status": "active",
+  "badges": [],
+  "featured": true,
+  "sortOrder": 60,
+  "images": [
+    { "src": "/assets/products/mig-mma-630b/main.webp", "alt": "GOWELLDE MIG/MMA-630B production MIG welding machine" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "500A",
+    "dutyCycleAt40c": "100",
+    "wireDiameterMm": "0.8–1.6",
+    "dimensionsMm": "655×315×610",
+    "netWeightKg": "43",
+    "igbtConfig": "2×G100N120, T120 transformer",
+    "accessories": "4m 45mm² cable, dual-drive wire feeder, 1.5m 45mm² negative cable, 500A ground clamp, 3m 36KD torch, 220V CO2 heated flowmeter regulator"
+  },
+  "summary": "500A at 100% duty with 1.6mm wire — built for non-stop production lines.",
+  "description": "The MIG/MMA-630B pairs a 100% duty cycle with 0.8–1.6 mm wire capability in the full-size 655mm chassis. With 45mm² cables and the T120 transformer, it keeps feeding thick wire through the longest shifts — the flagship of the MIG line.",
+  "features": ["100% duty cycle at 500A", "0.8–1.6 mm wire range", "45mm² cable package", "T120 transformer for sustained load", "Dual-drive wire feeder"],
+  "applications": ["Non-stop production lines", "Heavy structural fabrication", "Ship & bridge components"],
+  "downloads": [],
+  "related": ["mig-mma-630", "mig-mma-500ci"],
+  "priceDisplay": "$3XX",
+  "moq": "20 pcs",
+  "leadTimeDays": "20–30"
+}

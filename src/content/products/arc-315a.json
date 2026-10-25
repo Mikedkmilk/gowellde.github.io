@@ -1,0 +1,33 @@
+{
+  "model": "ARC-315A",
+  "name": "ARC-315A IGBT MMA Welder 180A",
+  "category": "mma-welders",
+  "series": "ARC",
+  "tags": ["IGBT MMA"],
+  "status": "active",
+  "badges": ["best-seller"],
+  "featured": false,
+  "sortOrder": 20,
+  "images": [
+    { "src": "/assets/products/arc-315a/main.webp", "alt": "GOWELLDE ARC-315A IGBT MMA welding machine" },
+    { "src": "/assets/datasheets/arc-315a.webp", "alt": "ARC-315A welding equipment info sheet" }
+  ],
+  "specs": {
+    "inputVoltage": "220V / 380V ±15%",
+    "ratedCurrent": "180A",
+    "dutyCycleAt40c": "60",
+    "rodDiameterMm": "2.5–4.0",
+    "dimensionsMm": "330×165×315",
+    "netWeightKg": "5.4",
+    "igbtConfig": "4×G40N120, 4×680µF/450V, T70 transformer"
+  },
+  "summary": "180A stick welder with heavier IGBT stage — the upgrade path from the 315E.",
+  "description": "The ARC-315A steps up to 180A with a larger G40N120 IGBT stage and bigger capacitors, accepting 2.5–4.0 mm rods for thicker structural work. Still a one-hand-carry machine at 5.4 kg, and a proven seller for distributors serving construction markets.",
+  "features": ["Upgraded 4×G40N120 IGBT power stage", "2.5–4.0 mm rod range covers structural work", "Hot start & anti-stick", "Thermal protection with auto-recovery", "220V / 380V dual supply options"],
+  "applications": ["Construction site welding", "Steel structure fabrication", "Maintenance shops"],
+  "downloads": [],
+  "related": ["arc-315e", "arc-400b"],
+  "priceDisplay": "$4X",
+  "moq": "50 pcs",
+  "leadTimeDays": "15–25"
+}

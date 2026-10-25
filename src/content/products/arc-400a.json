@@ -1,0 +1,33 @@
+{
+  "model": "ARC-400A",
+  "name": "ARC-400A Industrial MMA Welder 250A",
+  "category": "mma-welders",
+  "series": "ARC",
+  "tags": ["INDUSTRIAL"],
+  "status": "active",
+  "badges": [],
+  "featured": false,
+  "sortOrder": 40,
+  "images": [
+    { "src": "/assets/products/arc-400a/main.webp", "alt": "GOWELLDE ARC-400A industrial MMA welding machine" },
+    { "src": "/assets/datasheets/arc-400a.webp", "alt": "ARC-400A welding equipment info sheet" }
+  ],
+  "specs": {
+    "inputVoltage": "220V / 380V / 3P 380V ±15%",
+    "ratedCurrent": "250A",
+    "dutyCycleAt40c": "60",
+    "rodDiameterMm": "2.5–4.0",
+    "dimensionsMm": "405×205×420",
+    "netWeightKg": "10.6",
+    "igbtConfig": "4×G40N120, 8×470µF/450V, T80 transformer"
+  },
+  "summary": "250A industrial stick welder with dual power options up to three-phase.",
+  "description": "The ARC-400A is the industrial tier of the 400 class: 250A output, an 8×470µF capacitor bank and a T80 transformer for demanding production environments. Multiple input options (220V, 380V or 3-phase 380V) let one SKU serve different site power conditions.",
+  "features": ["250A rated output for heavy rods", "220V / 380V / 3P 380V input options", "8×470µF capacitor bank", "T80 high-capacity transformer", "Industrial housing with reinforced front panel"],
+  "applications": ["Industrial plants", "Heavy equipment repair", "Structural steel workshops"],
+  "downloads": [],
+  "related": ["arc-400b", "arc-500"],
+  "priceDisplay": "$6X",
+  "moq": "50 pcs",
+  "leadTimeDays": "15–25"
+}

@@ -1,0 +1,32 @@
+{
+  "model": "MIG/MMA-500",
+  "name": "MIG/MMA-500 Heavy MIG Welder 500A",
+  "category": "mig-mag-welders",
+  "series": "MIG/MMA",
+  "tags": ["HEAVY MIG"],
+  "status": "active",
+  "badges": [],
+  "featured": true,
+  "sortOrder": 40,
+  "images": [
+    { "src": "/assets/products/mig-mma-500/main.webp", "alt": "GOWELLDE MIG/MMA-500 heavy MIG welding machine" },
+    { "src": "/assets/datasheets/mig-mma-500.webp", "alt": "MIG/MMA-500 welding equipment info sheet" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "500A",
+    "dutyCycleAt40c": "80",
+    "wireDiameterMm": "0.8–1.2",
+    "netWeightKg": "31",
+    "accessories": "4m 40mm² cable, dual-drive wire feeder, 1.5m 40mm² negative cable, 500A ground clamp, 3m 36KD torch, 220V CO2 heated flowmeter regulator"
+  },
+  "summary": "500A MIG/MMA welder for heavy sections and long seams. Hot-sale model.",
+  "description": "The MIG/MMA-500 brings 500A to heavy plate welding with the dual-drive feeder and 40mm² cable package. A consistently strong seller for distributors serving structural steel and trailer manufacturers. (Note: verify latest spec sheet with our sales team — this model's datasheet is being updated.)",
+  "features": ["500A output for heavy sections", "MIG + MMA dual process", "Dual-drive wire feeder", "40mm² heavy-duty cable package", "Thermal protection with indicator"],
+  "applications": ["Structural steel fabrication", "Trailer & container manufacturing", "Heavy machinery production"],
+  "downloads": [],
+  "related": ["mig-mma-500ci", "mig-mma-400"],
+  "priceDisplay": "$3XX",
+  "moq": "20 pcs",
+  "leadTimeDays": "15–25"
+}

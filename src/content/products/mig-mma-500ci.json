@@ -1,0 +1,33 @@
+{
+  "model": "MIG/MMA-500CI",
+  "name": "MIG/MMA-500CI Industrial MIG Welder 450A @ 80% Duty",
+  "category": "mig-mag-welders",
+  "series": "MIG/MMA",
+  "tags": ["INDUSTRIAL"],
+  "status": "active",
+  "badges": [],
+  "featured": false,
+  "sortOrder": 50,
+  "images": [
+    { "src": "/assets/products/mig-mma-500ci/main.webp", "alt": "GOWELLDE MIG/MMA-500CI industrial MIG welding machine" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "450A",
+    "dutyCycleAt40c": "80",
+    "wireDiameterMm": "0.8–1.2",
+    "dimensionsMm": "570×290×555",
+    "netWeightKg": "31",
+    "igbtConfig": "2×G100N120, T105 transformer",
+    "accessories": "4m 40mm² cable, dual-drive wire feeder, 1.5m 40mm² negative cable, 500A ground clamp, 3m 36KD torch, 220V CO2 heated flowmeter regulator"
+  },
+  "summary": "450A with the G100N120 power stage in the larger 570mm chassis.",
+  "description": "The MIG/MMA-500CI combines the 2×G100N120 power stage with the larger 570×290 chassis, delivering 450A at 80% duty for industrial continuous welding. Same complete accessory package, with the 36KD torch rated for higher duty.",
+  "features": ["2×G100N120 IGBT power stage", "450A at 80% duty cycle", "36KD torch for sustained load", "Dual-drive wire feeder", "Complete accessory package included"],
+  "applications": ["Industrial fabrication lines", "Heavy steel structures", "Continuous production welding"],
+  "downloads": [],
+  "related": ["mig-mma-630b", "mig-mma-500"],
+  "priceDisplay": "$3XX",
+  "moq": "20 pcs",
+  "leadTimeDays": "15–25"
+}

@@ -1,0 +1,33 @@
+{
+  "model": "ARC-400B",
+  "name": "ARC-400B Heavy Duty MMA Welder 200A",
+  "category": "mma-welders",
+  "series": "ARC",
+  "tags": ["HEAVY DUTY"],
+  "status": "active",
+  "badges": [],
+  "featured": true,
+  "sortOrder": 30,
+  "images": [
+    { "src": "/assets/products/arc-400b/main.webp", "alt": "GOWELLDE ARC-400B heavy duty MMA welding machine" },
+    { "src": "/assets/datasheets/arc-400b.webp", "alt": "ARC-400B welding equipment info sheet" }
+  ],
+  "specs": {
+    "inputVoltage": "220V / 380V ±15%",
+    "ratedCurrent": "200A",
+    "dutyCycleAt40c": "60",
+    "rodDiameterMm": "2.5–4.0",
+    "dimensionsMm": "355×180×350",
+    "netWeightKg": "6.6",
+    "igbtConfig": "4×G40N120, 4×820µF/450V, T70 transformer"
+  },
+  "summary": "200A workhorse stick welder with the largest capacitor bank in its class.",
+  "description": "The ARC-400B pairs a 200A output with 4×820µF capacitors and a 12038 cooling fan, built for continuous work on fabrication benches and construction sites. 6.6 kg keeps it portable while the duty cycle supports long weld runs on 2.5–4.0 mm rods.",
+  "features": ["4×820µF/450V capacitor bank for stable arc", "Large 12038 cooling fan", "200A output for 4.0 mm rods", "Hot start, anti-stick & arc force adjustment", "Thermal protection"],
+  "applications": ["Steel fabrication workshops", "Construction & rebar welding", "Equipment repair"],
+  "downloads": [],
+  "related": ["arc-400a", "arc-400"],
+  "priceDisplay": "$5X",
+  "moq": "50 pcs",
+  "leadTimeDays": "15–25"
+}

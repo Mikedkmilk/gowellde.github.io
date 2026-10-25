@@ -1,0 +1,85 @@
+---
+import { SITE, CONTACT } from '../config';
+import Icon from './Icon.astro';
+import { getCategories } from '../lib/data';
+
+const cats = (await getCategories()).filter((c) => c.data.parent);
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-black text-gray-400 border-t border-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <Icon name="bolt" class="w-6 h-6 text-brand-orange" />
+        <span class="text-xl font-black text-white tracking-tighter italic">GOWELLDE</span>
+      </div>
+      <p class="text-sm leading-relaxed mb-4">
+        Professional inverter welding machine manufacturer in Tengzhou, Shandong, China. OEM/ODM for distributors worldwide.
+      </p>
+      <div class="flex gap-3">
+        <a href={CONTACT.youtube} target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-red-600 hover:text-white transition" aria-label="YouTube">
+          <Icon name="youtube" class="w-5 h-5" />
+        </a>
+        <a href={CONTACT.facebook} target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-600 hover:text-white transition" aria-label="Facebook">
+          <Icon name="facebook" class="w-4 h-4" />
+        </a>
+        <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-600 hover:text-white transition" aria-label="WhatsApp">
+          <Icon name="whatsapp" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Products</h3>
+      <ul class="space-y-2.5 text-sm">
+        {cats.map((c) => (
+          <li><a href={`/products/${c.data.slug}/`} class="hover:text-brand-orange transition">{c.data.name}</a></li>
+        ))}
+        <li><a href="/products/" class="hover:text-brand-orange transition">All Products</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Company</h3>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/about/" class="hover:text-brand-orange transition">About the Factory</a></li>
+        <li><a href="/blog/" class="hover:text-brand-orange transition">Blog & Guides</a></li>
+        <li><a href="/faq/" class="hover:text-brand-orange transition">FAQ</a></li>
+        <li><a href="/contact/" class="hover:text-brand-orange transition">Contact Us</a></li>
+        <li><a href={CONTACT.catalogUrl} target="_blank" rel="noopener" class="hover:text-brand-orange transition inline-flex items-center gap-1.5">
+          <Icon name="download" class="w-4 h-4" /> Catalog (PDF)
+        </a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Contact</h3>
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a href={`mailto:${CONTACT.email}`} class="flex items-start gap-2.5 hover:text-brand-orange transition break-all">
+            <Icon name="mail" class="w-4 h-4 mt-0.5 flex-shrink-0" /> {CONTACT.email}
+          </a>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <Icon name="phone" class="w-4 h-4 mt-0.5 flex-shrink-0" /> {CONTACT.phoneDisplay} (WhatsApp / WeChat)
+        </li>
+        <li class="flex items-start gap-2.5">
+          <Icon name="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0" /> {CONTACT.address}
+        </li>
+      </ul>
+      <p class="text-xs text-gray-600 mt-5">CE · ISO9001 · CCC Certified Factory</p>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-900 py-6">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-3 text-xs">
+      <p>&copy; {year} {SITE.legalName}. All rights reserved.</p>
+      <div class="flex gap-5">
+        <a href="/privacy-policy/" class="hover:text-white transition">Privacy Policy</a>
+        <a href="/terms-of-service/" class="hover:text-white transition">Terms of Service</a>
+        <a href="/sitemap-index.xml" class="hover:text-white transition">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>

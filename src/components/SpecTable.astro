@@ -1,0 +1,32 @@
+---
+/**
+ * 参数表：按品类 specSchema 的顺序渲染产品 specs。
+ * 品类没定义或产品没填的字段自动跳过——所以新品类换一套参数也能直接用。
+ */
+interface SpecItem {
+  key: string;
+  label: string;
+  unit: string;
+}
+interface Props {
+  specs: Record<string, string>;
+  schema: SpecItem[];
+}
+const { specs, schema } = Astro.props;
+const rows = schema.filter((s) => specs[s.key]);
+---
+
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+  <table class="w-full text-sm">
+    <tbody>
+      {rows.map((s, i) => (
+        <tr class={i % 2 === 0 ? 'bg-white' : 'bg-brand-light'}>
+          <th scope="row" class="text-left font-semibold text-gray-600 px-4 sm:px-5 py-3 w-2/5 border-b border-gray-100">
+            {s.label}{s.unit ? ` (${s.unit})` : ''}
+          </th>
+          <td class="px-4 sm:px-5 py-3 font-mono font-medium text-brand-dark border-b border-gray-100">{specs[s.key]}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

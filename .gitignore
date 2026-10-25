@@ -1,0 +1,17 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
+
+# environment
+.env
+.env.production
+
+# 客户资料、报价等敏感文件绝不放进本仓库

@@ -1,0 +1,33 @@
+{
+  "model": "MIG/MMA-400CI",
+  "name": "MIG/MMA-400CI Compact MIG Welder 350A @ 100% Duty",
+  "category": "mig-mag-welders",
+  "series": "MIG/MMA",
+  "tags": ["COMPACT"],
+  "status": "active",
+  "badges": [],
+  "featured": false,
+  "sortOrder": 20,
+  "images": [
+    { "src": "/assets/products/mig-mma-400ci/main.webp", "alt": "GOWELLDE MIG/MMA-400CI compact MIG welding machine" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "350A",
+    "dutyCycleAt40c": "100",
+    "wireDiameterMm": "0.8–1.2",
+    "dimensionsMm": "515×270×465",
+    "netWeightKg": "22",
+    "igbtConfig": "2×G50N120, T100 transformer",
+    "accessories": "4m 30mm² cable, dual-drive wire feeder, 1.5m 30mm² negative cable, 500A ground clamp, 3m 24KD torch, 220V CO2 heated flowmeter regulator"
+  },
+  "summary": "100% duty cycle at 350A in the compact 515mm chassis — production line ready.",
+  "description": "The MIG/MMA-400CI delivers a full 100% duty cycle at 350A in the compact 515×270 chassis. With the dual-drive wire feeder feeding 0.8–1.2 mm wire and a complete accessory package, it is built for production lines that run continuous seams all shift.",
+  "features": ["100% duty cycle at 350A", "Dual-drive wire feeder for stable feed", "Compact 515mm-wide chassis", "0.8–1.2 mm solid wire range", "Complete accessory package included"],
+  "applications": ["Continuous production lines", "Steel furniture & doors", "Automotive parts fabrication"],
+  "downloads": [],
+  "related": ["mig-mma-400", "mig-mma-500ci"],
+  "priceDisplay": "$2XX",
+  "moq": "30 pcs",
+  "leadTimeDays": "15–25"
+}

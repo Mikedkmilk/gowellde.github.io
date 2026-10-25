@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import Icon from '../../components/Icon.astro';
+import { getRootCategories, getChildCategories, getProductsByCategory, quickSpecs } from '../../lib/data';
+
+const roots = await getRootCategories();
+const sections = await Promise.all(
+  roots.map(async (root) => ({
+    name: root.data.name,
+    children: await Promise.all(
+      (await getChildCategories(root.data.slug)).map(async (child) => ({
+        name: child.data.name,
+        slug: child.data.slug,
+        count: (await getProductsByCategory(child.data.slug)).length,
+        cards: (await getProductsByCategory(child.data.slug)).map((p) => ({
+          product: p,
+          specs: quickSpecs(p, child),
+        })),
+      }))
+    ),
+  }))
+);
+const totalCount = sections.reduce((n, s) => n + s.children.reduce((m, c) => m + c.cards.length, 0), 0);
+---
+
+<BaseLayout
+  title="All Welding Machines - MMA & MIG/MAG Inverter Welders | GOWELLDE"
+  description={`Browse ${totalCount} factory-direct inverter welding machines: MMA arc welders 160-630A and MIG/MAG welders with dual-drive feeders. Wholesale prices, OEM/ODM, CE certified.`}
+  path="/products/"
+>
+  <section class="bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Products' }]} />
+      <h1 class="text-4xl font-black text-brand-dark uppercase mb-4">All Products</h1>
+      <p class="text-gray-600 max-w-3xl mb-12">
+        {totalCount} factory-direct models. Every machine uses IGBT inverter technology and passes a 100% board aging test before shipping.
+        FOB Qingdao, OEM/ODM available.
+      </p>
+
+      {sections.map((sec) => (
+        <div class="mb-16">
+          <h2 class="text-2xl font-black text-brand-dark uppercase mb-8 pb-3 border-b-2 border-brand-orange inline-block">{sec.name}</h2>
+          {sec.children.map((child) => (
+            <div class="mb-12">
+              <div class="flex items-baseline gap-3 mb-6">
+                <h3 class="text-xl font-bold text-gray-700">{child.name}</h3>
+                <span class="text-sm text-gray-400">{child.count} models</span>
+                <a href={`/products/${child.slug}/`} class="text-sm font-bold text-brand-orange hover:underline">View series →</a>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {child.cards.map((c) => (
+                  <ProductCard product={c.product} quickSpecs={c.specs} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+
+      <div class="bg-white border border-gray-100 rounded-lg p-8 text-center">
+        <h2 class="text-xl font-bold text-brand-dark mb-2">Need a custom configuration?</h2>
+        <p class="text-gray-500 mb-5">Voltage, plug type, color and logo can all be customized for OEM orders.</p>
+        <a href="/contact/" class="inline-block bg-brand-orange text-white px-8 py-3 rounded font-bold hover:bg-orange-600 transition shadow">
+          Contact the Factory <Icon name="arrow-right" class="w-4 h-4 inline -mt-0.5" />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

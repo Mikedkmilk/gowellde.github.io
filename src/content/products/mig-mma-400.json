@@ -1,0 +1,34 @@
+{
+  "model": "MIG/MMA-400",
+  "name": "MIG/MMA-400 MIG Welder 400A",
+  "category": "mig-mag-welders",
+  "series": "MIG/MMA",
+  "tags": ["400A"],
+  "status": "active",
+  "badges": [],
+  "featured": true,
+  "sortOrder": 30,
+  "images": [
+    { "src": "/assets/products/mig-mma-400/main.webp", "alt": "GOWELLDE MIG/MMA-400 MIG welding machine" },
+    { "src": "/assets/datasheets/mig-mma-400.webp", "alt": "MIG/MMA-400 welding equipment info sheet" }
+  ],
+  "specs": {
+    "inputVoltage": "3P 380V ±15%",
+    "ratedCurrent": "400A",
+    "dutyCycleAt40c": "80",
+    "wireDiameterMm": "0.8–1.2",
+    "dimensionsMm": "515×270×465",
+    "netWeightKg": "23",
+    "igbtConfig": "2×G75N120, T100 transformer",
+    "accessories": "4m 35mm² cable, dual-drive wire feeder, 1.5m 35mm² negative cable, 500A ground clamp, 3m 24KD torch, 220V CO2 heated flowmeter regulator"
+  },
+  "summary": "400A MIG/MMA workhorse — our most balanced production welding machine.",
+  "description": "The MIG/MMA-400 is the volume model of the MIG line: 400A at 80% duty, 2×G75N120 stage and the dual-drive feeder with 35mm² cables. One machine covers gas-shielded production welding and stick work, which is why it anchors so many distributor catalogs.",
+  "features": ["400A rated at 80% duty cycle", "MIG + MMA dual process", "Dual-drive wire feeder", "35mm² welding cables for low drop", "Complete accessory package included"],
+  "applications": ["General steel fabrication", "Structural workshops", "Equipment manufacturing"],
+  "downloads": [],
+  "related": ["mig-mma-400ci", "mig-mma-500"],
+  "priceDisplay": "$2XX",
+  "moq": "30 pcs",
+  "leadTimeDays": "15–25"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "mma-welders",
+  "name": "MMA / ARC Welders",
+  "parent": "welding-machines",
+  "hero": "/assets/categories/mma-hero.webp",
+  "intro": "Stick welding machines for construction sites, structural fabrication and maintenance repair. GOWELLDE MMA inverters run on IGBT modules from 160A portable units (4.1 kg) up to 630A three-phase industrial machines. Hot start and anti-stick features come standard, and every machine is aged-tested before it leaves the factory. Popular models for rebar welding and outdoor work: ARC-400 and ARC-500 series.",
+  "order": 1,
+  "seoTitle": "MMA / ARC Inverter Welders 160A-630A | GOWELLDE Factory",
+  "seoDescription": "IGBT MMA arc welder factory direct: 160A portable to 630A 3-phase heavy duty stick welding machines. Hot start, anti-stick, 100% aging test, OEM available.",
+  "specSchema": [
+    { "key": "inputVoltage", "label": "Input Voltage", "unit": "", "filterable": true },
+    { "key": "ratedCurrent", "label": "Rated Current", "unit": "A", "filterable": true },
+    { "key": "dutyCycleAt40c", "label": "Duty Cycle @40°C", "unit": "%", "filterable": true },
+    { "key": "rodDiameterMm", "label": "Rod Diameter", "unit": "mm", "filterable": false },
+    { "key": "dimensionsMm", "label": "Dimensions (L×W×H)", "unit": "mm", "filterable": false },
+    { "key": "netWeightKg", "label": "Net Weight", "unit": "kg", "filterable": false },
+    { "key": "igbtConfig", "label": "Power Stage (IGBT)", "unit": "", "filterable": false }
+  ]
+}

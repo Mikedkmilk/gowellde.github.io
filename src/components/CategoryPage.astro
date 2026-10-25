@@ -1,0 +1,102 @@
+---
+/**
+ * 品类列表页视图：父品类（如 Welding Machines）展示子品类分组；叶子品类直接网格。
+ */
+import type { Product, Category } from '../lib/data';
+import { getChildCategories, getProductsByCategory, getCategory, quickSpecs } from '../lib/data';
+import ProductCard from './ProductCard.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  category: Category;
+}
+const { category: cat } = Astro.props;
+const children = await getChildCategories(cat.data.slug);
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Products', href: '/products/' },
+  ...(cat.data.parent
+    ? [{ label: (await getCategory(cat.data.parent))?.data.name ?? 'Category', href: `/products/${cat.data.parent}/` }]
+    : []),
+  { label: cat.data.name },
+];
+
+interface CardData {
+  product: Product;
+  specs: { label: string; value: string }[];
+}
+
+const sections: { name: string; slug: string; cards: CardData[] }[] = await Promise.all(
+  children.map(async (child) => ({
+    name: child.data.name,
+    slug: child.data.slug,
+    cards: (await getProductsByCategory(child.data.slug)).map((p) => ({
+      product: p,
+      specs: quickSpecs(p, child),
+    })),
+  }))
+);
+
+const ownCards: CardData[] =
+  children.length > 0
+    ? []
+    : (await getProductsByCategory(cat.data.slug)).map((p) => ({
+        product: p,
+        specs: quickSpecs(p, cat),
+      }));
+---
+
+<section class="bg-brand-light">
+  <!-- 品类头图 -->
+  <div class="relative bg-brand-dark text-white overflow-hidden">
+    {cat.data.hero && (
+      <div class="absolute inset-0 bg-cover bg-center opacity-25" style={`background-image:url('${cat.data.hero}')`} aria-hidden="true"></div>
+    )}
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent" aria-hidden="true"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <Breadcrumbs items={crumbs} />
+      <h1 class="text-4xl font-black uppercase mb-4">{cat.data.name}</h1>
+      {cat.data.intro && <p class="text-gray-300 max-w-3xl leading-relaxed">{cat.data.intro}</p>}
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    {sections.length > 0 ? (
+      <div class="space-y-16">
+        {sections.map((sec) => (
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-2xl font-black text-brand-dark uppercase">{sec.name}</h2>
+              <a href={`/products/${sec.slug}/`} class="text-sm font-bold text-brand-orange hover:underline whitespace-nowrap">
+                View only this series →
+              </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {sec.cards.map((c) => (
+                <ProductCard product={c.product} quickSpecs={c.specs} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {ownCards.map((c) => (
+          <ProductCard product={c.product} quickSpecs={c.specs} />
+        ))}
+      </div>
+    )}
+
+    <div class="mt-16 bg-white border border-gray-100 rounded-lg p-8 text-center">
+      <h2 class="text-xl font-bold text-brand-dark mb-2">Can't find the right model?</h2>
+      <p class="text-gray-500 mb-5">
+        Tell us your application and power supply — our engineers will recommend the best machine and quote wholesale price.
+      </p>
+      <a href="/contact/" class="inline-block bg-brand-orange text-white px-8 py-3 rounded font-bold hover:bg-orange-600 transition shadow">
+        Ask an Engineer <Icon name="arrow-right" class="w-4 h-4 inline -mt-0.5" />
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+---
+import { CONTACT } from '../config';
+import Icon from './Icon.astro';
+---
+
+<a
+  href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Hello GOWELLDE, I am interested in your welding machines. Could you send me your catalog and price list?')}`}
+  target="_blank"
+  rel="noopener"
+  class="whatsapp-float"
+  title="Chat on WhatsApp"
+  aria-label="Chat on WhatsApp"
+>
+  <Icon name="whatsapp" class="w-8 h-8" />
+</a>
