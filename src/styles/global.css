@@ -59,6 +59,14 @@ html[lang='ar'] body {
   font-family: 'Tajawal', 'Roboto', system-ui, sans-serif;
 }
 
+/* 防御性断词：俄语/西语等长单词语言在窄屏不撑破布局 */
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+}
+
 /* FAQ 折叠面板 */
 details.faq-item summary {
   cursor: pointer;

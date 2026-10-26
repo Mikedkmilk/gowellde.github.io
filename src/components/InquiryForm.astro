@@ -16,8 +16,7 @@ interface Props {
   locale?: Locale;
 }
 const { model = '', id = 'inquiry', locale = 'en' } = Astro.props;
-const hasKey = FORM.web3formsKey.length > 0;
-const waMsgs: Record<string, string> = {
+const hasKey = FORM.web3formsKey.length > 0;const waMsgs: Record<string, string> = {
   en: 'Hello GOWELLDE, I am interested in your welding machines.',
   es: 'Hola GOWELLDE, me interesan sus máquinas. ¿Pueden enviarme el catálogo y los precios?',
   ru: 'Здравствуйте GOWELLDE, интересуют ваши сварочные аппараты. Пришлите каталог и цены, пожалуйста.',
@@ -35,7 +34,8 @@ const waMsg = model ? `${waAsk[locale]} ${model}` : waMsgs[locale];
 const mailSubject = `Wholesale Inquiry${model ? ` for ${model}` : ''}`;
 ---
 
-<section id={id} class="bg-white text-gray-800 p-6 sm:p-8 rounded-lg shadow-2xl">
+<section id="inquiry" class="bg-white text-gray-800 p-6 sm:p-8 rounded-lg shadow-2xl">
+  <!-- id 固定为 inquiry：页面 CTA 锚点（#inquiry）的目标；表单输入框 id 用 $id 前缀避免多表单页冲突 -->
   <div class="flex items-center justify-between mb-6">
     <h3 class="text-2xl font-bold">{model ? `${t(locale, 'd.inquireAbout')} ${model}` : t(locale, 'd.sendMsg')}</h3>
     <span class="text-xs text-brand-orange font-bold border border-brand-orange px-2 py-1 rounded flex-shrink-0">{t(locale, 'f.fastReply')}</span>

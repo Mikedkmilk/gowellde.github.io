@@ -190,7 +190,7 @@ const productLd = {
       </div>
 
       <div class="space-y-6">
-        <InquiryForm model={d.model} id={`inquiry-${p.id}`} locale={locale} />
+        <InquiryForm model={d.model} id={`form-${p.id}`} locale={locale} />
         {d.downloads.length > 0 && (
           <div class="bg-white rounded-lg shadow p-5">
             <h3 class="font-bold mb-3">{t(locale, 'd.downloads')}</h3>

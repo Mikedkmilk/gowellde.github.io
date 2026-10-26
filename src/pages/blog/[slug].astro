@@ -38,7 +38,7 @@ const postLd = {
 };
 ---
 
-<BaseLayout title={`${post.data.title} | GOWELLDE Blog`} description={post.data.description} path={`/blog/${post.id}/`} ogType="article" ogImage={post.data.image}>
+<BaseLayout title={`${post.data.title} | GOWELLDE Blog`} description={post.data.description} path={`/blog/${post.id}/`} ogType="article" ogImage={post.data.image} alternates={false}>
   <article class="py-12 bg-brand-light">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <Breadcrumbs items={crumbs} />

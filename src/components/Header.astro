@@ -3,6 +3,7 @@ import { SITE } from '../config';
 import type { Locale } from '../i18n/ui';
 import { t } from '../i18n/ui';
 import Icon from './Icon.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
 import { getRootCategories, getChildCategories, catName } from '../lib/data';
 
 interface Props {
@@ -36,8 +37,8 @@ const linkCls = (href: string) => `hover:text-brand-orange transition font-mediu
         <span class="text-2xl font-black tracking-tighter hover:text-brand-orange transition italic">GOWELLDE</span>
       </a>
 
-      <!-- PC 菜单 -->
-      <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
+      <!-- PC 菜单（≥1024；768-1024 区间俄语等宽语言导航放不下，统一走汉堡菜单） -->
+      <nav class="hidden lg:flex items-center gap-6" aria-label="Main navigation">
         <a href={`${prefix}/`} class={linkCls(`${prefix}/`)}>{t(locale, 'nav.home')}</a>
 
         {navCategories.map((cat) => (
@@ -76,8 +77,13 @@ const linkCls = (href: string) => `hover:text-brand-orange transition font-mediu
         </a>
       </nav>
 
+      <!-- PC：语言切换（≥1280 才显示；中窄屏用页脚的语言条，避免挤爆俄语等宽导航） -->
+      <div class="hidden xl:flex items-center ml-4">
+        <LanguageSwitcher />
+      </div>
+
       <!-- 手机菜单（零 JS：<details> 折叠） -->
-      <details class="md:hidden relative">
+      <details class="lg:hidden relative">
         <summary class="list-none cursor-pointer p-2 hover:text-brand-orange" aria-label="Open menu">
           <Icon name="menu" class="w-7 h-7" />
         </summary>
@@ -96,6 +102,9 @@ const linkCls = (href: string) => `hover:text-brand-orange transition font-mediu
           <a href="/blog/" class="block px-5 py-2.5 hover:bg-gray-700">{t(locale, 'nav.blog')}</a>
           <a href={`${prefix}/faq/`} class="block px-5 py-2.5 hover:bg-gray-700">{t(locale, 'nav.faq')}</a>
           <a href={`${prefix}/contact/`} class="block px-5 py-2.5 text-brand-orange font-bold hover:bg-gray-700">{t(locale, 'nav.getQuote')}</a>
+          <div class="border-t border-gray-700 mt-2 pt-2 pb-1 px-5 overflow-x-auto">
+            <LanguageSwitcher variant="names" />
+          </div>
         </nav>
       </details>
     </div>
