@@ -8,6 +8,7 @@ import '@fontsource/roboto-mono/400.css';
 import '@fontsource/roboto-mono/500.css';
 import '../styles/global.css';
 import { SITE, CONTACT, ANALYTICS } from '../config';
+import type { Locale } from '../i18n/ui';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
@@ -15,11 +16,13 @@ import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 interface Props {
   title: string;
   description: string;
-  path?: string; // 当前页路径，用于 canonical，如 '/products/arc-400/'
+  path?: string; // 当前页路径（含语言前缀），用于 canonical，如 '/products/arc-400/'、'/es/products/arc-400/'
   ogType?: string;
   ogImage?: string;
   noindex?: boolean;
-  preloadImage?: string; // 首屏关键图预加载（如首页轮播首张）
+  preloadImage?: string; // 首屏关键图预加载
+  locale?: Locale;
+  alternates?: boolean; // 是否输出 es/ru hreflang（博客等仅英文页关闭）
 }
 const {
   title,
@@ -29,12 +32,25 @@ const {
   ogImage = '/assets/factory/lineup.webp',
   noindex = false,
   preloadImage,
+  locale = 'en',
+  alternates = true,
 } = Astro.props;
 const canonical = `${SITE.url}${path}`;
+const ogLocale = { en: 'en_US', es: 'es_ES', ru: 'ru_RU' }[locale];
+// hreflang：各语言互指（含自身 + x-default 指英文）。path 传入的应是不含语言前缀的页面路径。
+const basePath = path.startsWith('/es/') || path.startsWith('/ru/') ? path.slice(3) : path;
+const alternatesList = alternates
+  ? [
+      { lang: 'en', href: `${SITE.url}${basePath}` },
+      { lang: 'es', href: `${SITE.url}/es${basePath}` },
+      { lang: 'ru', href: `${SITE.url}/ru${basePath}` },
+      { lang: 'x-default', href: `${SITE.url}${basePath}` },
+    ]
+  : [];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,6 +58,7 @@ const canonical = `${SITE.url}${path}`;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {alternatesList.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
 
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
@@ -49,6 +66,7 @@ const canonical = `${SITE.url}${path}`;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${SITE.url}${ogImage}`} />
     <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={ogLocale} />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -74,11 +92,11 @@ const canonical = `${SITE.url}${path}`;
     }
   </head>
   <body class="font-sans text-gray-800 bg-brand-light">
-    <Header />
+    <Header locale={locale} />
     <main>
       <slot />
     </main>
-    <Footer />
-    <WhatsAppFloat />
+    <Footer locale={locale} />
+    <WhatsAppFloat locale={locale} />
   </body>
 </html>

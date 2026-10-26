@@ -8,12 +8,75 @@
   "seoTitle": "MMA / ARC Inverter Welders 160A-630A | GOWELLDE Factory",
   "seoDescription": "IGBT MMA arc welder factory direct: 160A portable to 630A 3-phase heavy duty stick welding machines. Hot start, anti-stick, 100% aging test, OEM available.",
   "specSchema": [
-    { "key": "inputVoltage", "label": "Input Voltage", "unit": "", "filterable": true },
-    { "key": "ratedCurrent", "label": "Rated Current", "unit": "A", "filterable": true },
-    { "key": "dutyCycleAt40c", "label": "Duty Cycle @40°C", "unit": "%", "filterable": true },
-    { "key": "rodDiameterMm", "label": "Rod Diameter", "unit": "mm", "filterable": false },
-    { "key": "dimensionsMm", "label": "Dimensions (L×W×H)", "unit": "mm", "filterable": false },
-    { "key": "netWeightKg", "label": "Net Weight", "unit": "kg", "filterable": false },
-    { "key": "igbtConfig", "label": "Power Stage (IGBT)", "unit": "", "filterable": false }
-  ]
+    {
+      "key": "inputVoltage",
+      "label": "Input Voltage",
+      "unit": "",
+      "filterable": true,
+      "labelEs": "Tensión de entrada",
+      "labelRu": "Напряжение питания"
+    },
+    {
+      "key": "ratedCurrent",
+      "label": "Rated Current",
+      "unit": "A",
+      "filterable": true,
+      "labelEs": "Corriente nominal",
+      "labelRu": "Номинальный ток"
+    },
+    {
+      "key": "dutyCycleAt40c",
+      "label": "Duty Cycle @40°C",
+      "unit": "%",
+      "filterable": true,
+      "labelEs": "Ciclo de trabajo @40°C",
+      "labelRu": "ПВ при 40°C"
+    },
+    {
+      "key": "rodDiameterMm",
+      "label": "Rod Diameter",
+      "unit": "mm",
+      "filterable": false,
+      "labelEs": "Diámetro de electrodo",
+      "labelRu": "Диаметр электрода"
+    },
+    {
+      "key": "dimensionsMm",
+      "label": "Dimensions (L×W×H)",
+      "unit": "mm",
+      "filterable": false,
+      "labelEs": "Dimensiones (L×An×Al)",
+      "labelRu": "Габариты (Д×Ш×В)"
+    },
+    {
+      "key": "netWeightKg",
+      "label": "Net Weight",
+      "unit": "kg",
+      "filterable": false,
+      "labelEs": "Peso neto",
+      "labelRu": "Вес нетто"
+    },
+    {
+      "key": "igbtConfig",
+      "label": "Power Stage (IGBT)",
+      "unit": "",
+      "filterable": false,
+      "labelEs": "Etapa de potencia (IGBT)",
+      "labelRu": "Силовая ступень (IGBT)"
+    }
+  ],
+  "i18n": {
+    "es": {
+      "name": "MMA / Electrodo",
+      "intro": "Máquinas de soldadura con electrodo para obras, fabricación estructural y mantenimiento. Las inversoras MMA de GOWELLDE usan módulos IGBT desde unidades portátiles de 160 A (4,1 kg) hasta máquinas industriales trifásicas de 630 A. Arranque en caliente y antiadherencia de serie, y cada máquina pasa prueba de envejecimiento antes de salir de fábrica. Modelos populares para ferralla y trabajo en exterior: series ARC-400 y ARC-500.",
+      "seoTitle": "Soldadoras inversoras MMA / electrodo 160A-630A | Fábrica GOWELLDE",
+      "seoDescription": "Soldadoras MMA inversoras directas de fábrica: portátiles de 160 A hasta 630 A trifásicas de servicio pesado. Arranque en caliente, antiadherencia, 100% prueba de placas, OEM disponible."
+    },
+    "ru": {
+      "name": "ММА / электрод",
+      "intro": "Аппараты ручной дуговой сварки для стройки, металлоконструкций и ремонта. Инверторы MMA GOWELLDE на модулях IGBT: от переносных 160 А (4,1 кг) до трёхфазных промышленных 630 А. Горячий старт и антизалипание в базе, каждый аппарат проходит тест на старение перед отгрузкой. Популярные модели для арматуры и уличной работы: серии ARC-400 и ARC-500.",
+      "seoTitle": "Инверторные сварочные аппараты ММА 160А-630А | Завод GOWELLDE",
+      "seoDescription": "ММА-инверторы напрямую с завода: переносные от 160 А до трёхфазных 630 А. Горячий старт, антизалипание, 100% тест плат, доступен OEM."
+    }
+  }
 }

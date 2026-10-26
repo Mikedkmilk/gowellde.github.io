@@ -3,13 +3,18 @@
   "name": "MIG/MMA-630B Production MIG Welder 500A @ 100% Duty",
   "category": "mig-mag-welders",
   "series": "MIG/MMA",
-  "tags": ["FLAGSHIP"],
+  "tags": [
+    "FLAGSHIP"
+  ],
   "status": "active",
   "badges": [],
   "featured": true,
   "sortOrder": 60,
   "images": [
-    { "src": "/assets/products/mig-mma-630b/main.webp", "alt": "GOWELLDE MIG/MMA-630B production MIG welding machine" }
+    {
+      "src": "/assets/products/mig-mma-630b/main.webp",
+      "alt": "GOWELLDE MIG/MMA-630B production MIG welding machine"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -23,11 +28,38 @@
   },
   "summary": "500A at 100% duty with 1.6mm wire — built for non-stop production lines.",
   "description": "The MIG/MMA-630B pairs a 100% duty cycle with 0.8–1.6 mm wire capability in the full-size 655mm chassis. With 45mm² cables and the T120 transformer, it keeps feeding thick wire through the longest shifts — the flagship of the MIG line.",
-  "features": ["100% duty cycle at 500A", "0.8–1.6 mm wire range", "45mm² cable package", "T120 transformer for sustained load", "Dual-drive wire feeder"],
-  "applications": ["Non-stop production lines", "Heavy structural fabrication", "Ship & bridge components"],
+  "features": [
+    "100% duty cycle at 500A",
+    "0.8–1.6 mm wire range",
+    "45mm² cable package",
+    "T120 transformer for sustained load",
+    "Dual-drive wire feeder"
+  ],
+  "applications": [
+    "Non-stop production lines",
+    "Heavy structural fabrication",
+    "Ship & bridge components"
+  ],
   "downloads": [],
-  "related": ["mig-mma-630", "mig-mma-500ci"],
+  "related": [
+    "mig-mma-630",
+    "mig-mma-500ci"
+  ],
   "priceDisplay": "$3XX",
   "moq": "20 pcs",
-  "leadTimeDays": "20–30"
+  "leadTimeDays": "20–30",
+  "i18n": {
+    "es": {
+      "summary": "500 A al 100% de ciclo con alambre de 1,6 mm — construida para líneas de producción sin paradas.",
+      "description": "La MIG/MMA-630B empareja un ciclo de trabajo del 100% con capacidad de alambre 0,8–1,6 mm en el chasis completo de 655 mm. Con cables de 45 mm² y el transformador T120, sigue alimentando alambre grueso durante los turnos más largos — el tope de la línea MIG.",
+      "features": "100% de ciclo a 500 A|Rango de alambre 0,8–1,6 mm|Paquete de cables 45 mm²|Transformador T120 para carga sostenida|Alimentador de doble tracción",
+      "applications": "Líneas sin paradas|Fabricación pesada|Componentes navales y de puentes"
+    },
+    "ru": {
+      "summary": "500 А при ПВ 100% с проволокой 1,6 мм — для непрерывных производственных линий.",
+      "description": "MIG/MMA-630B совмещает ПВ 100% с проволокой 0,8–1,6 мм в полноразмерном корпусе 655 мм. С кабелями 45 мм² и трансформатором T120 он держит толстую проволоку всю длинную смену — флагман линейки MIG.",
+      "features": "ПВ 100% при 500 А|Проволока 0,8–1,6 мм|Комплект кабелей 45 мм²|Трансформатор T120 для длительной нагрузки|Двухприводная подача",
+      "applications": "Непрерывные линии|Тяжёлое производство|Судовые и мостовые узлы"
+    }
+  }
 }

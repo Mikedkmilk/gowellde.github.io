@@ -3,14 +3,24 @@
   "name": "ARC-315E Portable IGBT MMA Welder 160A",
   "category": "mma-welders",
   "series": "ARC",
-  "tags": ["BEST SELLER"],
+  "tags": [
+    "BEST SELLER"
+  ],
   "status": "active",
-  "badges": ["best-seller"],
+  "badges": [
+    "best-seller"
+  ],
   "featured": true,
   "sortOrder": 10,
   "images": [
-    { "src": "/assets/products/arc-315e/main.webp", "alt": "GOWELLDE ARC-315E portable IGBT MMA welding machine" },
-    { "src": "/assets/datasheets/arc-315e.webp", "alt": "ARC-315E welding equipment info sheet" }
+    {
+      "src": "/assets/products/arc-315e/main.webp",
+      "alt": "GOWELLDE ARC-315E portable IGBT MMA welding machine"
+    },
+    {
+      "src": "/assets/datasheets/arc-315e.webp",
+      "alt": "ARC-315E welding equipment info sheet"
+    }
   ],
   "specs": {
     "inputVoltage": "220V / 380V ±15%",
@@ -23,11 +33,39 @@
   },
   "summary": "4.1 kg portable stick welder for site repair and light fabrication. Our best-selling entry model.",
   "description": "The ARC-315E is the mainstream choice for basic stick welding. At only 4.1 kg it moves easily between workshops, rooftops and remote sites, while the IGBT inverter stage keeps the arc stable on long extension cables and generator power. Handles complex joints and narrow spaces where heavier machines cannot reach.",
-  "features": ["IGBT inverter technology, high power-to-weight ratio", "Hot start & anti-stick for easy rod striking", "Thermal overload protection with indicator", "Works on 220V or 380V supply ±15%", "Generator-compatible for outdoor sites"],
-  "applications": ["Site maintenance & repair", "Light steel fabrication", "Rebar tack welding", "Farm & workshop general use"],
+  "features": [
+    "IGBT inverter technology, high power-to-weight ratio",
+    "Hot start & anti-stick for easy rod striking",
+    "Thermal overload protection with indicator",
+    "Works on 220V or 380V supply ±15%",
+    "Generator-compatible for outdoor sites"
+  ],
+  "applications": [
+    "Site maintenance & repair",
+    "Light steel fabrication",
+    "Rebar tack welding",
+    "Farm & workshop general use"
+  ],
   "downloads": [],
-  "related": ["arc-315a", "arc-400b"],
+  "related": [
+    "arc-315a",
+    "arc-400b"
+  ],
   "priceDisplay": "$3X",
   "moq": "50 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "Soldadora portátil de 4,1 kg para reparación en obra y fabricación ligera. Nuestro modelo de entrada más vendido.",
+      "description": "La ARC-315E es la opción estándar para soldadura básica con electrodo. Con solo 4,1 kg se traslada fácilmente entre talleres, azoteas y sitios remotos, mientras el inversor IGBT mantiene un arco estable en extensiones largas y con generador. Aporta uniones complejas y espacios estrechos donde las máquinas pesadas no llegan.",
+      "features": "Tecnología inversora IGBT, alta relación potencia-peso|Arranque en caliente y antiadherencia para fácil cebado|Protección térmica con indicador|Funciona con red de 220V o 380V ±15%|Compatible con generador para exteriores",
+      "applications": "Mantenimiento y reparación en obra|Fabricación ligera de acero|Punteo de ferralla|Uso general agrícola y de taller"
+    },
+    "ru": {
+      "summary": "Портативный аппарат 4,1 кг для ремонта на объекте и лёгкого производства. Наш самый продаваемый стартовый аппарат.",
+      "description": "ARC-315E — базовый выбор для ручной дуговой сварки. Вес всего 4,1 кг позволяет легко переносить аппарат по цехам, кровлям и удалённым объектам, а IGBT-инвертор держит дугу стабильной на длинных удлинителях и от генератора. Справляется со сложными соединениями и узкими местами, куда тяжёлым машинам не добраться.",
+      "features": "Инверторная технология IGBT, высокая мощность на килограмм|Горячий старт и антизалипание для лёгкого поджига|Термозащита с индикатором|Работа от сети 220В или 380В ±15%|Совместим с генератором",
+      "applications": "Ремонт и обслуживание на объектах|Лёгкие металлоконструкции|Прихватка арматуры|Ферма и общие работы в мастерской"
+    }
+  }
 }

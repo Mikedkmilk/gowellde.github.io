@@ -3,13 +3,18 @@
   "name": "MIG/MMA-500CI Industrial MIG Welder 450A @ 80% Duty",
   "category": "mig-mag-welders",
   "series": "MIG/MMA",
-  "tags": ["INDUSTRIAL"],
+  "tags": [
+    "INDUSTRIAL"
+  ],
   "status": "active",
   "badges": [],
   "featured": false,
   "sortOrder": 50,
   "images": [
-    { "src": "/assets/products/mig-mma-500ci/main.webp", "alt": "GOWELLDE MIG/MMA-500CI industrial MIG welding machine" }
+    {
+      "src": "/assets/products/mig-mma-500ci/main.webp",
+      "alt": "GOWELLDE MIG/MMA-500CI industrial MIG welding machine"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -23,11 +28,38 @@
   },
   "summary": "450A with the G100N120 power stage in the larger 570mm chassis.",
   "description": "The MIG/MMA-500CI combines the 2×G100N120 power stage with the larger 570×290 chassis, delivering 450A at 80% duty for industrial continuous welding. Same complete accessory package, with the 36KD torch rated for higher duty.",
-  "features": ["2×G100N120 IGBT power stage", "450A at 80% duty cycle", "36KD torch for sustained load", "Dual-drive wire feeder", "Complete accessory package included"],
-  "applications": ["Industrial fabrication lines", "Heavy steel structures", "Continuous production welding"],
+  "features": [
+    "2×G100N120 IGBT power stage",
+    "450A at 80% duty cycle",
+    "36KD torch for sustained load",
+    "Dual-drive wire feeder",
+    "Complete accessory package included"
+  ],
+  "applications": [
+    "Industrial fabrication lines",
+    "Heavy steel structures",
+    "Continuous production welding"
+  ],
   "downloads": [],
-  "related": ["mig-mma-630b", "mig-mma-500"],
+  "related": [
+    "mig-mma-630b",
+    "mig-mma-500"
+  ],
   "priceDisplay": "$3XX",
   "moq": "20 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "450 A con la etapa G100N120 en el chasis ampliado de 570 mm.",
+      "description": "La MIG/MMA-500CI combina la etapa 2×G100N120 con el chasis ampliado de 570×290 mm, entregando 450 A al 80% de ciclo para soldadura industrial continua. El mismo paquete completo de accesorios, con antorcha 36KD de mayor rendimiento.",
+      "features": "Etapa IGBT 2×G100N120|450 A al 80% de ciclo|Antorcha 36KD para carga sostenida|Alimentador de doble tracción|Paquete completo de accesorios incluido",
+      "applications": "Líneas de fabricación industrial|Estructuras pesadas|Soldadura continua"
+    },
+    "ru": {
+      "summary": "450 А со ступенью G100N120 в увеличенном корпусе 570 мм.",
+      "description": "MIG/MMA-500CI сочетает ступень 2×G100N120 с увеличенным корпусом 570×290 мм, выдавая 450 А при ПВ 80% для непрерывной промышленной сварки. Тот же полный комплект аксессуаров, с горелкой 36KD под большую нагрузку.",
+      "features": "Ступень 2×G100N120|450 А при ПВ 80%|Горелка 36KD под длительную нагрузку|Двухприводная подача|Полный комплект аксессуаров",
+      "applications": "Промышленные линии|Тяжёлые конструкции|Непрерывная сварка"
+    }
+  }
 }

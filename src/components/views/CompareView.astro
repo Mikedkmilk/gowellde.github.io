@@ -1,0 +1,225 @@
+---
+/**
+ * 对比页视图：品类 Tab → 勾选最多 3 款 → 参数并排对比表。
+ * 数据在构建期生成嵌入页面；locale 感知。
+ */
+import type { Locale } from '../../i18n/ui';
+import { t } from '../../i18n/ui';
+import { getCategories, getProductsByCategory, catName, specLabel } from '../../lib/data';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Icon from '../Icon.astro';
+
+interface Props {
+  locale?: Locale;
+  initialCategory?: string;
+}
+const { locale = 'en', initialCategory = '' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
+
+// 构建期生成全部对比数据（locale 感知标签）
+const cats = await getCategories();
+const seriesData = [];
+for (const cat of cats) {
+  const products = await getProductsByCategory(cat.data.slug);
+  if (products.length < 2) continue;
+  seriesData.push({
+    slug: cat.data.slug,
+    name: catName(cat, locale),
+    specs: cat.data.specSchema.map((s) => ({
+      key: s.key,
+      label: specLabel(s, locale),
+      unit: s.unit,
+    })),
+    products: products.map((p) => ({
+      id: p.id,
+      model: p.data.model,
+      name: p.data.name,
+      status: p.data.status,
+      image: p.data.images[0]?.src ?? '',
+      price: p.data.priceDisplay,
+      moq: p.data.moq,
+      lead: p.data.leadTimeDays,
+      url: `${prefix}/products/${p.id}/`,
+      specs: p.data.specs,
+    })),
+  });
+}
+---
+
+<section class="bg-brand-light min-h-[60vh]">
+  <div class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <Breadcrumbs items={[{ label: t(locale, 'crumb.home'), href: locale === 'en' ? '/' : `/${locale}/` }, { label: t(locale, 'cmp.title') }]} />
+      <h1 class="text-4xl font-black uppercase mb-3">{t(locale, 'cmp.title')}</h1>
+      <p class="text-gray-300">{t(locale, 'cmp.sub')}</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div
+      id="compare-app"
+      data-locale={locale}
+      data-initial={initialCategory}
+      data-t-limit={t(locale, 'cmp.limit')}
+      data-t-empty={t(locale, 'cmp.empty')}
+      data-t-image={t(locale, 'cmp.image')}
+      data-t-model={t(locale, 'cmp.model')}
+      data-t-price={t(locale, 'cmp.price')}
+      data-t-moq={t(locale, 'cmp.moq')}
+      data-t-lead={t(locale, 'cmp.lead')}
+      data-t-inquire={t(locale, 'cmp.inquire')}
+      data-t-comingsoon={t(locale, 'cmp.comingSoon')}
+      data-t-days={t(locale, 'd.days')}
+    >
+      <p class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">{t(locale, 'cmp.choose')}</p>
+      <div id="compare-tabs" class="flex flex-wrap gap-2 mb-8">
+        {seriesData.map((s, i) => (
+          <button
+            class={`compare-tab px-5 py-2 rounded-full border font-bold text-sm transition ${i === 0 ? 'tab-active border-brand-orange' : 'border-gray-300 text-gray-600 hover:border-brand-orange hover:text-brand-orange'}`}
+            data-series={s.slug}
+          >
+            {s.name}
+          </button>
+        ))}
+      </div>
+
+      <p class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">{t(locale, 'cmp.pick')}</p>
+      <div id="compare-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-3"></div>
+      <p id="compare-hint" class="hidden text-sm text-red-500 mb-3"></p>
+
+      <div id="compare-table-wrap" class="mt-8 overflow-x-auto">
+        <p id="compare-empty" class="text-center text-gray-400 py-12">{t(locale, 'cmp.empty')}</p>
+        <table id="compare-table" class="hidden w-full text-sm bg-white rounded-lg overflow-hidden border border-gray-100"></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="compare-data" set:html={JSON.stringify(seriesData)} />
+
+<script>
+  // 对比页逻辑：品类切换 / 最多 3 款勾选 / 参数表渲染（构建期数据，无 API）
+  const app = document.getElementById('compare-app')!;
+  const series = JSON.parse(document.getElementById('compare-data')!.textContent || '[]') as Array<{
+    slug: string; name: string; specs: { key: string; label: string; unit: string }[];
+    products: Array<{ id: string; model: string; name: string; status: string; image: string; price: string; moq: string; lead: string; url: string; specs: Record<string, string> }>;
+  }>;
+  const T = {
+    limit: app.dataset.tLimit!,
+    empty: app.dataset.tEmpty!,
+    image: app.dataset.tImage!,
+    model: app.dataset.tModel!,
+    price: app.dataset.tPrice!,
+    moq: app.dataset.tMoq!,
+    lead: app.dataset.tLead!,
+    inquire: app.dataset.tInquire!,
+    comingsoon: app.dataset.tComingsoon!,
+    days: app.dataset.tDays!,
+  };
+  let current = series[0]?.slug || '';
+  // 支持 /compare/?category=mig-mag-welders 直达某品类
+  const wanted = new URLSearchParams(location.search).get('category');
+  if (wanted && series.some((s) => s.slug === wanted)) current = wanted;
+  const selected = new Map<string, string>(); // productId -> model
+
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.compare-tab');
+  const list = document.getElementById('compare-list')!;
+  const table = document.getElementById('compare-table')!;
+  const emptyEl = document.getElementById('compare-empty')!;
+  const hint = document.getElementById('compare-hint')!;
+
+  function renderList() {
+    const s = series.find((x) => x.slug === current);
+    if (!s) return;
+    list.innerHTML = s.products
+      .map(
+        (p) => `
+      <label class="compare-item flex items-center gap-3 bg-white border rounded-lg p-3 cursor-pointer hover:border-brand-orange transition ${selected.has(p.id) ? 'border-brand-orange bg-orange-50' : 'border-gray-200'}">
+        <input type="checkbox" class="w-4 h-4 accent-orange-600" data-id="${p.id}" ${selected.has(p.id) ? 'checked' : ''} />
+        <span class="font-black text-brand-dark">${p.model}</span>
+        <span class="text-xs text-gray-400 truncate flex-1">${p.name}</span>
+      </label>`
+      )
+      .join('');
+  }
+
+  function renderTable() {
+    const s = series.find((x) => x.slug === current);
+    if (!s) return;
+    const picked = s.products.filter((p) => selected.has(p.id));
+    if (picked.length === 0) {
+      table.classList.add('hidden');
+      emptyEl.classList.remove('hidden');
+      return;
+    }
+    emptyEl.classList.add('hidden');
+    table.classList.remove('hidden');
+
+    const cell = (v: string) => `<td class="px-4 py-3 border-b border-gray-100 font-mono font-medium">${v || '—'}</td>`;
+    let html = '<thead><tr><th class="px-4 py-3 text-left text-gray-400 text-xs uppercase w-40"></th>';
+    for (const p of picked) {
+      html += `<th class="px-4 py-3 text-left border-b-2 border-brand-orange">
+        ${p.image ? `<img src="${p.image}" alt="${p.model}" class="h-20 object-contain mb-2" loading="lazy"/>` : ''}
+        <a href="${p.url}" class="text-lg font-black text-brand-dark hover:text-brand-orange block">${p.model}</a>
+      </th>`;
+    }
+    html += '</tr></thead><tbody>';
+
+    const row = (label: string, cells: string[]) =>
+      `<tr><th class="px-4 py-3 text-left font-semibold text-gray-500 border-b border-gray-100">${label}</th>${cells.map(cell).join('')}</tr>`;
+
+    html += row(T.price, picked.map((p) => p.price || T.comingsoon));
+    html += row(T.moq, picked.map((p) => p.moq));
+    html += row(T.lead, picked.map((p) => (p.lead && p.status !== 'coming-soon' ? `${p.lead} ${T.days}` : p.lead || '—')));
+    for (const sp of s.specs) {
+      html += row(
+        `${sp.label}${sp.unit ? ` (${sp.unit})` : ''}`,
+        picked.map((p) => p.specs[sp.key] || '')
+      );
+    }
+    html += row('', picked.map((p) => `<a href="${p.url}#inquiry" class="text-brand-orange font-bold hover:underline">${T.inquire} →</a>`));
+    html += '</tbody>';
+    table.innerHTML = html;
+  }
+
+  tabs.forEach((tab) => {
+    tab.classList.toggle('tab-active', tab.dataset.series === current);
+    tab.classList.toggle('border-brand-orange', tab.dataset.series === current);
+  });
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      current = tab.dataset.series || current;
+      selected.clear();
+      tabs.forEach((x) => {
+        x.classList.toggle('tab-active', x === tab);
+        x.classList.toggle('border-brand-orange', x === tab);
+      });
+      renderList();
+      renderTable();
+    });
+  });
+
+  list.addEventListener('change', (e) => {
+    const input = (e.target as HTMLElement).closest('input[type="checkbox"]') as HTMLInputElement | null;
+    if (!input) return;
+    const id = input.dataset.id!;
+    const model = input.closest('.compare-item')?.querySelector('.font-black')?.textContent || id;
+    if (input.checked) {
+      if (selected.size >= 3) {
+        input.checked = false;
+        hint.textContent = T.limit;
+        hint.classList.remove('hidden');
+        setTimeout(() => hint.classList.add('hidden'), 2500);
+        return;
+      }
+      selected.set(id, model);
+    } else {
+      selected.delete(id);
+    }
+    renderTable();
+    renderList();
+  });
+
+  renderList();
+  renderTable();
+</script>

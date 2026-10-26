@@ -1,25 +1,27 @@
 ---
 /**
  * 产品卡片：列表页/首页/相关推荐通用。
- * quickSpecs 由 lib/data.ts 的 quickSpecs() 计算（品类 schema 驱动）。
+ * quickSpecs 由 lib/data.ts 的 quickSpecs() 计算（品类 schema 驱动，locale 感知）。
  */
+import type { Locale } from '../i18n/ui';
+import { t } from '../i18n/ui';
 import type { Product } from '../lib/data';
-import Icon from './Icon.astro';
 
 interface Props {
   product: Product;
   quickSpecs: { label: string; value: string }[];
-  categorySlug?: string;
+  locale?: Locale;
 }
-const { product: p, quickSpecs, categorySlug } = Astro.props;
+const { product: p, quickSpecs, locale = 'en' } = Astro.props;
 const d = p.data;
 const isHot = d.badges.includes('best-seller');
 const isNew = d.badges.includes('new');
 const comingSoon = d.status === 'coming-soon';
+const href = locale === 'en' ? `/products/${p.id}/` : `/${locale}/products/${p.id}/`;
 ---
 
 <a
-  href={`/products/${p.id}/`}
+  href={href}
   class="product-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 group relative flex flex-col"
 >
   <div class="h-56 bg-gray-50 relative overflow-hidden p-6 flex items-center justify-center">
@@ -33,7 +35,7 @@ const comingSoon = d.status === 'coming-soon';
         loading="lazy"
       />
     ) : (
-      <span class="text-gray-400 text-sm">Photo on request</span>
+      <span class="text-gray-400 text-sm">{t(locale, 'card.photoOnRequest')}</span>
     )}
     {d.tags.length > 0 && (
       <div class="absolute top-0 left-0 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-br shadow">
@@ -65,14 +67,13 @@ const comingSoon = d.status === 'coming-soon';
       <div class="flex items-center justify-between mb-3">
         <div class="flex items-baseline gap-1.5">
           {d.priceDisplay && <span class="text-3xl font-extrabold text-brand-orange">{d.priceDisplay}</span>}
-          <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">FOB</span>
+          <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">{t(locale, 'card.fob')}</span>
         </div>
-        {d.moq && <span class="text-xs text-gray-400">MOQ {d.moq}</span>}
+        {d.moq && <span class="text-xs text-gray-400">{t(locale, 'card.moq')} {d.moq}</span>}
       </div>
       <span class={`block w-full text-center py-3 rounded font-bold transition duration-300 shadow-sm ${comingSoon ? 'bg-gray-200 text-gray-600' : 'bg-brand-dark text-white group-hover:bg-brand-orange'}`}>
-        {comingSoon ? 'COMING SOON — ASK US' : 'VIEW & INQUIRE'}
+        {comingSoon ? t(locale, 'card.comingSoon') : t(locale, 'card.viewInquire')}
       </span>
     </div>
   </div>
 </a>
-{categorySlug && <span class="hidden">{categorySlug}</span>}

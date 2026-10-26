@@ -3,14 +3,22 @@
   "name": "ARC-400A Industrial MMA Welder 250A",
   "category": "mma-welders",
   "series": "ARC",
-  "tags": ["INDUSTRIAL"],
+  "tags": [
+    "INDUSTRIAL"
+  ],
   "status": "active",
   "badges": [],
   "featured": false,
   "sortOrder": 40,
   "images": [
-    { "src": "/assets/products/arc-400a/main.webp", "alt": "GOWELLDE ARC-400A industrial MMA welding machine" },
-    { "src": "/assets/datasheets/arc-400a.webp", "alt": "ARC-400A welding equipment info sheet" }
+    {
+      "src": "/assets/products/arc-400a/main.webp",
+      "alt": "GOWELLDE ARC-400A industrial MMA welding machine"
+    },
+    {
+      "src": "/assets/datasheets/arc-400a.webp",
+      "alt": "ARC-400A welding equipment info sheet"
+    }
   ],
   "specs": {
     "inputVoltage": "220V / 380V / 3P 380V ±15%",
@@ -23,11 +31,38 @@
   },
   "summary": "250A industrial stick welder with dual power options up to three-phase.",
   "description": "The ARC-400A is the industrial tier of the 400 class: 250A output, an 8×470µF capacitor bank and a T80 transformer for demanding production environments. Multiple input options (220V, 380V or 3-phase 380V) let one SKU serve different site power conditions.",
-  "features": ["250A rated output for heavy rods", "220V / 380V / 3P 380V input options", "8×470µF capacitor bank", "T80 high-capacity transformer", "Industrial housing with reinforced front panel"],
-  "applications": ["Industrial plants", "Heavy equipment repair", "Structural steel workshops"],
+  "features": [
+    "250A rated output for heavy rods",
+    "220V / 380V / 3P 380V input options",
+    "8×470µF capacitor bank",
+    "T80 high-capacity transformer",
+    "Industrial housing with reinforced front panel"
+  ],
+  "applications": [
+    "Industrial plants",
+    "Heavy equipment repair",
+    "Structural steel workshops"
+  ],
   "downloads": [],
-  "related": ["arc-400b", "arc-500"],
+  "related": [
+    "arc-400b",
+    "arc-500"
+  ],
   "priceDisplay": "$6X",
   "moq": "50 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "Soldadora industrial de 250 A con opciones de alimentación hasta trifásica.",
+      "description": "La ARC-400A es el escalón industrial de la clase 400: 250 A, banco de 8×470 µF y transformador T80 para entornos de producción exigentes. Las opciones de entrada (220V, 380V o trifásica 380V) permiten que un solo SKU sirva a distintas condiciones de red.",
+      "features": "Salida nominal 250 A para electrodos pesados|Entrada 220V / 380V / 3P 380V|Banco de capacitores 8×470 µF|Transformador T80 de alta capacidad|Carcasa industrial con panel frontal reforzado",
+      "applications": "Plantas industriales|Reparación de equipo pesado|Talleres estructurales"
+    },
+    "ru": {
+      "summary": "Промышленный аппарат 250 А с питанием вплоть до трёхфазного.",
+      "description": "ARC-400A — промышленный уровень класса 400: 250 А, банк 8×470 мкФ и трансформатор T80 для требовательного производства. Варианты входа (220В, 380В или 3-ф 380В) позволяют одной модели закрывать разные условия электроснабжения.",
+      "features": "Номинальный ток 250 А под тяжёлые электроды|Питание 220В / 380В / 3-ф 380В|Банк конденсаторов 8×470 мкФ|Трансформатор T80 повышенной мощности|Промышленный корпус с усиленной передней панелью",
+      "applications": "Промышленные предприятия|Ремонт тяжёлой техники|Металлоконструкции"
+    }
+  }
 }

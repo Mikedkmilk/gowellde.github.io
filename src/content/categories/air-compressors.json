@@ -1,0 +1,33 @@
+{
+  "slug": "air-compressors",
+  "name": "Air Compressors",
+  "parent": null,
+  "hero": "",
+  "intro": "Oil-free silent and belt-drive piston air compressors for welding workshops, service stations and light industrial use. Designed to pair with GOWELLDE welding equipment: stable air supply for plasma cutting, pneumatic tools and workshop cleaning. The series is in final sourcing preparation — models below accept pre-orders and inquiries, with full specifications, photos and pricing published as production starts.",
+  "order": 2,
+  "seoTitle": "Air Compressors for Welding Workshops | GOWELLDE (Coming Soon)",
+  "seoDescription": "Oil-free silent and piston air compressors 2.5-7.5 HP, 24-150L tanks, pairing with GOWELLDE welding and plasma cutting equipment. Pre-orders and wholesale inquiries open.",
+  "specSchema": [
+    { "key": "motorPowerKw", "label": "Motor Power", "unit": "kW", "filterable": true, "labelEs": "Potencia del motor", "labelRu": "Мощность двигателя" },
+    { "key": "displacementLmin", "label": "Air Displacement", "unit": "L/min", "filterable": true, "labelEs": "Caudal de aire", "labelRu": "Производительность" },
+    { "key": "ratedPressureMpa", "label": "Rated Pressure", "unit": "MPa", "filterable": true, "labelEs": "Presión nominal", "labelRu": "Рабочее давление" },
+    { "key": "tankCapacityL", "label": "Tank Capacity", "unit": "L", "filterable": false, "labelEs": "Volumen del tanque", "labelRu": "Объём ресивера" },
+    { "key": "noiseLevelDb", "label": "Noise Level", "unit": "dB", "filterable": false, "labelEs": "Nivel de ruido", "labelRu": "Уровень шума" },
+    { "key": "dimensionsMm", "label": "Dimensions (L×W×H)", "unit": "mm", "filterable": false },
+    { "key": "netWeightKg", "label": "Net Weight", "unit": "kg", "filterable": false, "labelEs": "Peso neto", "labelRu": "Вес нетто" }
+  ],
+  "i18n": {
+    "es": {
+      "name": "Compresores de aire",
+      "intro": "Compresores de aire silenciosos sin aceite y de pistón con correa para talleres de soldadura, estaciones de servicio y uso industrial ligero. Diseñados para complementar el equipo de soldadura GOWELLDE: suministro estable de aire para corte por plasma, herramientas neumáticas y limpieza de taller. La serie está en preparación final — los modelos aceptan preventas y consultas; las especificaciones completas, fotos y precios se publicarán al iniciar la producción.",
+      "seoTitle": "Compresores de aire para talleres de soldadura | GOWELLDE (Próximamente)",
+      "seoDescription": "Compresores de aire silenciosos sin aceite y de pistón de 2,5-7,5 HP, tanques de 24-150 L, para complementar equipos de soldadura y corte por plasma GOWELLDE. Preventas y consultas mayoristas abiertas."
+    },
+    "ru": {
+      "name": "Воздушные компрессоры",
+      "intro": "Безмасляные бесшумные и ремённые поршневые воздушные компрессоры для сварочных цехов, станций обслуживания и лёгкой промышленности. Разработаны в пару к сварочному оборудованию GOWELLDE: стабильная подача воздуха для плазменной резки, пневмоинструмента и уборки цеха. Серия готовится к запуску — модели принимают предварительные заказы и запросы; полные характеристики, фото и цены появятся с началом производства.",
+      "seoTitle": "Воздушные компрессоры для сварочных цехов | GOWELLDE (Скоро в продаже)",
+      "seoDescription": "Безмасляные бесшумные и поршневые компрессоры 2,5-7,5 л.с., ресиверы 24-150 л, в пару к сварочному и плазменному оборудованию GOWELLDE. Предзаказы и оптовые запросы открыты."
+    }
+  }
+}

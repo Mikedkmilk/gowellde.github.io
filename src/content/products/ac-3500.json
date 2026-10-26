@@ -1,0 +1,44 @@
+{
+  "model": "AC-3500",
+  "name": "AC-3500 Oil-Free Silent Air Compressor 2.2kW",
+  "category": "air-compressors",
+  "series": "AC",
+  "tags": ["OIL-FREE", "SILENT"],
+  "status": "coming-soon",
+  "badges": [],
+  "featured": false,
+  "sortOrder": 20,
+  "images": [],
+  "specs": {
+    "motorPowerKw": "2.2",
+    "displacementLmin": "240",
+    "ratedPressureMpa": "0.8",
+    "tankCapacityL": "50",
+    "noiseLevelDb": "60",
+    "dimensionsMm": "780×360×620",
+    "netWeightKg": "48"
+  },
+  "summary": "Mid-size silent compressor with 50L tank — pairs with 60A plasma cutting and continuous air-tool work.",
+  "description": "The AC-3500 doubles tank capacity to 50L and raises displacement to 240 L/min, covering 60A plasma cutting and longer pneumatic tool runs while staying around 60 dB.",
+  "features": ["Oil-free silent pump, 60 dB class", "50L tank for longer tool runs", "240 L/min displacement", "Wheel kit and handle for workshop mobility"],
+  "applications": ["60A plasma cutting", "Impact wrenches & spray guns", "General workshop air"],
+  "downloads": [],
+  "related": ["ac-2500", "ac-5500"],
+  "priceDisplay": "",
+  "moq": "30 pcs",
+  "leadTimeDays": "TBD",
+  "i18n": {
+    "es": {
+      "summary": "Compresor silencioso mediano con tanque de 50 L — ideal para corte por plasma de 60A y trabajo continuo con herramientas neumáticas.",
+      "description": "El AC-3500 duplica la capacidad del tanque a 50 L y aumenta el caudal a 240 L/min, cubriendo corte por plasma de 60A y trabajos más largos con herramientas, manteniéndose cerca de 60 dB.",
+      "features": "Bomba silenciosa sin aceite, clase 60 dB|Tanque de 50 L para trabajos más largos|Caudal de 240 L/min|Ruedas y asa para movilidad en el taller",
+      "applications": "Corte por plasma 60A|Llaves de impacto y pistolas de pintura|Aire general de taller"
+    },
+    "ru": {
+      "summary": "Средний бесшумный компрессор с ресивером 50 л — для плазмореза 60 А и продолжительной работы пневмоинструмента.",
+      "description": "AC-3500 удваивает объём ресивера до 50 л и подаёт 240 л/мин — закрывает плазменную резку 60 А и длительную работу с пневмоинструментом, оставаясь на уровне около 60 дБ.",
+      "features": "Безмасляная бесшумная головка, класс 60 дБ|Ресивер 50 л для длительной работы|Производительность 240 л/мин|Колёса и ручка для перемещения по цеху",
+      "applications": "Плазменная резка 60 А|Гайковёрты и краскопульты|Общецеховой воздух"
+    }
+  }
+}

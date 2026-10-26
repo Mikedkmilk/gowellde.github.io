@@ -1,0 +1,117 @@
+---
+/**
+ * 关于工厂页视图（locale 感知）。
+ */
+import type { Locale } from '../../i18n/ui';
+import { t } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { CONTACT } from '../../config';
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = 'en' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
+
+const pageTitle = locale === 'es'
+  ? 'Sobre la fábrica de soldadoras GOWELLDE | 15+ años, OEM/ODM, CE e ISO9001'
+  : locale === 'ru'
+    ? 'О заводе сварочных аппаратов GOWELLDE | 15+ лет, OEM/ODM, CE и ISO9001'
+    : 'About GOWELLDE Welding Machine Factory | 15+ Years, OEM/ODM, CE & ISO9001';
+const pageDesc = locale === 'es'
+  ? 'GOWELLDE opera una fábrica de soldadoras inversoras de 10.000㎡ en Tengzhou, Shandong. Más de 15 años de fabricación, prueba de envejecimiento 100%, sistema ISO9001, servicios OEM/ODM.'
+  : locale === 'ru'
+    ? 'Завод GOWELLDE площадью 10 000 м² в Тэнчжоу, Шаньдун. Более 15 лет производства, 100% тест плат, система ISO9001, услуги OEM/ODM.'
+    : 'GOWELLDE operates a 10,000㎡ inverter welding machine factory in Tengzhou, Shandong. 15+ years of manufacturing, 100% board aging test, ISO9001 quality system, OEM/ODM services for global distributors.';
+
+const stats = [
+  { value: '15+', label: t(locale, 'ab.s1l') },
+  { value: '10,000㎡', label: t(locale, 'ab.s2l') },
+  { value: '100%', label: t(locale, 'ab.s3l') },
+  { value: '20+', label: t(locale, 'ab.s4l') },
+];
+
+const oemSteps = [
+  { title: t(locale, 'ab.oem1t'), desc: t(locale, 'ab.oem1d') },
+  { title: t(locale, 'ab.oem2t'), desc: t(locale, 'ab.oem2d') },
+  { title: t(locale, 'ab.oem3t'), desc: t(locale, 'ab.oem3d') },
+  { title: t(locale, 'ab.oem4t'), desc: t(locale, 'ab.oem4d') },
+  { title: t(locale, 'ab.oem5t'), desc: t(locale, 'ab.oem5d') },
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} path={`${prefix}/about/`} locale={locale} ogImage="/assets/factory/lineup.webp">
+  <section class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <Breadcrumbs items={[{ label: t(locale, 'crumb.home'), href: locale === 'en' ? '/' : `/${locale}/` }, { label: t(locale, 'crumb.factory') }]} />
+        <h1 class="text-4xl font-black uppercase mb-4">{t(locale, 'ab.title')}</h1>
+        <p class="text-gray-300 leading-relaxed">{t(locale, 'ab.intro')}</p>
+      </div>
+      <img src="/assets/factory/lineup.webp" alt="GOWELLDE inverter welding machine product lineup" width="1200" height="800" class="rounded-lg shadow-2xl w-full" loading="eager" />
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      {stats.map((s) => (
+        <div>
+          <p class="text-4xl font-black text-brand-orange mb-2">{s.value}</p>
+          <p class="text-sm text-gray-500">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <img src="/assets/factory/inside.webp" alt="Inside a GOWELLDE inverter welder: copper-wound inductor and rectifier diode" width="1000" height="750" class="rounded shadow-2xl w-full aspect-[4/3] object-cover" loading="lazy" />
+      <div>
+        <h2 class="text-3xl font-bold text-brand-dark mb-6">{t(locale, 'ab.qualityTitle')}</h2>
+        <ul class="space-y-4">
+          <li class="flex gap-3 text-gray-700"><Icon name="check-circle" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" /><span><strong>{t(locale, 'ab.q1t')}</strong> {t(locale, 'ab.q1d')}</span></li>
+          <li class="flex gap-3 text-gray-700"><Icon name="check-circle" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" /><span><strong>{t(locale, 'ab.q2t')}</strong> {t(locale, 'ab.q2d')}</span></li>
+          <li class="flex gap-3 text-gray-700"><Icon name="check-circle" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" /><span><strong>{t(locale, 'ab.q3t')}</strong> {t(locale, 'ab.q3d')}</span></li>
+          <li class="flex gap-3 text-gray-700"><Icon name="check-circle" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" /><span><strong>{t(locale, 'ab.q4t')}</strong> {t(locale, 'ab.q4d')}</span></li>
+        </ul>
+        <div class="mt-8 flex gap-4">
+          <a href={`${prefix}/products/`} class="bg-brand-orange text-white px-6 py-3 rounded font-bold hover:bg-orange-600 transition">{t(locale, 'ab.browse')}</a>
+          <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener" class="border-2 border-brand-dark text-brand-dark px-6 py-3 rounded font-bold hover:bg-brand-dark hover:text-white transition flex items-center gap-2">
+            <Icon name="whatsapp" class="w-4 h-4" /> {t(locale, 'ab.videoTour')}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-dark mb-10 text-center">{t(locale, 'ab.oemTitle')}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        {oemSteps.map((step) => (
+          <div class="bg-brand-light border border-gray-100 rounded-lg p-5">
+            <h3 class="font-bold text-brand-dark mb-2">{step.title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-gray-500 mt-8">
+        {t(locale, 'ab.oemCta')} <a href={`${prefix}/contact/`} class="text-brand-orange font-bold hover:underline">{t(locale, 'ab.oemCtaLink')}</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-brand-dark mb-10">{t(locale, 'ab.certsTitle')}</h2>
+      <div class="flex flex-wrap justify-center gap-10">
+        <div class="flex flex-col items-center"><div class="w-20 h-20 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-2xl mb-2">CE</div><span class="text-sm text-gray-500">{t(locale, 'certs.ce')}</span></div>
+        <div class="flex flex-col items-center"><div class="w-20 h-20 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-base mb-2 text-center leading-tight">ISO<br />9001</div><span class="text-sm text-gray-500">{t(locale, 'certs.iso')}</span></div>
+        <div class="flex flex-col items-center"><div class="w-20 h-20 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold text-2xl mb-2">CCC</div><span class="text-sm text-gray-500">{t(locale, 'certs.ccc')}</span></div>
+      </div>
+      <p class="text-gray-400 text-sm mt-6">{t(locale, 'ab.certsNote')} <a href={`${prefix}/contact/`} class="hover:underline">{t(locale, 'ab.certsNoteLink')}</a>.</p>
+    </div>
+  </section>
+</BaseLayout>

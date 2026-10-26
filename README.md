@@ -21,7 +21,27 @@ npm run preview    # 预览构建结果
 | 新增品类 | `src/content/categories/` 一个 json，含 specSchema（参数表定义） |
 | 发博客 | `src/content/blog/` 一篇一个 md |
 | 产品/博客图片 | `public/assets/` 对应子目录，重跑 `npm run optimize:images` |
-| 页面模板 | `src/pages/`（页面骨架）与 `src/components/`（复用组件） |
+| 页面模板 | `src/pages/_views/`（视图）+ `src/pages/`（路由包装）+ `src/components/`（复用组件） |
+| 界面文字翻译（按钮/导航/表单等） | `src/i18n/ui.ts`（en/es/ru 三语词典，缺 key 自动回落英文） |
+| 产品/品类的西语俄语内容 | 各 content JSON 的 `i18n.es` / `i18n.ru` 字段 |
+
+## 多语言（/es/ /ru/）
+
+- 英语在根路径，西语 `/es/`、俄语 `/ru/` 镜像整站（产品/品类/首页/关于/联系/FAQ/对比）。
+- 界面文字在 `src/i18n/ui.ts`；内容翻译在各 JSON 的 `i18n` 字段（无翻译时自动显示英文）。
+- 页面结构：一套视图 `src/pages/_views/*.astro`，三套路由包装 `src/pages/`、`src/pages/es/`、`src/pages/ru/`——**新增语言 = 复制一套包装目录 + ui.ts 加一个词典 + 内容 JSON 加 i18n 字段**。
+- 博客暂仅英文（多语言页导航的 Blog 链接指向英文博客）。
+- `/compare/` 对比页标记 noindex（工具页不参与收录）。
+- 批量注入翻译的脚本：`node scripts/inject-i18n.mjs`（一次性，后续手改 JSON 即可）。
+
+## 品类筛选与对比页
+
+- 品类页筛选器由品类 JSON 的 `specSchema.filterable` 驱动：参数在 ≥2 款产品上取值不同就自动出现筛选 chips（单选、可清除、显示"Showing X of Y"）。数据结构零改动。
+- 对比页 `/compare/?category=mma-welders`：切品类 → 勾选最多 3 款 → 参数并排对比（对比范围限同一品类，因为各品类 specSchema 不同）。
+
+## 演示品类：空气压缩机（Air Compressors）
+
+第二品类已虚拟上线：4 款 `coming-soon` 机型（AC-2500/3500/5500/7500），无图无价，用于验证多品类架构与对比页。**正式上线前替换为真实产品数据与图片，或整品类下线**（删除 `src/content/categories/air-compressors.json` + 对应 4 个产品 json）。
 
 ## 部署（GitHub Pages，自动构建）
 

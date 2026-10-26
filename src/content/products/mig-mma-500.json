@@ -3,14 +3,22 @@
   "name": "MIG/MMA-500 Heavy MIG Welder 500A",
   "category": "mig-mag-welders",
   "series": "MIG/MMA",
-  "tags": ["HEAVY MIG"],
+  "tags": [
+    "HEAVY MIG"
+  ],
   "status": "active",
   "badges": [],
   "featured": true,
   "sortOrder": 40,
   "images": [
-    { "src": "/assets/products/mig-mma-500/main.webp", "alt": "GOWELLDE MIG/MMA-500 heavy MIG welding machine" },
-    { "src": "/assets/datasheets/mig-mma-500.webp", "alt": "MIG/MMA-500 welding equipment info sheet" }
+    {
+      "src": "/assets/products/mig-mma-500/main.webp",
+      "alt": "GOWELLDE MIG/MMA-500 heavy MIG welding machine"
+    },
+    {
+      "src": "/assets/datasheets/mig-mma-500.webp",
+      "alt": "MIG/MMA-500 welding equipment info sheet"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -22,11 +30,38 @@
   },
   "summary": "500A MIG/MMA welder for heavy sections and long seams. Hot-sale model.",
   "description": "The MIG/MMA-500 brings 500A to heavy plate welding with the dual-drive feeder and 40mm² cable package. A consistently strong seller for distributors serving structural steel and trailer manufacturers. (Note: verify latest spec sheet with our sales team — this model's datasheet is being updated.)",
-  "features": ["500A output for heavy sections", "MIG + MMA dual process", "Dual-drive wire feeder", "40mm² heavy-duty cable package", "Thermal protection with indicator"],
-  "applications": ["Structural steel fabrication", "Trailer & container manufacturing", "Heavy machinery production"],
+  "features": [
+    "500A output for heavy sections",
+    "MIG + MMA dual process",
+    "Dual-drive wire feeder",
+    "40mm² heavy-duty cable package",
+    "Thermal protection with indicator"
+  ],
+  "applications": [
+    "Structural steel fabrication",
+    "Trailer & container manufacturing",
+    "Heavy machinery production"
+  ],
   "downloads": [],
-  "related": ["mig-mma-500ci", "mig-mma-400"],
+  "related": [
+    "mig-mma-500ci",
+    "mig-mma-400"
+  ],
   "priceDisplay": "$3XX",
   "moq": "20 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "Soldadora MIG/MMA de 500 A para secciones pesadas y cordones largos. Modelo de alta rotación.",
+      "description": "La MIG/MMA-500 lleva 500 A a la soldadura de chapa pesada con el alimentador de doble tracción y el paquete de cables de 40 mm². Una venta consistentemente fuerte para distribuidores que atienden estructuras metálicas y fabricantes de remolques. (Nota: confirme la ficha técnica vigente con ventas — la de este modelo está en actualización.)",
+      "features": "500 A para secciones pesadas|Doble proceso MIG + MMA|Alimentador de doble tracción|Paquete de cables 40 mm²|Protección térmica con indicador",
+      "applications": "Fabricación estructural|Remolques y contenedores|Maquinaria pesada"
+    },
+    "ru": {
+      "summary": "MIG/MMA 500 А для тяжёлых сечений и длинных швов. Ходовой аппарат.",
+      "description": "MIG/MMA-500 подаёт 500 А на толстый металл: двухприводная подача и комплект кабелей 40 мм². Стабильно сильная позиция для дистрибьюторов, работающих с металлоконструкциями и производителями прицепов. (Примечание: уточните актуальный техпаспорт у менеджера — по этой модели он обновляется.)",
+      "features": "500 А для тяжёлых сечений|Два процесса MIG + MMA|Двухприводная подача|Комплект кабелей 40 мм²|Термозащита с индикатором",
+      "applications": "Металлоконструкции|Прицепы и контейнеры|Тяжёлая техника"
+    }
+  }
 }

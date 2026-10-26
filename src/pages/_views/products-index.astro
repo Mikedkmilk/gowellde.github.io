@@ -1,0 +1,91 @@
+---
+/**
+ * 产品总览页视图（locale 感知）。
+ */
+import type { Locale } from '../../i18n/ui';
+import { t } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import Icon from '../../components/Icon.astro';
+import { getRootCategories, getChildCategories, getProductsByCategory, quickSpecs, catName } from '../../lib/data';
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = 'en' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
+
+const roots = await getRootCategories();
+const sections = await Promise.all(
+  roots.map(async (root) => ({
+    name: catName(root, locale),
+    children: await Promise.all(
+      (await getChildCategories(root.data.slug)).map(async (child) => {
+        const prods = await getProductsByCategory(child.data.slug);
+        return {
+          name: catName(child, locale),
+          slug: child.data.slug,
+          count: prods.length,
+          cards: prods.map((p) => ({ product: p, specs: quickSpecs(p, child, locale) })),
+        };
+      })
+    ),
+  }))
+);
+const totalCount = sections.reduce((n, s) => n + s.children.reduce((m, c) => m + c.cards.length, 0), 0);
+---
+
+<BaseLayout
+  title={locale === 'es'
+    ? 'Todas las soldadoras - Soldadoras inversoras MMA y MIG/MAG | GOWELLDE'
+    : locale === 'ru'
+      ? 'Вся продукция - Инверторные сварочные аппараты MMA и MIG/MAG | GOWELLDE'
+      : 'All Welding Machines - MMA & MIG/MAG Inverter Welders | GOWELLDE'}
+  description={locale === 'es'
+    ? `Catálogo de ${totalCount} soldadoras inversoras directas de fábrica: MMA de 160-630 A y MIG/MAG con alimentador de doble tracción. Precios mayoristas, OEM/ODM, certificación CE.`
+    : locale === 'ru'
+      ? `Каталог из ${totalCount} инверторных сварочных аппаратов напрямую с завода: MMA 160-630 А и MIG/MAG с двухприводной подачей. Оптовые цены, OEM/ODM, CE.`
+      : `Browse ${totalCount} factory-direct inverter welding machines: MMA arc welders 160-630A and MIG/MAG welders with dual-drive feeders. Wholesale prices, OEM/ODM, CE certified.`}
+  path={`${prefix}/products/`}
+  locale={locale}
+>
+  <section class="bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <Breadcrumbs items={[{ label: t(locale, 'crumb.home'), href: locale === 'en' ? '/' : `/${locale}/` }, { label: t(locale, 'pi.title') }]} />
+      <h1 class="text-4xl font-black text-brand-dark uppercase mb-4">{t(locale, 'pi.title')}</h1>
+      <p class="text-gray-600 max-w-3xl mb-12">{t(locale, 'pi.models', { 0: totalCount })}</p>
+
+      {sections.map((sec) => (
+        <div class="mb-16">
+          <h2 class="text-2xl font-black text-brand-dark uppercase mb-8 pb-3 border-b-2 border-brand-orange inline-block">{sec.name}</h2>
+          {sec.children.map((child) => (
+            <div class="mb-12">
+              <div class="flex items-baseline gap-3 mb-6 flex-wrap">
+                <h3 class="text-xl font-bold text-gray-700">{child.name}</h3>
+                <span class="text-sm text-gray-400">{child.count} {t(locale, 'pi.modelsCount')}</span>
+                <div class="flex gap-5 ml-auto">
+                  <a href={`${prefix}/compare/?category=${child.slug}`} class="text-sm font-bold text-brand-blue hover:underline">{t(locale, 'cat.compare')}</a>
+                  <a href={`${prefix}/products/${child.slug}/`} class="text-sm font-bold text-brand-orange hover:underline">{t(locale, 'cat.viewOnly')}</a>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {child.cards.map((c) => (
+                  <ProductCard product={c.product} quickSpecs={c.specs} locale={locale} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+
+      <div class="bg-white border border-gray-100 rounded-lg p-8 text-center">
+        <h2 class="text-xl font-bold text-brand-dark mb-2">{t(locale, 'pi.customTitle')}</h2>
+        <p class="text-gray-500 mb-5">{t(locale, 'pi.customSub')}</p>
+        <a href={`${prefix}/contact/`} class="inline-block bg-brand-orange text-white px-8 py-3 rounded font-bold hover:bg-orange-600 transition shadow">
+          {t(locale, 'pi.customCta')} <Icon name="arrow-right" class="w-4 h-4 inline -mt-0.5" />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

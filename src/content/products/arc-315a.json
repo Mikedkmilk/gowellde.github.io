@@ -3,14 +3,24 @@
   "name": "ARC-315A IGBT MMA Welder 180A",
   "category": "mma-welders",
   "series": "ARC",
-  "tags": ["IGBT MMA"],
+  "tags": [
+    "IGBT MMA"
+  ],
   "status": "active",
-  "badges": ["best-seller"],
+  "badges": [
+    "best-seller"
+  ],
   "featured": false,
   "sortOrder": 20,
   "images": [
-    { "src": "/assets/products/arc-315a/main.webp", "alt": "GOWELLDE ARC-315A IGBT MMA welding machine" },
-    { "src": "/assets/datasheets/arc-315a.webp", "alt": "ARC-315A welding equipment info sheet" }
+    {
+      "src": "/assets/products/arc-315a/main.webp",
+      "alt": "GOWELLDE ARC-315A IGBT MMA welding machine"
+    },
+    {
+      "src": "/assets/datasheets/arc-315a.webp",
+      "alt": "ARC-315A welding equipment info sheet"
+    }
   ],
   "specs": {
     "inputVoltage": "220V / 380V ±15%",
@@ -23,11 +33,38 @@
   },
   "summary": "180A stick welder with heavier IGBT stage — the upgrade path from the 315E.",
   "description": "The ARC-315A steps up to 180A with a larger G40N120 IGBT stage and bigger capacitors, accepting 2.5–4.0 mm rods for thicker structural work. Still a one-hand-carry machine at 5.4 kg, and a proven seller for distributors serving construction markets.",
-  "features": ["Upgraded 4×G40N120 IGBT power stage", "2.5–4.0 mm rod range covers structural work", "Hot start & anti-stick", "Thermal protection with auto-recovery", "220V / 380V dual supply options"],
-  "applications": ["Construction site welding", "Steel structure fabrication", "Maintenance shops"],
+  "features": [
+    "Upgraded 4×G40N120 IGBT power stage",
+    "2.5–4.0 mm rod range covers structural work",
+    "Hot start & anti-stick",
+    "Thermal protection with auto-recovery",
+    "220V / 380V dual supply options"
+  ],
+  "applications": [
+    "Construction site welding",
+    "Steel structure fabrication",
+    "Maintenance shops"
+  ],
   "downloads": [],
-  "related": ["arc-315e", "arc-400b"],
+  "related": [
+    "arc-315e",
+    "arc-400b"
+  ],
   "priceDisplay": "$4X",
   "moq": "50 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "Soldadora de 180 A con etapa IGBT más robusta — la evolución natural de la 315E.",
+      "description": "La ARC-315A sube a 180 A con módulos IGBT G40N120 y capacitores más grandes, aceptando electrodos de 2,5–4,0 mm para trabajos estructurales. Sigue siendo una máquina de una mano a 5,4 kg y es una venta probada para distribuidores del sector construcción.",
+      "features": "Etapa de potencia IGBT 4×G40N120 mejorada|Rango de electrodos 2,5–4,0 mm para trabajo estructural|Arranque en caliente y antiadherencia|Protección térmica con auto-recuperación|Opciones de alimentación 220V / 380V",
+      "applications": "Soldadura en obra|Estructuras de acero|Talleres de mantenimiento"
+    },
+    "ru": {
+      "summary": "Аппарат 180 А с усиленной IGBT-ступенью — логичное развитие модели 315E.",
+      "description": "ARC-315A выдаёт 180 А на модулях G40N120 с увеличенными конденсаторами, работая электродами 2,5–4,0 мм для ответственных конструкций. По-прежнему переносной аппарат весом 5,4 кг и проверенный бестселлер для строительного рынка.",
+      "features": "Улучшенная силовая ступень 4×G40N120|Электроды 2,5–4,0 мм для несущих конструкций|Горячий старт и антизалипание|Термозащита с автовосстановлением|Варианты питания 220В / 380В",
+      "applications": "Сварка на стройке|Металлоконструкции|Ремонтные мастерские"
+    }
+  }
 }

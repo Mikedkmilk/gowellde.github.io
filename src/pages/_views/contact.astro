@@ -1,0 +1,92 @@
+---
+/**
+ * 联系页视图（locale 感知）。
+ */
+import type { Locale } from '../../i18n/ui';
+import { t } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import Icon from '../../components/Icon.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { CONTACT } from '../../config';
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = 'en' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
+
+const waMsg =
+  locale === 'es'
+    ? 'Hola GOWELLDE, quiero consultar sobre sus soldadoras.'
+    : locale === 'ru'
+      ? 'Здравствуйте GOWELLDE, хочу сделать запрос по сварочным аппаратам.'
+      : 'Hello GOWELLDE, I would like to ask about your welding machines.';
+
+const pageTitle = locale === 'es'
+  ? 'Contactar GOWELLDE - Cotizaciones mayoristas en 24 h'
+  : locale === 'ru'
+    ? 'Контакты GOWELLDE - Оптовый запрос за 24 часа'
+    : 'Contact GOWELLDE - Get Wholesale Welding Machine Quotes in 24h';
+const pageDesc = locale === 'es'
+  ? 'Contacte la fábrica GOWELLDE para precios mayoristas, proyectos OEM/ODM y soporte técnico. WhatsApp, correo o formulario — respondemos en 24 horas.'
+  : locale === 'ru'
+    ? 'Свяжитесь с заводом GOWELLDE: оптовые цены, OEM/ODM, техподдержка. WhatsApp, email или форма — ответ в течение 24 часов.'
+    : 'Contact the GOWELLDE welding machine factory for wholesale prices, OEM/ODM projects and technical support. WhatsApp, email or inquiry form — we reply within 24 hours.';
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} path={`${prefix}/contact/`} locale={locale}>
+  <section class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <Breadcrumbs items={[{ label: t(locale, 'crumb.home'), href: locale === 'en' ? '/' : `/${locale}/` }, { label: t(locale, 'crumb.contact') }]} />
+      <h1 class="text-4xl font-black uppercase mb-4">{t(locale, 'cp.title')}</h1>
+      <p class="text-gray-300 max-w-2xl">{t(locale, 'cp.sub')}</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="space-y-5">
+        <a href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(waMsg)}`} target="_blank" rel="noopener" class="flex items-center gap-4 bg-white rounded-lg shadow p-5 group hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+            <Icon name="whatsapp" class="w-7 h-7 text-white" />
+          </div>
+          <div>
+            <p class="text-sm text-gray-400">{t(locale, 'cp.fastest')}</p>
+            <p class="text-lg font-bold text-brand-dark">{CONTACT.whatsappDisplay}</p>
+          </div>
+        </a>
+        <a href={`mailto:${CONTACT.email}`} class="flex items-center gap-4 bg-white rounded-lg shadow p-5 group hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-brand-orange rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+            <Icon name="mail" class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <p class="text-sm text-gray-400">{t(locale, 'cp.salesEmail')}</p>
+            <p class="text-lg font-bold text-brand-dark break-all">{CONTACT.email}</p>
+          </div>
+        </a>
+        <div class="flex items-start gap-4 bg-white rounded-lg shadow p-5">
+          <div class="w-14 h-14 bg-brand-dark rounded-full flex items-center justify-center flex-shrink-0">
+            <Icon name="map-pin" class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <p class="text-sm text-gray-400">{t(locale, 'cp.addressL')}</p>
+            <p class="text-base font-bold text-brand-dark">{CONTACT.address}</p>
+            <p class="text-sm text-gray-500 mt-1">{t(locale, 'cp.visitors')}</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-lg shadow p-5">
+          <div class="w-14 h-14 bg-brand-blue rounded-full flex items-center justify-center flex-shrink-0">
+            <Icon name="clock" class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <p class="text-sm text-gray-400">{t(locale, 'cp.hoursL')}</p>
+            <p class="text-base font-bold text-brand-dark">{t(locale, 'cp.hours')}</p>
+            <p class="text-sm text-gray-500 mt-1">{t(locale, 'cp.hoursSub')}</p>
+          </div>
+        </div>
+      </div>
+      <InquiryForm locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

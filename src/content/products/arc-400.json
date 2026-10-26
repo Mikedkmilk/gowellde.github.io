@@ -3,14 +3,22 @@
   "name": "ARC-400 Three-Phase MMA Welder 320A",
   "category": "mma-welders",
   "series": "ARC",
-  "tags": ["3-PHASE"],
+  "tags": [
+    "3-PHASE"
+  ],
   "status": "active",
   "badges": [],
   "featured": true,
   "sortOrder": 50,
   "images": [
-    { "src": "/assets/products/arc-400/main.webp", "alt": "GOWELLDE ARC-400 three-phase MMA welding machine" },
-    { "src": "/assets/datasheets/arc-400.webp", "alt": "ARC-400 welding equipment info sheet" }
+    {
+      "src": "/assets/products/arc-400/main.webp",
+      "alt": "GOWELLDE ARC-400 three-phase MMA welding machine"
+    },
+    {
+      "src": "/assets/datasheets/arc-400.webp",
+      "alt": "ARC-400 welding equipment info sheet"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -23,11 +31,38 @@
   },
   "summary": "320A three-phase stick welder at 80% duty — the entry to the heavy fabrication class.",
   "description": "The ARC-400 moves into the three-phase heavy class: 320A rated current at 80% duty cycle, 2.5–5.0 mm rod range and a ferrite-core T102 transformer driven by two G50N120 IGBTs. This is the baseline machine for steel structure plants that run long, continuous seams.",
-  "features": ["320A rated at 80% duty cycle", "3-phase 380V industrial input", "5.0 mm rod capability", "2×G50N120 half-bridge IGBT stage", "High-volume 200FZY cooling fan"],
-  "applications": ["Steel structure plants", "Shipyard & bridge fabrication", "Heavy machinery manufacturing"],
+  "features": [
+    "320A rated at 80% duty cycle",
+    "3-phase 380V industrial input",
+    "5.0 mm rod capability",
+    "2×G50N120 half-bridge IGBT stage",
+    "High-volume 200FZY cooling fan"
+  ],
+  "applications": [
+    "Steel structure plants",
+    "Shipyard & bridge fabrication",
+    "Heavy machinery manufacturing"
+  ],
   "downloads": [],
-  "related": ["arc-500", "mig-mma-400"],
+  "related": [
+    "arc-500",
+    "mig-mma-400"
+  ],
   "priceDisplay": "$1XX",
   "moq": "30 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "Trifásica de 320 A al 80% de ciclo — la entrada a la clase pesada de fabricación.",
+      "description": "La ARC-400 entra en la clase trifásica pesada: 320 A al 80% de ciclo de trabajo, rango de electrodos 2,5–5,0 mm y transformador de núcleo de ferrita T102 manejado por dos IGBT G50N120. Es la máquina base para plantas de estructuras de acero que realizan cordones largos y continuos.",
+      "features": "320 A nominales al 80% de ciclo de trabajo|Entrada industrial trifásica 380V|Capacidad de electrodo 5,0 mm|Etapa IGBT puente 2×G50N120|Ventilador de alto caudal 200FZY",
+      "applications": "Plantas de estructuras metálicas|Astilleros y puentes|Maquinaria pesada"
+    },
+    "ru": {
+      "summary": "Трёхфазный аппарат 320 А при ПВ 80% — вход в тяжёлый производственный класс.",
+      "description": "ARC-400 выходит в тяжёлый трёхфазный класс: 320 А при ПВ 80%, электроды 2,5–5,0 мм и ферритовый трансформатор T102 на двух IGBT G50N120. Базовый аппарат для заводов металлоконструкций с длинными непрерывными швами.",
+      "features": "320 А номинала при ПВ 80%|Промышленное трёхфазное питание 380В|Электроды до 5,0 мм|Полумостовая IGBT-ступень 2×G50N120|Высокопроизводительный вентилятор 200FZY",
+      "applications": "Заводы металлоконструкций|Судостроение и мосты|Тяжёлое машиностроение"
+    }
+  }
 }

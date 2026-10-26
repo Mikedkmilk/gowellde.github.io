@@ -1,10 +1,22 @@
 ---
+import type { Locale } from '../i18n/ui';
 import { CONTACT } from '../config';
 import Icon from './Icon.astro';
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = 'en' } = Astro.props;
+const msg =
+  locale === 'es'
+    ? 'Hola GOWELLDE, me interesan sus soldadoras. ¿Pueden enviarme el catálogo y la lista de precios?'
+    : locale === 'ru'
+      ? 'Здравствуйте GOWELLDE, интересуют ваши сварочные аппараты. Пришлите каталог и прайс-лист, пожалуйста.'
+      : 'Hello GOWELLDE, I am interested in your welding machines. Could you send me your catalog and price list?';
 ---
 
 <a
-  href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Hello GOWELLDE, I am interested in your welding machines. Could you send me your catalog and price list?')}`}
+  href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(msg)}`}
   target="_blank"
   rel="noopener"
   class="whatsapp-float"

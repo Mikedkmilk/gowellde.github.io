@@ -1,51 +1,79 @@
 ---
 /**
- * 品类列表页视图：父品类（如 Welding Machines）展示子品类分组；叶子品类直接网格。
+ * 品类列表页：父品类分组展示子品类；叶子品类直接网格。
+ * 内置筛选器：按品类 specSchema 的 filterable 参数前端过滤（与数据结构解耦）。
  */
+import type { Locale } from '../i18n/ui';
+import { t } from '../i18n/ui';
 import type { Product, Category } from '../lib/data';
-import { getChildCategories, getProductsByCategory, getCategory, quickSpecs } from '../lib/data';
+import {
+  getChildCategories,
+  getProductsByCategory,
+  getCategory,
+  quickSpecs,
+  filterGroups,
+  cardFilterData,
+  catName,
+  catIntro,
+  specLabel,
+} from '../lib/data';
 import ProductCard from './ProductCard.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
 import Icon from './Icon.astro';
 
 interface Props {
   category: Category;
+  locale?: Locale;
 }
-const { category: cat } = Astro.props;
+const { category: cat, locale = 'en' } = Astro.props;
 const children = await getChildCategories(cat.data.slug);
 
 const crumbs = [
-  { label: 'Home', href: '/' },
-  { label: 'Products', href: '/products/' },
+  { label: t(locale, 'crumb.home'), href: locale === 'en' ? '/' : `/${locale}/` },
+  { label: t(locale, 'crumb.products'), href: locale === 'en' ? '/products/' : `/${locale}/products/` },
   ...(cat.data.parent
-    ? [{ label: (await getCategory(cat.data.parent))?.data.name ?? 'Category', href: `/products/${cat.data.parent}/` }]
+    ? [
+        {
+          label: catName((await getCategory(cat.data.parent))!, locale),
+          href: locale === 'en' ? `/products/${cat.data.parent}/` : `/${locale}/products/${cat.data.parent}/`,
+        },
+      ]
     : []),
-  { label: cat.data.name },
+  { label: catName(cat, locale) },
 ];
 
 interface CardData {
   product: Product;
   specs: { label: string; value: string }[];
+  filter: Record<string, string>;
+  section?: string;
 }
 
 const sections: { name: string; slug: string; cards: CardData[] }[] = await Promise.all(
   children.map(async (child) => ({
-    name: child.data.name,
+    name: catName(child, locale),
     slug: child.data.slug,
     cards: (await getProductsByCategory(child.data.slug)).map((p) => ({
       product: p,
-      specs: quickSpecs(p, child),
+      specs: quickSpecs(p, child, locale),
+      filter: cardFilterData(p, child),
+      section: child.data.slug,
     })),
   }))
 );
 
-const ownCards: CardData[] =
-  children.length > 0
-    ? []
-    : (await getProductsByCategory(cat.data.slug)).map((p) => ({
-        product: p,
-        specs: quickSpecs(p, cat),
-      }));
+const ownProducts = children.length > 0 ? [] : await getProductsByCategory(cat.data.slug);
+const ownCards: CardData[] = ownProducts.map((p) => ({
+  product: p,
+  specs: quickSpecs(p, cat, locale),
+  filter: cardFilterData(p, cat),
+}));
+
+// 筛选组：本页全部产品（含子品类）的 filterable 参数取值
+const allCards = [...sections.flatMap((s) => s.cards), ...ownCards];
+const groups = filterGroups(allCards.map((c) => c.product), cat, locale);
+const hasFilter = groups.length > 0;
+const prefix = locale === 'en' ? '' : `/${locale}`;
 ---
 
 <section class="bg-brand-light">
@@ -57,46 +85,181 @@ const ownCards: CardData[] =
     <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent" aria-hidden="true"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
       <Breadcrumbs items={crumbs} />
-      <h1 class="text-4xl font-black uppercase mb-4">{cat.data.name}</h1>
-      {cat.data.intro && <p class="text-gray-300 max-w-3xl leading-relaxed">{cat.data.intro}</p>}
+      <h1 class="text-4xl font-black uppercase mb-4">{catName(cat, locale)}</h1>
+      {catIntro(cat, locale) && <p class="text-gray-300 max-w-3xl leading-relaxed">{catIntro(cat, locale)}</p>}
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-    {sections.length > 0 ? (
-      <div class="space-y-16">
-        {sections.map((sec) => (
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <h2 class="text-2xl font-black text-brand-dark uppercase">{sec.name}</h2>
-              <a href={`/products/${sec.slug}/`} class="text-sm font-bold text-brand-orange hover:underline whitespace-nowrap">
-                View only this series →
-              </a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {sec.cards.map((c) => (
-                <ProductCard product={c.product} quickSpecs={c.specs} />
-              ))}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    {
+      hasFilter && (
+        <div
+          id="product-filters"
+          class="bg-white border border-gray-100 rounded-lg shadow-sm p-5 mb-10"
+          data-locale={locale}
+          data-t-showing={t(locale, 'cat.showing')}
+          data-t-noresults={t(locale, 'cat.noResults')}
+        >
+          <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-gray-400">{t(locale, 'cat.filterBy')}</span>
+            <div class="flex items-center gap-4">
+              <span id="filter-count" class="text-sm font-medium text-gray-500"></span>
+              <button id="filter-clear" class="hidden text-sm font-bold text-brand-orange hover:underline">
+                {t(locale, 'cat.clear')}
+              </button>
             </div>
           </div>
-        ))}
-      </div>
-    ) : (
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {ownCards.map((c) => (
-          <ProductCard product={c.product} quickSpecs={c.specs} />
-        ))}
-      </div>
-    )}
+          <div class="space-y-2.5">
+            {groups.map((g) => (
+              <div class="filter-group flex items-baseline flex-wrap gap-2" data-key={g.key}>
+                <span class="text-sm text-gray-500 font-semibold w-40 flex-shrink-0">
+                  {g.label}
+                  {g.unit ? ` (${g.unit})` : ''}
+                </span>
+                <div class="flex flex-wrap gap-2">
+                  {g.values.map((v) => (
+                    <button
+                      class="filter-chip text-sm px-3 py-1 rounded-full border border-gray-300 text-gray-600 hover:border-brand-orange hover:text-brand-orange transition font-mono"
+                      data-value={v}
+                    >
+                      {v}
+                      {g.unit && !v.includes(g.unit) && /^\d/.test(v) ? ` ${g.unit}` : ''}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    {
+      sections.length > 0 ? (
+        <div class="space-y-16">
+          {sections.map((sec) => (
+            <div class="category-section" data-section={sec.slug}>
+              <div class="flex items-center justify-between mb-6 flex-wrap gap-2">
+                <h2 class="text-2xl font-black text-brand-dark uppercase">{sec.name}</h2>
+                <div class="flex items-center gap-5">
+                  <a href={`${prefix}/compare/?category=${sec.slug}`} class="text-sm font-bold text-brand-blue hover:underline flex items-center gap-1">
+                    {t(locale, 'cat.compare')}
+                  </a>
+                  <a href={`${prefix}/products/${sec.slug}/`} class="text-sm font-bold text-brand-orange hover:underline">
+                    {t(locale, 'cat.viewOnly')}
+                  </a>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {sec.cards.map((c) => (
+                  <div class="product-card-wrap" data-specs={JSON.stringify(c.filter)} data-section={sec.slug}>
+                    <ProductCard product={c.product} quickSpecs={c.specs} locale={locale} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {ownCards.map((c) => (
+            <div class="product-card-wrap" data-specs={JSON.stringify(c.filter)}>
+              <ProductCard product={c.product} quickSpecs={c.specs} locale={locale} />
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      ownProducts.length > 0 && (
+        <div class="mt-10 text-center">
+          <a href={`${prefix}/compare/?category=${cat.data.slug}`} class="inline-block border-2 border-brand-blue text-brand-blue px-6 py-2.5 rounded font-bold hover:bg-brand-blue hover:text-white transition">
+            {t(locale, 'cat.compare')}
+          </a>
+        </div>
+      )
+    }
 
     <div class="mt-16 bg-white border border-gray-100 rounded-lg p-8 text-center">
-      <h2 class="text-xl font-bold text-brand-dark mb-2">Can't find the right model?</h2>
-      <p class="text-gray-500 mb-5">
-        Tell us your application and power supply — our engineers will recommend the best machine and quote wholesale price.
-      </p>
-      <a href="/contact/" class="inline-block bg-brand-orange text-white px-8 py-3 rounded font-bold hover:bg-orange-600 transition shadow">
-        Ask an Engineer <Icon name="arrow-right" class="w-4 h-4 inline -mt-0.5" />
+      <h2 class="text-xl font-bold text-brand-dark mb-2">{t(locale, 'cat.cantFind')}</h2>
+      <p class="text-gray-500 mb-5">{t(locale, 'cat.cantFindSub')}</p>
+      <a href={`${prefix}/contact/`} class="inline-block bg-brand-orange text-white px-8 py-3 rounded font-bold hover:bg-orange-600 transition shadow">
+        {t(locale, 'cat.askEngineer')} <Icon name="arrow-right" class="w-4 h-4 inline -mt-0.5" />
       </a>
     </div>
   </div>
 </section>
+
+<script>
+  // 品类筛选器：与数据结构解耦——只读 data-specs JSON 与 schema 的 key
+  const container = document.getElementById('product-filters');
+  const cards = document.querySelectorAll<HTMLElement>('.product-card-wrap');
+  if (container && cards.length > 0) {
+    const showingTpl = container.dataset.tShowing || 'Showing {0} of {1} models';
+    const noResults = container.dataset.tNoresults || 'No models match.';
+    const chips = container.querySelectorAll<HTMLButtonElement>('.filter-chip');
+    const clearBtn = document.getElementById('filter-clear') as HTMLButtonElement | null;
+    const countEl = document.getElementById('filter-count');
+    const emptyMsg = document.createElement('p');
+    emptyMsg.className = 'hidden text-center text-gray-400 py-10';
+    emptyMsg.textContent = noResults;
+    container.parentElement?.insertBefore(emptyMsg, container.nextSibling);
+
+    const selection: Record<string, string> = {};
+
+    function apply() {
+      let visible = 0;
+      const sectionCounts = new Map<string, number>();
+      cards.forEach((card) => {
+        const specs = JSON.parse(card.dataset.specs || '{}');
+        const section = card.dataset.section || '';
+        const ok = Object.entries(selection).every(([k, v]) => specs[k] === v);
+        card.classList.toggle('hidden', !ok);
+        if (ok) {
+          visible++;
+          sectionCounts.set(section, (sectionCounts.get(section) || 0) + 1);
+        }
+      });
+      // 隐藏全部被过滤掉的分组（父品类页）
+      document.querySelectorAll<HTMLElement>('.category-section').forEach((sec) => {
+        const n = sectionCounts.get(sec.dataset.section || '') || 0;
+        sec.classList.toggle('hidden', n === 0);
+      });
+      const anySelected = Object.keys(selection).length > 0;
+      if (countEl) countEl.textContent = showingTpl.replace('{0}', String(visible)).replace('{1}', String(cards.length));
+      if (clearBtn) clearBtn.classList.toggle('hidden', !anySelected);
+      emptyMsg.classList.toggle('hidden', visible > 0);
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const key = chip.closest('.filter-group')?.getAttribute('data-key') || '';
+        const value = chip.dataset.value || '';
+        const active = chip.classList.contains('bg-brand-orange');
+        // 同组单选；再点取消
+        chip.closest('.filter-group')?.querySelectorAll('.filter-chip').forEach((c) => {
+          c.classList.remove('bg-brand-orange', 'text-white', 'border-brand-orange');
+          c.classList.add('border-gray-300', 'text-gray-600');
+        });
+        if (!active) {
+          chip.classList.add('bg-brand-orange', 'text-white', 'border-brand-orange');
+          chip.classList.remove('border-gray-300', 'text-gray-600');
+          selection[key] = value;
+        } else {
+          delete selection[key];
+        }
+        apply();
+      });
+    });
+    clearBtn?.addEventListener('click', () => {
+      Object.keys(selection).forEach((k) => delete selection[k]);
+      chips.forEach((c) => {
+        c.classList.remove('bg-brand-orange', 'text-white', 'border-brand-orange');
+        c.classList.add('border-gray-300', 'text-gray-600');
+      });
+      apply();
+    });
+    apply();
+  }
+</script>

@@ -1,0 +1,45 @@
+---
+/**
+ * /products/{slug}/ 视图：slug 是品类 → 品类页；是产品 → 产品详情页。
+ * 产品 URL 保持扁平，不挂品类路径——详见改版方案 4.2。locale 感知。
+ * 路由包装层负责 getStaticPaths 并传入 kind/slug/locale props。
+ */
+import type { Locale } from '../../i18n/ui';
+import { t } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductPage from '../../components/ProductPage.astro';
+import CategoryPage from '../../components/CategoryPage.astro';
+import { getCategories, getProducts, catSeoTitle, catSeoDesc, catName, prodSummary } from '../../lib/data';
+
+interface Props {
+  kind: 'category' | 'product';
+  slug: string;
+  locale?: Locale;
+}
+const { kind, slug, locale = 'en' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
+const cats = await getCategories();
+const prods = await getProducts();
+
+let title = `${t(locale, 'pi.title')} | GOWELLDE`;
+let description = t(locale, 'pi.title');
+let ogImage: string | undefined;
+
+if (kind === 'category') {
+  const cat = cats.find((c) => c.data.slug === slug)!;
+  title = catSeoTitle(cat, locale);
+  description = catSeoDesc(cat, locale);
+  ogImage = cat.data.hero || undefined;
+} else {
+  const p = prods.find((x) => x.id === slug)!;
+  title = `${p.data.name} | Wholesale Price - GOWELLDE`;
+  description = prodSummary(p, locale) || p.data.description || `${p.data.model} inverter welding machine, factory direct wholesale.`;
+  ogImage = p.data.images.length > 0 ? p.data.images[0].src : undefined;
+}
+---
+
+<BaseLayout title={title} description={description} path={`${prefix}/products/${slug}/`} ogType="product" ogImage={ogImage} locale={locale}>
+  {kind === 'category'
+    ? <CategoryPage category={cats.find((c) => c.data.slug === slug)!} locale={locale} />
+    : <ProductPage product={prods.find((x) => x.id === slug)!} locale={locale} />}
+</BaseLayout>

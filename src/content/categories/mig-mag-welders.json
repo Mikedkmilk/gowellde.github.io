@@ -8,13 +8,83 @@
   "seoTitle": "MIG/MAG Welding Machines with Dual-Drive Feeder | GOWELLDE",
   "seoDescription": "Factory-direct MIG/MAG welders 250A-630A with dual-drive wire feeders and MMA function. Up to 100% duty cycle, complete accessory package, OEM/ODM from China.",
   "specSchema": [
-    { "key": "inputVoltage", "label": "Input Voltage", "unit": "", "filterable": true },
-    { "key": "ratedCurrent", "label": "Rated Current", "unit": "A", "filterable": true },
-    { "key": "dutyCycleAt40c", "label": "Duty Cycle @40°C", "unit": "%", "filterable": true },
-    { "key": "wireDiameterMm", "label": "Wire Diameter", "unit": "mm", "filterable": false },
-    { "key": "dimensionsMm", "label": "Dimensions (L×W×H)", "unit": "mm", "filterable": false },
-    { "key": "netWeightKg", "label": "Net Weight", "unit": "kg", "filterable": false },
-    { "key": "igbtConfig", "label": "Power Stage (IGBT)", "unit": "", "filterable": false },
-    { "key": "accessories", "label": "Standard Package", "unit": "", "filterable": false }
-  ]
+    {
+      "key": "inputVoltage",
+      "label": "Input Voltage",
+      "unit": "",
+      "filterable": true,
+      "labelEs": "Tensión de entrada",
+      "labelRu": "Напряжение питания"
+    },
+    {
+      "key": "ratedCurrent",
+      "label": "Rated Current",
+      "unit": "A",
+      "filterable": true,
+      "labelEs": "Corriente nominal",
+      "labelRu": "Номинальный ток"
+    },
+    {
+      "key": "dutyCycleAt40c",
+      "label": "Duty Cycle @40°C",
+      "unit": "%",
+      "filterable": true,
+      "labelEs": "Ciclo de trabajo @40°C",
+      "labelRu": "ПВ при 40°C"
+    },
+    {
+      "key": "wireDiameterMm",
+      "label": "Wire Diameter",
+      "unit": "mm",
+      "filterable": false,
+      "labelEs": "Diámetro de alambre",
+      "labelRu": "Диаметр проволоки"
+    },
+    {
+      "key": "dimensionsMm",
+      "label": "Dimensions (L×W×H)",
+      "unit": "mm",
+      "filterable": false,
+      "labelEs": "Dimensiones (L×An×Al)",
+      "labelRu": "Габариты (Д×Ш×В)"
+    },
+    {
+      "key": "netWeightKg",
+      "label": "Net Weight",
+      "unit": "kg",
+      "filterable": false,
+      "labelEs": "Peso neto",
+      "labelRu": "Вес нетто"
+    },
+    {
+      "key": "igbtConfig",
+      "label": "Power Stage (IGBT)",
+      "unit": "",
+      "filterable": false,
+      "labelEs": "Etapa de potencia (IGBT)",
+      "labelRu": "Силовая ступень (IGBT)"
+    },
+    {
+      "key": "accessories",
+      "label": "Standard Package",
+      "unit": "",
+      "filterable": false,
+      "labelEs": "Paquete estándar",
+      "labelRu": "Комплект поставки"
+    }
+  ],
+  "i18n": {
+    "es": {
+      "name": "MIG / MAG",
+      "intro": "Máquinas de soldadura MIG/MAG con protección gaseosa y alimentador de doble tracción para producción continua. La serie MIG/MMA también cambia a electrodo, cubriendo dos procesos con una sola máquina en el taller. Ciclos de trabajo de hasta el 100% a corriente nominal para plantas estructurales y líneas de fabricación, y cada unidad se envía completa con antorcha, cables, pinza y regulador de CO2.",
+      "seoTitle": "Máquinas MIG/MAG con alimentador de doble tracción | GOWELLDE",
+      "seoDescription": "Soldadoras MIG/MAG directas de fábrica 250A-630A con alimentador de doble tracción y función MMA. Hasta 100% de ciclo, kit completo de accesorios, OEM/ODM desde China."
+    },
+    "ru": {
+      "name": "MIG / MAG",
+      "intro": "Аппараты механизированной сварки MIG/MAG в защитном газе с двухприводной подачей для непрерывного производства. Серия MIG/MMA также переключается на ММА — один аппарат закрывает два процесса в цехе. ПВ до 100% при номинальном токе для металлоконструкций и производственных линий; каждый аппарат поставляется с горелкой, кабелями, зажимом и CO2-редуктором.",
+      "seoTitle": "Аппараты MIG/MAG с двухприводной подачей | GOWELLDE",
+      "seoDescription": "Сварочные полуавтоматы 250А-630А напрямую с завода: двухприводная подача и функция ММА. ПВ до 100%, полный комплект, OEM/ODM из Китая."
+    }
+  }
 }

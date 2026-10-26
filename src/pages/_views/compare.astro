@@ -1,0 +1,31 @@
+---
+/**
+ * 对比页路由视图（包 BaseLayout，locale 感知）。
+ */
+import type { Locale } from '../../i18n/ui';
+import { t } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CompareView from '../../components/views/CompareView.astro';
+
+interface Props {
+  locale?: Locale;
+  initialCategory?: string;
+}
+const { locale = 'en', initialCategory = '' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
+
+const pageTitle = locale === 'es'
+  ? 'Comparar soldadoras - MMA, MIG/MAG | GOWELLDE'
+  : locale === 'ru'
+    ? 'Сравнение сварочных аппаратов - MMA, MIG/MAG | GOWELLDE'
+    : 'Compare Welding Machines - MMA & MIG/MAG | GOWELLDE';
+const pageDesc = locale === 'es'
+  ? 'Compare hasta 3 modelos de soldadoras lado a lado: corriente, ciclo de trabajo, peso y precio FOB. Herramienta de selección para compradores mayoristas.'
+  : locale === 'ru'
+    ? 'Сравните до 3 сварочных аппаратов рядом: ток, ПВ, вес и цена FOB. Инструмент выбора для оптовых покупателей.'
+    : 'Compare up to 3 welding machines side by side: current, duty cycle, weight and FOB price. A selection tool for wholesale buyers.';
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} path={`${prefix}/compare/`} locale={locale} noindex>
+  <CompareView locale={locale} initialCategory={initialCategory} />
+</BaseLayout>

@@ -3,13 +3,18 @@
   "name": "MIG/MMA-315Y Multi-Function Welder 250A",
   "category": "mig-mag-welders",
   "series": "MIG/MMA",
-  "tags": ["MULTI-FUNC"],
+  "tags": [
+    "MULTI-FUNC"
+  ],
   "status": "active",
   "badges": [],
   "featured": false,
   "sortOrder": 10,
   "images": [
-    { "src": "/assets/products/mig-mma-315y/main.webp", "alt": "GOWELLDE MIG/MMA-315Y multi-function welding machine" }
+    {
+      "src": "/assets/products/mig-mma-315y/main.webp",
+      "alt": "GOWELLDE MIG/MMA-315Y multi-function welding machine"
+    }
   ],
   "specs": {
     "inputVoltage": "220V / 380V / 3P 380V ±15%",
@@ -23,11 +28,38 @@
   },
   "summary": "Entry MIG/MMA combo: gas-shielded welding plus stick, flexible input options.",
   "description": "The MIG/MMA-315Y covers both MIG and stick welding in one unit, with flexible 220V/380V/3-phase input that suits workshops with mixed power supply. Ships as a complete package — torch, cables, clamp and CO2 regulator included — so end users start welding the day it arrives.",
-  "features": ["MIG and MMA processes in one machine", "220V / 380V / 3P 380V input flexibility", "0.8–1.0 mm wire range", "Complete accessory package included", "IGBT inverter stage with 8×470µF capacitors"],
-  "applications": ["Small fabrication shops", "Repair & maintenance workshops", "Entry-level production lines"],
+  "features": [
+    "MIG and MMA processes in one machine",
+    "220V / 380V / 3P 380V input flexibility",
+    "0.8–1.0 mm wire range",
+    "Complete accessory package included",
+    "IGBT inverter stage with 8×470µF capacitors"
+  ],
+  "applications": [
+    "Small fabrication shops",
+    "Repair & maintenance workshops",
+    "Entry-level production lines"
+  ],
   "downloads": [],
-  "related": ["mig-mma-400", "arc-315a"],
+  "related": [
+    "mig-mma-400",
+    "arc-315a"
+  ],
   "priceDisplay": "$1XX",
   "moq": "30 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "Combo MIG/MMA de entrada: soldadura con gas más electrodo, entradas flexibles.",
+      "description": "La MIG/MMA-315Y cubre soldadura MIG y electrodo en una sola unidad, con entradas flexibles de 220V/380V/trifásica que se adaptan a talleres con redes mixtas. Se envía como paquete completo — antorcha, cables, pinza y regulador CO2 incluidos — para que el usuario final suelde el día que llega.",
+      "features": "Procesos MIG y MMA en una máquina|Flexibilidad de entrada 220V / 380V / 3P 380V|Rango de alambre 0,8–1,0 mm|Paquete completo de accesorios incluido|Etapa inversora IGBT con 8×470 µF",
+      "applications": "Talleres de fabricación pequeños|Talleres de reparación y mantenimiento|Líneas de producción iniciales"
+    },
+    "ru": {
+      "summary": "Начальный комбо-аппарат MIG/MMA: полуавтомат плюс ММА, гибкое питание.",
+      "description": "MIG/MMA-315Y закрывает полуавтомат и ММА в одном корпусе, с гибким питанием 220В/380В/3-ф для цехов со смешанными сетями. Поставляется полным комплектом — горелка, кабели, зажим и CO2-редуктор, — чтобы сварщик начал работать в день получения.",
+      "features": "MIG и MMA в одном аппарате|Питание 220В / 380В / 3-ф 380В|Проволока 0,8–1,0 мм|Полный комплект аксессуаров|IGBT-ступень с банком 8×470 мкФ",
+      "applications": "Небольшие производственные цеха|Ремонтные мастерские|Стартовые производственные линии"
+    }
+  }
 }

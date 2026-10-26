@@ -41,6 +41,10 @@ const products = defineCollection({
     fobPort: z.string().default('FOB Qingdao'),
     leadTimeDays: z.string().default(''),
     packing: z.string().default(''),
+
+    // 可选多语言内容（如 i18n.es.summary）；缺的字段回落英文。
+    // features/applications 用 | 分隔存成单个字符串。
+    i18n: z.record(z.string(), z.record(z.string(), z.string())).optional(),
   }),
 });
 
@@ -62,11 +66,15 @@ const categories = defineCollection({
     specSchema: z.array(
       z.object({
         key: z.string(), // 对应产品 specs 的 key
-        label: z.string(), // 参数表表头
+        label: z.string(), // 参数表表头（英文）
         unit: z.string().default(''),
-        filterable: z.boolean().default(false), // 品类页是否展示为快速参数
+        filterable: z.boolean().default(false), // 品类页是否展示为筛选/快览参数
+        labelEs: z.string().optional(), // 西语表头（缺则用英文）
+        labelRu: z.string().optional(), // 俄语表头（缺则用英文）
       })
     ),
+    // 可选多语言内容（i18n.es.name / i18n.es.intro / i18n.es.seoTitle / i18n.es.seoDescription）
+    i18n: z.record(z.string(), z.record(z.string(), z.string())).optional(),
   }),
 });
 

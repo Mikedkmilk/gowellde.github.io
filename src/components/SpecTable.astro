@@ -2,17 +2,24 @@
 /**
  * 参数表：按品类 specSchema 的顺序渲染产品 specs。
  * 品类没定义或产品没填的字段自动跳过——所以新品类换一套参数也能直接用。
+ * labelEs/labelRu 存在于 schema 时按 locale 显示对应表头。
  */
+import type { Locale } from '../i18n/ui';
+import { specLabel } from '../lib/data';
+
 interface SpecItem {
   key: string;
   label: string;
   unit: string;
+  labelEs?: string;
+  labelRu?: string;
 }
 interface Props {
   specs: Record<string, string>;
   schema: SpecItem[];
+  locale?: Locale;
 }
-const { specs, schema } = Astro.props;
+const { specs, schema, locale = 'en' } = Astro.props;
 const rows = schema.filter((s) => specs[s.key]);
 ---
 
@@ -22,7 +29,7 @@ const rows = schema.filter((s) => specs[s.key]);
       {rows.map((s, i) => (
         <tr class={i % 2 === 0 ? 'bg-white' : 'bg-brand-light'}>
           <th scope="row" class="text-left font-semibold text-gray-600 px-4 sm:px-5 py-3 w-2/5 border-b border-gray-100">
-            {s.label}{s.unit ? ` (${s.unit})` : ''}
+            {specLabel(s, locale)}{s.unit ? ` (${s.unit})` : ''}
           </th>
           <td class="px-4 sm:px-5 py-3 font-mono font-medium text-brand-dark border-b border-gray-100">{specs[s.key]}</td>
         </tr>

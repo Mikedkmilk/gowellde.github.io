@@ -1,0 +1,56 @@
+---
+/**
+ * FAQ 页视图（locale 感知，问题与答案来自 UI 词典）。
+ */
+import type { Locale } from '../../i18n/ui';
+import { t } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = 'en' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
+
+const faqs = Array.from({ length: 10 }, (_, i) => ({
+  q: t(locale, `fq.q${i + 1}`),
+  a: t(locale, `fq.a${i + 1}`),
+}));
+
+const pageTitle = locale === 'es'
+  ? 'Preguntas frecuentes - Pedidos, OEM, envíos y garantía | GOWELLDE'
+  : locale === 'ru'
+    ? 'Частые вопросы - заказы, OEM, доставка и гарантия | GOWELLDE'
+    : 'FAQ - Welding Machine Orders, OEM, Shipping & Warranty | GOWELLDE';
+const pageDesc = locale === 'es'
+  ? 'Respuestas sobre pedidos de soldadoras en GOWELLDE: MOQ, OEM/ODM, pagos, plazos, FOB Qingdao, certificación CE, garantía y muestras.'
+  : locale === 'ru'
+    ? 'Ответы на частые вопросы о заказе сварочных аппаратов GOWELLDE: MOQ, OEM/ODM, оплата, сроки, FOB Циндао, CE, гарантия и образцы.'
+    : 'Answers to common questions about ordering welding machines from GOWELLDE: MOQ, OEM/ODM, payment terms, lead time, FOB Qingdao shipping, CE certification, warranty and samples.';
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} path={`${prefix}/faq/`} locale={locale}>
+  <section class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <Breadcrumbs items={[{ label: t(locale, 'crumb.home'), href: locale === 'en' ? '/' : `/${locale}/` }, { label: t(locale, 'nav.faq') }]} />
+      <h1 class="text-4xl font-black uppercase mb-4">{t(locale, 'fq.title')}</h1>
+      <p class="text-gray-300">{t(locale, 'fq.sub')} <a href={`${prefix}/contact/`} class="text-brand-orange hover:underline">{t(locale, 'fq.subLink')}</a>.</p>
+    </div>
+  </section>
+
+  <section class="py-14 bg-brand-light">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {faqs.map((f) => (
+        <details class="faq-item bg-white rounded-lg shadow-sm border border-gray-100">
+          <summary class="flex items-center justify-between gap-4 p-5 font-bold text-brand-dark">
+            {f.q}
+            <Icon name="chevron-down" class="faq-chevron w-5 h-5 text-brand-orange flex-shrink-0" />
+          </summary>
+          <div class="px-5 pb-5 text-gray-600 leading-relaxed">{f.a}</div>
+        </details>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

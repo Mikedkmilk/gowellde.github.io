@@ -8,13 +8,83 @@
   "seoTitle": "Inverter Welding Machines Manufacturer - MMA & MIG/MAG | GOWELLDE",
   "seoDescription": "IGBT inverter welding machines from a Chinese factory: MMA arc welders 160-630A and MIG/MAG welders with dual-drive feeders. 100% board aging test, OEM/ODM, CE compliant.",
   "specSchema": [
-    { "key": "inputVoltage", "label": "Input Voltage", "unit": "", "filterable": true },
-    { "key": "ratedCurrent", "label": "Rated Current", "unit": "A", "filterable": true },
-    { "key": "dutyCycleAt40c", "label": "Duty Cycle @40°C", "unit": "%", "filterable": true },
-    { "key": "rodDiameterMm", "label": "Rod Diameter", "unit": "mm", "filterable": false },
-    { "key": "wireDiameterMm", "label": "Wire Diameter", "unit": "mm", "filterable": false },
-    { "key": "dimensionsMm", "label": "Dimensions (L×W×H)", "unit": "mm", "filterable": false },
-    { "key": "netWeightKg", "label": "Net Weight", "unit": "kg", "filterable": false },
-    { "key": "igbtConfig", "label": "Power Stage (IGBT)", "unit": "", "filterable": false }
-  ]
+    {
+      "key": "inputVoltage",
+      "label": "Input Voltage",
+      "unit": "",
+      "filterable": true,
+      "labelEs": "Tensión de entrada",
+      "labelRu": "Напряжение питания"
+    },
+    {
+      "key": "ratedCurrent",
+      "label": "Rated Current",
+      "unit": "A",
+      "filterable": true,
+      "labelEs": "Corriente nominal",
+      "labelRu": "Номинальный ток"
+    },
+    {
+      "key": "dutyCycleAt40c",
+      "label": "Duty Cycle @40°C",
+      "unit": "%",
+      "filterable": true,
+      "labelEs": "Ciclo de trabajo @40°C",
+      "labelRu": "ПВ при 40°C"
+    },
+    {
+      "key": "rodDiameterMm",
+      "label": "Rod Diameter",
+      "unit": "mm",
+      "filterable": false,
+      "labelEs": "Diámetro de electrodo",
+      "labelRu": "Диаметр электрода"
+    },
+    {
+      "key": "wireDiameterMm",
+      "label": "Wire Diameter",
+      "unit": "mm",
+      "filterable": false,
+      "labelEs": "Diámetro de alambre",
+      "labelRu": "Диаметр проволоки"
+    },
+    {
+      "key": "dimensionsMm",
+      "label": "Dimensions (L×W×H)",
+      "unit": "mm",
+      "filterable": false,
+      "labelEs": "Dimensiones (L×An×Al)",
+      "labelRu": "Габариты (Д×Ш×В)"
+    },
+    {
+      "key": "netWeightKg",
+      "label": "Net Weight",
+      "unit": "kg",
+      "filterable": false,
+      "labelEs": "Peso neto",
+      "labelRu": "Вес нетто"
+    },
+    {
+      "key": "igbtConfig",
+      "label": "Power Stage (IGBT)",
+      "unit": "",
+      "filterable": false,
+      "labelEs": "Etapa de potencia (IGBT)",
+      "labelRu": "Силовая ступень (IGBT)"
+    }
+  ],
+  "i18n": {
+    "es": {
+      "name": "Máquinas de soldadura",
+      "intro": "GOWELLDE fabrica máquinas de soldadura inversoras IGBT para distribuidores y usuarios industriales en todo el mundo. La gama cubre soldadoras MMA de 160 A a 630 A y equipos MIG/MAG con alimentador de doble tracción hasta 630 A. Cada placa pasa una prueba de envejecimiento del 100% antes del ensamblaje y todos los aparatos están clasificados a 40°C. Con soporte OEM/ODM, diseño conforme a CE y logística FOB Qingdao, suministramos a Egipto, India, Pakistán, Vietnam y más de 20 mercados.",
+      "seoTitle": "Máquinas de soldadura inversora - MMA y MIG/MAG | GOWELLDE",
+      "seoDescription": "Máquinas de soldadura inversoras IGBT de fábrica china: MMA de 160-630 A y MIG/MAG con alimentador de doble tracción. 100% prueba de placas, OEM/ODM, conforme a CE."
+    },
+    "ru": {
+      "name": "Сварочные аппараты",
+      "intro": "GOWELLDE производит инверторные сварочные аппараты IGBT для дистрибьюторов и промышленных клиентов по всему миру. Линейка включает аппараты MMA от 160 до 630 А и MIG/MAG с двухприводной подачей до 630 А. Каждая плата проходит 100% тест на старение, все аппараты нормированы при 40°C. С поддержкой OEM/ODM, соответствием CE и логистикой FOB Циндао мы поставляем в Египет, Индию, Пакистан, Вьетнам и ещё 20+ стран.",
+      "seoTitle": "Инверторные сварочные аппараты - MMA и MIG/MAG | GOWELLDE",
+      "seoDescription": "Инверторные аппараты IGBT с завода в Китае: MMA 160-630 А и MIG/MAG с двухприводной подачей. 100% тест плат, OEM/ODM, соответствие CE."
+    }
+  }
 }

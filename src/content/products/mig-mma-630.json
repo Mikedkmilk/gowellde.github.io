@@ -3,14 +3,22 @@
   "name": "MIG/MMA-630 Powerhouse MIG Welder 630A",
   "category": "mig-mag-welders",
   "series": "MIG/MMA",
-  "tags": ["POWERHOUSE"],
+  "tags": [
+    "POWERHOUSE"
+  ],
   "status": "active",
   "badges": [],
   "featured": false,
   "sortOrder": 70,
   "images": [
-    { "src": "/assets/products/mig-mma-630/main.webp", "alt": "GOWELLDE MIG/MMA-630 powerhouse MIG welding machine" },
-    { "src": "/assets/datasheets/mig-mma-630.webp", "alt": "MIG/MMA-630 welding equipment info sheet" }
+    {
+      "src": "/assets/products/mig-mma-630/main.webp",
+      "alt": "GOWELLDE MIG/MMA-630 powerhouse MIG welding machine"
+    },
+    {
+      "src": "/assets/datasheets/mig-mma-630.webp",
+      "alt": "MIG/MMA-630 welding equipment info sheet"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -24,11 +32,38 @@
   },
   "summary": "630A top-of-range MIG welder with the 50mm² cable package.",
   "description": "The MIG/MMA-630 tops the range at 630A with the 2×G150N120 stage, T130 transformer and 50mm² cables. For the heaviest wire-feed welding — thick structural sections, long flat and horizontal seams — it is the maximum machine in the catalog.",
-  "features": ["630A maximum output", "2×G150N120 IGBT stage", "50mm² heavy cable package", "0.8–1.6 mm wire range", "Reinforced 655mm chassis"],
-  "applications": ["Heavy construction fabrication", "Thick plate welding", "Large equipment manufacturing"],
+  "features": [
+    "630A maximum output",
+    "2×G150N120 IGBT stage",
+    "50mm² heavy cable package",
+    "0.8–1.6 mm wire range",
+    "Reinforced 655mm chassis"
+  ],
+  "applications": [
+    "Heavy construction fabrication",
+    "Thick plate welding",
+    "Large equipment manufacturing"
+  ],
   "downloads": [],
-  "related": ["mig-mma-630b", "arc-630"],
+  "related": [
+    "mig-mma-630b",
+    "arc-630"
+  ],
   "priceDisplay": "$4XX",
   "moq": "20 pcs",
-  "leadTimeDays": "20–30"
+  "leadTimeDays": "20–30",
+  "i18n": {
+    "es": {
+      "summary": "Soldadora MIG tope de gama de 630 A con paquete de cables de 50 mm².",
+      "description": "La MIG/MMA-630 corona la gama con 630 A desde la etapa 2×G150N120, el transformador T130 y cables de 50 mm². Para la soldadura MIG más pesada — secciones estructurales gruesas y cordones largos horizontales — es la máquina máxima del catálogo.",
+      "features": "Salida máxima 630 A|Etapa IGBT 2×G150N120|Paquete de cables 50 mm²|Rango de alambre 0,8–1,6 mm|Carcasa reforzada de 655 mm",
+      "applications": "Fabricación de construcción pesada|Soldadura de chapa gruesa|Manufactura de gran equipo"
+    },
+    "ru": {
+      "summary": "Топовая MIG 630 А с комплектом кабелей 50 мм².",
+      "description": "MIG/MMA-630 замыкает линейку на 630 А: ступень 2×G150N120, трансформатор T130 и кабели 50 мм². Для самой тяжёлой механизированной сварки — толстые несущие сечения и длинные нижние швы — это максимум в каталоге.",
+      "features": "Максимальный ток 630 А|Ступень 2×G150N120|Комплект кабелей 50 мм²|Проволока 0,8–1,6 мм|Усиленный корпус 655 мм",
+      "applications": "Тяжёлое строительство|Толстолистовая сварка|Крупное оборудование"
+    }
+  }
 }

@@ -3,13 +3,18 @@
   "name": "ARC-630B Extreme MMA Welder 500A @ 100% Duty",
   "category": "mma-welders",
   "series": "ARC",
-  "tags": ["EXTREME"],
+  "tags": [
+    "EXTREME"
+  ],
   "status": "active",
   "badges": [],
   "featured": false,
   "sortOrder": 80,
   "images": [
-    { "src": "/assets/products/_placeholder/main.webp", "alt": "ARC-630B heavy duty MMA welding machine (photo coming soon)" }
+    {
+      "src": "/assets/products/_placeholder/main.webp",
+      "alt": "ARC-630B heavy duty MMA welding machine (photo coming soon)"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -22,11 +27,37 @@
   },
   "summary": "500A at 100% duty cycle in the 630-class chassis. Photos on request.",
   "description": "The ARC-630B pairs the 630-class chassis and T120 transformer with a 2×G100N120 stage rated 500A at 100% duty cycle — extreme continuous output for the heaviest stick welding work. Contact us for current photos and datasheet.",
-  "features": ["500A at 100% duty cycle", "T120 transformer for sustained load", "630-class reinforced chassis", "5.0 mm rod capability"],
-  "applications": ["Heavy construction", "Large structural fabrication", "Continuous heavy-duty welding"],
+  "features": [
+    "500A at 100% duty cycle",
+    "T120 transformer for sustained load",
+    "630-class reinforced chassis",
+    "5.0 mm rod capability"
+  ],
+  "applications": [
+    "Heavy construction",
+    "Large structural fabrication",
+    "Continuous heavy-duty welding"
+  ],
   "downloads": [],
-  "related": ["arc-630", "arc-500"],
+  "related": [
+    "arc-630",
+    "arc-500"
+  ],
   "priceDisplay": "$2XX",
   "moq": "20 pcs",
-  "leadTimeDays": "20–30"
+  "leadTimeDays": "20–30",
+  "i18n": {
+    "es": {
+      "summary": "500 A al 100% de ciclo en el chasis de clase 630. Fotos a solicitud.",
+      "description": "La ARC-630B combina el chasis de clase 630 y el transformador T120 con una etapa 2×G100N120 de 500 A al 100% de ciclo — salida extrema y continua para la soldadura con electrodo más exigente. Contáctenos para fotos actuales y ficha técnica.",
+      "features": "500 A al 100% de ciclo|Transformador T120 para carga sostenida|Chasis reforzado clase 630|Capacidad de electrodo 5,0 mm",
+      "applications": "Construcción pesada|Fabricación estructural grande|Soldadura continua de alta carga"
+    },
+    "ru": {
+      "summary": "500 А при ПВ 100% в корпусе 630-класса. Фото по запросу.",
+      "description": "ARC-630B сочетает корпус 630-класса и трансформатор T120 со ступенью 2×G100N120 на 500 А при ПВ 100% — экстремальный непрерывный ток для самой тяжёлой ММА-сварки. Актуальные фото и техпаспорт — по запросу.",
+      "features": "500 А при ПВ 100%|Трансформатор T120 для длительной нагрузки|Усиленный корпус 630-класса|Электроды до 5,0 мм",
+      "applications": "Тяжёлое строительство|Крупные металлоконструкции|Непрерывная тяжёлая сварка"
+    }
+  }
 }

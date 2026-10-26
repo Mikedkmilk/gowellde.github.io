@@ -1,25 +1,32 @@
 ---
 /**
- * 全站复用的询盘表单。
+ * 全站复用的询盘表单（locale 感知）。
  * - src/config.ts 里填了 Web3Forms key → 提交到 Web3Forms，收到邮件通知
  * - 没填 key → 自动降级：拉起访客邮件客户端并预填型号/留言（比旧站 mailto 表单可靠）
- * 用法：<InquiryForm model="ARC-400" />（model 可省略）
+ * 用法：<InquiryForm model="ARC-400" locale="es" />（均可省略）
  */
+import type { Locale } from '../i18n/ui';
+import { t } from '../i18n/ui';
 import { CONTACT, FORM } from '../config';
 import Icon from './Icon.astro';
 
 interface Props {
   model?: string;
   id?: string;
+  locale?: Locale;
 }
-const { model = '', id = 'inquiry' } = Astro.props;
+const { model = '', id = 'inquiry', locale = 'en' } = Astro.props;
 const hasKey = FORM.web3formsKey.length > 0;
+const waMsg = model
+  ? `Hello GOWELLDE, I am interested in ${model}.`
+  : 'Hello GOWELLDE, I am interested in your welding machines.';
+const mailSubject = `Wholesale Inquiry${model ? ` for ${model}` : ''}`;
 ---
 
 <section id={id} class="bg-white text-gray-800 p-6 sm:p-8 rounded-lg shadow-2xl">
   <div class="flex items-center justify-between mb-6">
-    <h3 class="text-2xl font-bold">{model ? `Inquire about ${model}` : 'Send Us a Message'}</h3>
-    <span class="text-xs text-brand-orange font-bold border border-brand-orange px-2 py-1 rounded flex-shrink-0">Fast Reply</span>
+    <h3 class="text-2xl font-bold">{model ? `${t(locale, 'd.inquireAbout')} ${model}` : t(locale, 'd.sendMsg')}</h3>
+    <span class="text-xs text-brand-orange font-bold border border-brand-orange px-2 py-1 rounded flex-shrink-0">{t(locale, 'f.fastReply')}</span>
   </div>
 
   <form
@@ -28,6 +35,10 @@ const hasKey = FORM.web3formsKey.length > 0;
     data-web3forms={hasKey ? 'true' : 'false'}
     data-model={model}
     data-email={CONTACT.email}
+    data-t-submit={t(locale, 'f.submit')}
+    data-t-sending={t(locale, 'f.sending')}
+    data-t-retry={t(locale, 'f.retry')}
+    data-t-fail={t(locale, 'f.fail')}
   >
     {hasKey && <input type="hidden" name="access_key" value={FORM.web3formsKey} />}
     {/* 蜜罐字段：机器人会填，人类看不到 */}
@@ -35,50 +46,50 @@ const hasKey = FORM.web3formsKey.length > 0;
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div>
-        <label for={`${id}-name`} class="block text-xs font-bold uppercase text-gray-500 mb-1">Name *</label>
+        <label for={`${id}-name`} class="block text-xs font-bold uppercase text-gray-500 mb-1">{t(locale, 'f.nameL')}</label>
         <input id={`${id}-name`} type="text" name="name" required class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition" />
       </div>
       <div>
-        <label for={`${id}-country`} class="block text-xs font-bold uppercase text-gray-500 mb-1">Country</label>
+        <label for={`${id}-country`} class="block text-xs font-bold uppercase text-gray-500 mb-1">{t(locale, 'f.countryL')}</label>
         <input id={`${id}-country`} type="text" name="country" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition" />
       </div>
     </div>
     <div>
-      <label for={`${id}-email`} class="block text-xs font-bold uppercase text-gray-500 mb-1">Email *</label>
+      <label for={`${id}-email`} class="block text-xs font-bold uppercase text-gray-500 mb-1">{t(locale, 'f.emailL')}</label>
       <input id={`${id}-email`} type="email" name="email" required class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition" />
     </div>
     <div>
-      <label for={`${id}-model`} class="block text-xs font-bold uppercase text-gray-500 mb-1">Interested Model / Quantity</label>
-      <input id={`${id}-model`} type="text" name="model" value={model} placeholder="e.g. ARC-400 x 50pcs" class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition" />
+      <label for={`${id}-model`} class="block text-xs font-bold uppercase text-gray-500 mb-1">{t(locale, 'f.modelL')}</label>
+      <input id={`${id}-model`} type="text" name="model" value={model} placeholder={t(locale, 'f.phModel')} class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition" />
     </div>
     <div>
-      <label for={`${id}-message`} class="block text-xs font-bold uppercase text-gray-500 mb-1">Message *</label>
-      <textarea id={`${id}-message`} name="message" rows="4" required placeholder="Please send me your price list..." class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition"></textarea>
+      <label for={`${id}-message`} class="block text-xs font-bold uppercase text-gray-500 mb-1">{t(locale, 'f.messageL')}</label>
+      <textarea id={`${id}-message`} name="message" rows="4" required placeholder={t(locale, 'f.phMsg')} class="w-full bg-gray-100 border-none p-3 rounded focus:ring-2 focus:ring-brand-orange transition"></textarea>
     </div>
 
     <button
       type="submit"
       class="w-full bg-brand-dark text-white font-bold py-4 rounded hover:bg-brand-orange transition duration-300 flex items-center justify-center gap-2"
     >
-      SUBMIT INQUIRY <Icon name="arrow-right" class="w-4 h-4" />
+      {t(locale, 'f.submit')} <Icon name="arrow-right" class="w-4 h-4" />
     </button>
 
     <p class="text-xs text-gray-400 text-center">
-      Or reach us directly:
-      <a href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(`Hello GOWELLDE, I am interested in ${model || 'your welding machines'}.`)}`} target="_blank" rel="noopener" class="text-green-600 font-semibold hover:underline">WhatsApp</a>
+      {t(locale, 'f.orReach')}
+      <a href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(waMsg)}`} target="_blank" rel="noopener" class="text-green-600 font-semibold hover:underline">WhatsApp</a>
       ·
-      <a href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(`Wholesale Inquiry${model ? ` for ${model}` : ''}`)}`} class="text-brand-blue hover:underline">{CONTACT.email}</a>
+      <a href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(mailSubject)}`} class="text-brand-blue hover:underline">{CONTACT.email}</a>
     </p>
   </form>
 
   <div data-inquiry-success class="hidden text-center py-10">
     <Icon name="check-circle" class="w-14 h-14 text-green-500 mx-auto mb-4" />
-    <h4 class="text-xl font-bold mb-2">Thank you! Your inquiry has been sent.</h4>
-    <p class="text-gray-500">Our sales team will reply within 24 hours (Mon–Sat).</p>
+    <h4 class="text-xl font-bold mb-2">{t(locale, 'f.successTitle')}</h4>
+    <p class="text-gray-500">{t(locale, 'f.successSub')}</p>
   </div>
 
   <p data-inquiry-mailto-note class="hidden text-sm text-gray-500 bg-brand-light border border-gray-200 rounded p-3">
-    Opening your email app with the inquiry pre-filled. If nothing happens, email us directly at
+    {t(locale, 'f.mailtoNote')}
     <a href={`mailto:${CONTACT.email}`} class="text-brand-blue font-semibold hover:underline">{CONTACT.email}</a>.
   </p>
 </section>
@@ -93,6 +104,12 @@ const hasKey = FORM.web3formsKey.length > 0;
       const useWeb3Forms = form.dataset.web3forms === 'true';
       const email = form.dataset.email || '';
       const model = String(data.get('model') || '');
+      const T = {
+        submit: form.dataset.tSubmit || 'SUBMIT INQUIRY',
+        sending: form.dataset.tSending || 'SENDING...',
+        retry: form.dataset.tRetry || 'SUBMIT INQUIRY — RETRY',
+        fail: form.dataset.tFail || 'Submission failed.',
+      };
 
       // 统计事件（配好 GA4 后自动生效）
       if (typeof window !== 'undefined' && 'gtag' in window) {
@@ -101,7 +118,7 @@ const hasKey = FORM.web3formsKey.length > 0;
 
       if (useWeb3Forms) {
         const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
-        if (btn) { btn.disabled = true; btn.textContent = 'SENDING...'; }
+        if (btn) { btn.disabled = true; btn.textContent = T.sending; }
         try {
           const res = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
@@ -111,8 +128,8 @@ const hasKey = FORM.web3formsKey.length > 0;
           form.classList.add('hidden');
           form.parentElement?.querySelector('[data-inquiry-success]')?.classList.remove('hidden');
         } catch {
-          if (btn) { btn.disabled = false; btn.textContent = 'SUBMIT INQUIRY — RETRY'; }
-          alert('Submission failed. Please email us directly or use WhatsApp.');
+          if (btn) { btn.disabled = false; btn.textContent = T.retry; }
+          alert(T.fail);
         }
       } else {
         // 兜底模式：预填邮件

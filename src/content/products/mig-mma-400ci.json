@@ -3,13 +3,18 @@
   "name": "MIG/MMA-400CI Compact MIG Welder 350A @ 100% Duty",
   "category": "mig-mag-welders",
   "series": "MIG/MMA",
-  "tags": ["COMPACT"],
+  "tags": [
+    "COMPACT"
+  ],
   "status": "active",
   "badges": [],
   "featured": false,
   "sortOrder": 20,
   "images": [
-    { "src": "/assets/products/mig-mma-400ci/main.webp", "alt": "GOWELLDE MIG/MMA-400CI compact MIG welding machine" }
+    {
+      "src": "/assets/products/mig-mma-400ci/main.webp",
+      "alt": "GOWELLDE MIG/MMA-400CI compact MIG welding machine"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -23,11 +28,38 @@
   },
   "summary": "100% duty cycle at 350A in the compact 515mm chassis — production line ready.",
   "description": "The MIG/MMA-400CI delivers a full 100% duty cycle at 350A in the compact 515×270 chassis. With the dual-drive wire feeder feeding 0.8–1.2 mm wire and a complete accessory package, it is built for production lines that run continuous seams all shift.",
-  "features": ["100% duty cycle at 350A", "Dual-drive wire feeder for stable feed", "Compact 515mm-wide chassis", "0.8–1.2 mm solid wire range", "Complete accessory package included"],
-  "applications": ["Continuous production lines", "Steel furniture & doors", "Automotive parts fabrication"],
+  "features": [
+    "100% duty cycle at 350A",
+    "Dual-drive wire feeder for stable feed",
+    "Compact 515mm-wide chassis",
+    "0.8–1.2 mm solid wire range",
+    "Complete accessory package included"
+  ],
+  "applications": [
+    "Continuous production lines",
+    "Steel furniture & doors",
+    "Automotive parts fabrication"
+  ],
   "downloads": [],
-  "related": ["mig-mma-400", "mig-mma-500ci"],
+  "related": [
+    "mig-mma-400",
+    "mig-mma-500ci"
+  ],
   "priceDisplay": "$2XX",
   "moq": "30 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "100% de ciclo a 350 A en el chasis compacto de 515 mm — lista para línea de producción.",
+      "description": "La MIG/MMA-400CI entrega un ciclo de trabajo completo del 100% a 350 A en el chasis compacto de 515×270 mm. Con el alimentador de doble tracción para alambre de 0,8–1,2 mm y un paquete completo de accesorios, está hecha para líneas que sueldan cordones continuos toda la jornada.",
+      "features": "100% de ciclo de trabajo a 350 A|Alimentador de doble tracción para alimentación estable|Chasis compacto de 515 mm|Rango de alambre sólido 0,8–1,2 mm|Paquete completo de accesorios incluido",
+      "applications": "Líneas de producción continua|Muebles y puertas de acero|Piezas automotrices"
+    },
+    "ru": {
+      "summary": "ПВ 100% при 350 А в компактном корпусе 515 мм — готова к производственной линии.",
+      "description": "MIG/MMA-400CI выдаёт полные 100% ПВ при 350 А в компактном корпусе 515×270 мм. С двухприводным механизмом подачи проволоки 0,8–1,2 мм и полным комплектом аксессуаров — для линий с непрерывными швами всю смену.",
+      "features": "ПВ 100% при 350 А|Двухприводная подача — стабильная проволока|Компактный корпус 515 мм|Сплошная проволока 0,8–1,2 мм|Полный комплект аксессуаров",
+      "applications": "Непрерывные производственные линии|Мебель и двери из стали|Автокомпоненты"
+    }
+  }
 }

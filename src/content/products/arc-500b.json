@@ -3,13 +3,20 @@
   "name": "ARC-500B New-Generation MMA Welder 400A",
   "category": "mma-welders",
   "series": "ARC",
-  "tags": ["NEW MODEL"],
+  "tags": [
+    "NEW MODEL"
+  ],
   "status": "active",
-  "badges": ["new"],
+  "badges": [
+    "new"
+  ],
   "featured": false,
   "sortOrder": 60,
   "images": [
-    { "src": "/assets/products/arc-500b/main.webp", "alt": "GOWELLDE ARC-500B new generation MMA welding machine" }
+    {
+      "src": "/assets/products/arc-500b/main.webp",
+      "alt": "GOWELLDE ARC-500B new generation MMA welding machine"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -22,11 +29,38 @@
   },
   "summary": "400A at 80% duty in the proven 515×270 chassis — updated power stage, same footprint.",
   "description": "The ARC-500B refreshes the 500-class power stage with two G75N120 IGBTs, delivering 400A at 80% duty cycle in the same compact chassis as the ARC-400. A straightforward upgrade item for existing ARC-400 users who need more headroom for 5.0 mm rods.",
-  "features": ["400A rated at 80% duty cycle", "2×G75N120 IGBT stage", "Same chassis & mounting as ARC-400", "5.0 mm rod capability", "Thermostatic fan control"],
-  "applications": ["Heavy steel fabrication", "Construction of steel structures", "Mining & quarry equipment repair"],
+  "features": [
+    "400A rated at 80% duty cycle",
+    "2×G75N120 IGBT stage",
+    "Same chassis & mounting as ARC-400",
+    "5.0 mm rod capability",
+    "Thermostatic fan control"
+  ],
+  "applications": [
+    "Heavy steel fabrication",
+    "Construction of steel structures",
+    "Mining & quarry equipment repair"
+  ],
   "downloads": [],
-  "related": ["arc-500", "arc-400"],
+  "related": [
+    "arc-500",
+    "arc-400"
+  ],
   "priceDisplay": "$1XX",
   "moq": "30 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "400 A al 80% de ciclo en el chasis probado de 515 mm — etapa renovada, misma huella.",
+      "description": "La ARC-500B renueva la etapa de potencia de la clase 500 con dos IGBT G75N120, entregando 400 A al 80% de ciclo en el mismo chasis compacto que la ARC-400. Una actualización directa para usuarios de la ARC-400 que necesitan margen para electrodos de 5,0 mm.",
+      "features": "400 A nominales al 80% de ciclo|Etapa IGBT 2×G75N120|Mismo chasis y anclajes que la ARC-400|Capacidad de electrodo 5,0 mm|Ventilación termostática",
+      "applications": "Fabricación pesada|Construcción de estructuras|Mantenimiento minero"
+    },
+    "ru": {
+      "summary": "400 А при ПВ 80% в проверенном корпусе 515 мм — новая силовая ступень, те же габариты.",
+      "description": "ARC-500B обновляет силовую ступень 500-класса двумя IGBT G75N120, выдавая 400 А при ПВ 80% в том же компактном корпусе, что и ARC-400. Прямое обновление для владельцев ARC-400, которым нужен запас под электроды 5,0 мм.",
+      "features": "400 А при ПВ 80%|Ступень 2×G75N120|Тот же корпус и крепления, что у ARC-400|Электроды до 5,0 мм|Термостатическое управление вентилятором",
+      "applications": "Тяжёлое производство|Стальные конструкции|Ремонт в карьерах"
+    }
+  }
 }

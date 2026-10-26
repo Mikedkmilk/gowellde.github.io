@@ -3,14 +3,22 @@
   "name": "ARC-400B Heavy Duty MMA Welder 200A",
   "category": "mma-welders",
   "series": "ARC",
-  "tags": ["HEAVY DUTY"],
+  "tags": [
+    "HEAVY DUTY"
+  ],
   "status": "active",
   "badges": [],
   "featured": true,
   "sortOrder": 30,
   "images": [
-    { "src": "/assets/products/arc-400b/main.webp", "alt": "GOWELLDE ARC-400B heavy duty MMA welding machine" },
-    { "src": "/assets/datasheets/arc-400b.webp", "alt": "ARC-400B welding equipment info sheet" }
+    {
+      "src": "/assets/products/arc-400b/main.webp",
+      "alt": "GOWELLDE ARC-400B heavy duty MMA welding machine"
+    },
+    {
+      "src": "/assets/datasheets/arc-400b.webp",
+      "alt": "ARC-400B welding equipment info sheet"
+    }
   ],
   "specs": {
     "inputVoltage": "220V / 380V ±15%",
@@ -23,11 +31,38 @@
   },
   "summary": "200A workhorse stick welder with the largest capacitor bank in its class.",
   "description": "The ARC-400B pairs a 200A output with 4×820µF capacitors and a 12038 cooling fan, built for continuous work on fabrication benches and construction sites. 6.6 kg keeps it portable while the duty cycle supports long weld runs on 2.5–4.0 mm rods.",
-  "features": ["4×820µF/450V capacitor bank for stable arc", "Large 12038 cooling fan", "200A output for 4.0 mm rods", "Hot start, anti-stick & arc force adjustment", "Thermal protection"],
-  "applications": ["Steel fabrication workshops", "Construction & rebar welding", "Equipment repair"],
+  "features": [
+    "4×820µF/450V capacitor bank for stable arc",
+    "Large 12038 cooling fan",
+    "200A output for 4.0 mm rods",
+    "Hot start, anti-stick & arc force adjustment",
+    "Thermal protection"
+  ],
+  "applications": [
+    "Steel fabrication workshops",
+    "Construction & rebar welding",
+    "Equipment repair"
+  ],
   "downloads": [],
-  "related": ["arc-400a", "arc-400"],
+  "related": [
+    "arc-400a",
+    "arc-400"
+  ],
   "priceDisplay": "$5X",
   "moq": "50 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "Soldadora de 200 A con el banco de capacitores más grande de su clase.",
+      "description": "La ARC-400B combina 200 A de salida con 4×820 µF y un ventilador 12038, pensada para trabajo continuo en mesas de fabricación y obra. Con 6,6 kg sigue siendo portátil y el ciclo de trabajo admite cordones largos con electrodos de 2,5–4,0 mm.",
+      "features": "Banco de capacitores 4×820µF/450V para arco estable|Ventilador grande 12038|Salida 200 A para electrodos de 4,0 mm|Arranque en caliente, antiadherencia y ajuste de arc force|Protección térmica",
+      "applications": "Talleres de fabricación|Construcción y ferralla|Reparación de equipos"
+    },
+    "ru": {
+      "summary": "Сварочный аппарат 200 А с самым ёмким банком конденсаторов в классе.",
+      "description": "ARC-400B выдаёт 200 А с банком 4×820 мкФ и вентилятором 12038 — создана для непрерывной работы на производственных столах и стройплощадках. Вес 6,6 кг сохраняет мобильность, а ПВ позволяет варить длинные швы электродами 2,5–4,0 мм.",
+      "features": "Банк конденсаторов 4×820 мкФ/450В — стабильная дуга|Мощный вентилятор 12038|Ток 200 А под электроды 4,0 мм|Горячий старт, антизалипание и регулировка Arc Force|Термозащита",
+      "applications": "Производственные цеха|Строительство и арматура|Ремонт техники"
+    }
+  }
 }

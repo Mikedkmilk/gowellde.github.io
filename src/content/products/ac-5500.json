@@ -1,0 +1,44 @@
+{
+  "model": "AC-5500",
+  "name": "AC-5500 Belt-Drive Piston Air Compressor 4.0kW",
+  "category": "air-compressors",
+  "series": "AC",
+  "tags": ["BELT-DRIVE"],
+  "status": "coming-soon",
+  "badges": [],
+  "featured": false,
+  "sortOrder": 30,
+  "images": [],
+  "specs": {
+    "motorPowerKw": "4.0",
+    "displacementLmin": "420",
+    "ratedPressureMpa": "0.8",
+    "tankCapacityL": "100",
+    "noiseLevelDb": "72",
+    "dimensionsMm": "1150×440×860",
+    "netWeightKg": "96"
+  },
+  "summary": "Belt-drive piston compressor with 100L tank — the workhorse for busy fabrication shops.",
+  "description": "The AC-5500 moves to a cast-iron belt-drive piston pump on a 100L horizontal tank: 420 L/min displacement supports heavy-duty plasma cutting and multiple tools in busy fabrication shops.",
+  "features": ["Cast-iron belt-drive pump for long service life", "100L horizontal tank", "420 L/min displacement", "Twin pressure gauges and safety valve"],
+  "applications": ["Heavy plasma cutting", "Multi-tool workshops", "Painting & sandblasting prep"],
+  "downloads": [],
+  "related": ["ac-3500", "ac-7500"],
+  "priceDisplay": "",
+  "moq": "20 pcs",
+  "leadTimeDays": "TBD",
+  "i18n": {
+    "es": {
+      "summary": "Compresor de pistón con correa y tanque de 100 L — el caballo de trabajo para talleres de fabricación concurridos.",
+      "description": "El AC-5500 pasa a una bomba de pistón de hierro fundido con correa sobre un tanque horizontal de 100 L: 420 L/min soportan corte por plasma intensivo y múltiples herramientas en talleres ocupados.",
+      "features": "Bomba de correa de hierro fundido de larga vida|Tanque horizontal de 100 L|Caudal de 420 L/min|Doble manómetro y válvula de seguridad",
+      "applications": "Corte por plasma intensivo|Talleres multi-herramienta|Preparación de pintura y arenado"
+    },
+    "ru": {
+      "summary": "Ремённый поршневой компрессор с ресивером 100 л — рабочая лошадка загруженных цехов.",
+      "description": "AC-5500 — чугунная ремённая поршневая головка на горизонтальном ресивере 100 л: 420 л/мин выдерживают интенсивную плазменную резку и одновременную работу нескольких инструментов.",
+      "features": "Чугунная ремённая головка — долгий ресурс|Горизонтальный ресивер 100 л|Производительность 420 л/мин|Двойной манометр и предохранительный клапан",
+      "applications": "Интенсивная плазменная резка|Многинструментальные цеха|Подготовка к покраске и пескострую"
+    }
+  }
+}

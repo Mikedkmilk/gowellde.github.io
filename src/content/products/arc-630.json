@@ -3,14 +3,22 @@
   "name": "ARC-630 Flagship MMA Welder 630A",
   "category": "mma-welders",
   "series": "ARC",
-  "tags": ["FLAGSHIP"],
+  "tags": [
+    "FLAGSHIP"
+  ],
   "status": "active",
   "badges": [],
   "featured": true,
   "sortOrder": 90,
   "images": [
-    { "src": "/assets/products/arc-630/main.webp", "alt": "GOWELLDE ARC-630 flagship 630A MMA welding machine" },
-    { "src": "/assets/datasheets/arc-630.webp", "alt": "ARC-630 welding equipment info sheet" }
+    {
+      "src": "/assets/products/arc-630/main.webp",
+      "alt": "GOWELLDE ARC-630 flagship 630A MMA welding machine"
+    },
+    {
+      "src": "/assets/datasheets/arc-630.webp",
+      "alt": "ARC-630 welding equipment info sheet"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -23,11 +31,38 @@
   },
   "summary": "630A flagship stick welder — the top of the GOWELLDE MMA range.",
   "description": "The ARC-630 tops the MMA range with 630A output from a 2×G150N120 IGBT stage and the T130 transformer. For preheating, thick-section structural work and carbon-arc gouging duty, it is the machine heavy fabricators specify when nothing smaller survives the shift.",
-  "features": ["630A maximum output", "2×G150N120 top-grade IGBT stage", "T130 heavy-duty transformer", "80% duty cycle at rated current", "Reinforced 630-class chassis"],
-  "applications": ["Heavy structural fabrication", "Carbon arc gouging duty", "Large-scale construction projects"],
+  "features": [
+    "630A maximum output",
+    "2×G150N120 top-grade IGBT stage",
+    "T130 heavy-duty transformer",
+    "80% duty cycle at rated current",
+    "Reinforced 630-class chassis"
+  ],
+  "applications": [
+    "Heavy structural fabrication",
+    "Carbon arc gouging duty",
+    "Large-scale construction projects"
+  ],
   "downloads": [],
-  "related": ["arc-630b", "arc-500"],
+  "related": [
+    "arc-630b",
+    "arc-500"
+  ],
   "priceDisplay": "$2XX",
   "moq": "20 pcs",
-  "leadTimeDays": "20–30"
+  "leadTimeDays": "20–30",
+  "i18n": {
+    "es": {
+      "summary": "Soldadora tope de gama de 630 A — la cima de la línea MMA de GOWELLDE.",
+      "description": "La ARC-630 corona la gama MMA con 630 A desde una etapa 2×G150N120 y el transformador T130. Para precalentamiento, secciones estructurales gruesas y gouging con carbón, es la máquina que especifican los fabricantes pesados cuando nada más pequeño sobrevive al turno.",
+      "features": "Salida máxima 630 A|Etapa IGBT 2×G150N120 de primera calidad|Transformador T130 de servicio pesado|80% de ciclo a corriente nominal|Carcasa reforzada clase 630",
+      "applications": "Fabricación estructural pesada|Gouging con carbón|Proyectos de construcción a gran escala"
+    },
+    "ru": {
+      "summary": "Флагман на 630 А — вершина линейки MMA GOWELLDE.",
+      "description": "ARC-630 возглавляет линейку MMA: 630 А на ступени 2×G150N120 с трансформатором T130. Для подогрева, толстых несущих сечений и воздушно-дуговой строжки — аппарат, который берут тяжёлые производства, когда меньшие не переживают смену.",
+      "features": "Максимальный ток 630 А|IGBT-ступень 2×G150N120 высшего класса|Тяжёлый трансформатор T130|ПВ 80% при номинале|Усиленный корпус 630-класса",
+      "applications": "Тяжёлые металлоконструкции|Воздушно-дуговая строжка|Крупные строительные объекты"
+    }
+  }
 }

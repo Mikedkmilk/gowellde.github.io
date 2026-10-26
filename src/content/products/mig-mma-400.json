@@ -3,14 +3,22 @@
   "name": "MIG/MMA-400 MIG Welder 400A",
   "category": "mig-mag-welders",
   "series": "MIG/MMA",
-  "tags": ["400A"],
+  "tags": [
+    "400A"
+  ],
   "status": "active",
   "badges": [],
   "featured": true,
   "sortOrder": 30,
   "images": [
-    { "src": "/assets/products/mig-mma-400/main.webp", "alt": "GOWELLDE MIG/MMA-400 MIG welding machine" },
-    { "src": "/assets/datasheets/mig-mma-400.webp", "alt": "MIG/MMA-400 welding equipment info sheet" }
+    {
+      "src": "/assets/products/mig-mma-400/main.webp",
+      "alt": "GOWELLDE MIG/MMA-400 MIG welding machine"
+    },
+    {
+      "src": "/assets/datasheets/mig-mma-400.webp",
+      "alt": "MIG/MMA-400 welding equipment info sheet"
+    }
   ],
   "specs": {
     "inputVoltage": "3P 380V ±15%",
@@ -24,11 +32,38 @@
   },
   "summary": "400A MIG/MMA workhorse — our most balanced production welding machine.",
   "description": "The MIG/MMA-400 is the volume model of the MIG line: 400A at 80% duty, 2×G75N120 stage and the dual-drive feeder with 35mm² cables. One machine covers gas-shielded production welding and stick work, which is why it anchors so many distributor catalogs.",
-  "features": ["400A rated at 80% duty cycle", "MIG + MMA dual process", "Dual-drive wire feeder", "35mm² welding cables for low drop", "Complete accessory package included"],
-  "applications": ["General steel fabrication", "Structural workshops", "Equipment manufacturing"],
+  "features": [
+    "400A rated at 80% duty cycle",
+    "MIG + MMA dual process",
+    "Dual-drive wire feeder",
+    "35mm² welding cables for low drop",
+    "Complete accessory package included"
+  ],
+  "applications": [
+    "General steel fabrication",
+    "Structural workshops",
+    "Equipment manufacturing"
+  ],
   "downloads": [],
-  "related": ["mig-mma-400ci", "mig-mma-500"],
+  "related": [
+    "mig-mma-400ci",
+    "mig-mma-500"
+  ],
   "priceDisplay": "$2XX",
   "moq": "30 pcs",
-  "leadTimeDays": "15–25"
+  "leadTimeDays": "15–25",
+  "i18n": {
+    "es": {
+      "summary": "Caballo de batalla MIG/MMA de 400 A — nuestra máquina de producción más equilibrada.",
+      "description": "La MIG/MMA-400 es el modelo de volumen de la línea MIG: 400 A al 80% de ciclo, etapa 2×G75N120 y alimentador de doble tracción con cables de 35 mm². Una sola máquina cubre soldadura con gas y electrodo, por eso ancla tantos catálogos de distribuidores.",
+      "features": "400 A nominales al 80% de ciclo|Doble proceso MIG + MMA|Alimentador de doble tracción|Cables de 35 mm² de baja caída|Paquete completo de accesorios incluido",
+      "applications": "Fabricación general de acero|Talleres estructurales|Manufactura de equipos"
+    },
+    "ru": {
+      "summary": "Рабочая лошадка MIG/MMA на 400 А — самый сбалансированный производственный аппарат.",
+      "description": "MIG/MMA-400 — объёмная модель линейки MIG: 400 А при ПВ 80%, ступень 2×G75N120 и двухприводная подача с кабелями 35 мм². Один аппарат закрывает полуавтомат и ММА — поэтому он основа стольких каталогов дистрибьюторов.",
+      "features": "400 А при ПВ 80%|Два процесса MIG + MMA|Двухприводная подача|Кабели 35 мм² с малым падением|Полный комплект аксессуаров",
+      "applications": "Общее металлопроизводство|Цеха металлоконструкций|Производство оборудования"
+    }
+  }
 }

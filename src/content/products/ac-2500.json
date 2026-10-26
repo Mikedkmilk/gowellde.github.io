@@ -1,0 +1,44 @@
+{
+  "model": "AC-2500",
+  "name": "AC-2500 Oil-Free Silent Air Compressor 1.8kW",
+  "category": "air-compressors",
+  "series": "AC",
+  "tags": ["OIL-FREE", "SILENT"],
+  "status": "coming-soon",
+  "badges": [],
+  "featured": false,
+  "sortOrder": 10,
+  "images": [],
+  "specs": {
+    "motorPowerKw": "1.8",
+    "displacementLmin": "180",
+    "ratedPressureMpa": "0.8",
+    "tankCapacityL": "24",
+    "noiseLevelDb": "58",
+    "dimensionsMm": "600×260×560",
+    "netWeightKg": "29"
+  },
+  "summary": "Compact oil-free silent compressor for light duty: plasma cutting up to 40A, air tools and cleaning.",
+  "description": "The AC-2500 is the entry model of the upcoming air compressor line: an oil-free silent head on a 24L tank, rated 58 dB — quiet enough to run inside a small workshop. Sized to feed a 40A plasma cutter and light pneumatic tools.",
+  "features": ["Oil-free silent pump — no oil contamination in air line", "58 dB rated for indoor workshop use", "24L coated tank", "Pressure regulator and quick coupler included"],
+  "applications": ["40A plasma cutting", "Pneumatic hand tools", "Workshop cleaning", "Tire inflation"],
+  "downloads": [],
+  "related": ["ac-3500", "ac-5500"],
+  "priceDisplay": "",
+  "moq": "30 pcs",
+  "leadTimeDays": "TBD",
+  "i18n": {
+    "es": {
+      "summary": "Compresor silencioso sin aceite compacto para trabajo ligero: corte por plasma hasta 40A, herramientas neumáticas y limpieza.",
+      "description": "El AC-2500 es el modelo de entrada de la próxima línea de compresores: una cabeza silenciosa sin aceite sobre un tanque de 24 L, con 58 dB nominales — suficientemente silencioso para operar dentro de un taller pequeño. Dimensionado para alimentar una cortadora de plasma de 40A y herramientas neumáticas ligeras.",
+      "features": "Bomba silenciosa sin aceite — sin contaminación de aceite en la línea de aire|58 dB nominales para uso en taller interior|Tanque de 24 L con recubrimiento|Regulador de presión y acople rápido incluidos",
+      "applications": "Corte por plasma 40A|Herramientas neumáticas manuales|Limpieza de taller|Inflado de llantas"
+    },
+    "ru": {
+      "summary": "Компактный безмасляный бесшумный компрессор для лёгких задач: плазменная резка до 40 А, пневмоинструмент и уборка.",
+      "description": "AC-2500 — стартовая модель будущей линейки компрессоров: безмасляная бесшумная головка на ресивере 24 л, уровень шума 58 дБ — можно работать прямо в небольшом цехе. Рассчитан на плазморез 40 А и лёгкий пневмоинструмент.",
+      "features": "Безмасляная бесшумная головка — масло не попадает в воздух|58 дБ — можно в помещении цеха|Ресивер 24 л с покрытием|Регулятор давления и быстроразъём в комплекте",
+      "applications": "Плазменная резка 40 А|Ручной пневмоинструмент|Уборка цеха|Накачка шин"
+    }
+  }
+}

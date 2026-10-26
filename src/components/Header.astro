@@ -1,68 +1,78 @@
 ---
-import { SITE, CONTACT } from '../config';
+import { SITE } from '../config';
+import type { Locale } from '../i18n/ui';
+import { t } from '../i18n/ui';
 import Icon from './Icon.astro';
-import { getRootCategories, getChildCategories } from '../lib/data';
+import { getRootCategories, getChildCategories, catName } from '../lib/data';
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = 'en' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
 
 const rootCats = await getRootCategories();
-// 导航下拉：目前只有焊机一个顶级品类，展开它的子品类
+// 导航下拉：顶级品类展开子品类
 const navCategories: { slug: string; name: string; children: { slug: string; name: string }[] }[] = [];
 for (const root of rootCats) {
-  const children = (await getChildCategories(root.data.slug)).map((c) => ({ slug: c.data.slug, name: c.data.name }));
-  navCategories.push({ slug: root.data.slug, name: root.data.name, children });
+  const children = (await getChildCategories(root.data.slug)).map((c) => ({
+    slug: c.data.slug,
+    name: catName(c, locale),
+  }));
+  navCategories.push({ slug: root.data.slug, name: catName(root, locale), children });
 }
 
 const path = Astro.url.pathname;
-const isActive = (href: string) =>
-  href === '/' ? path === '/' : path.startsWith(href);
+const isActive = (href: string) => (href === prefix + '/' ? path === href : path.startsWith(href));
 
-const linkCls = (href: string) =>
-  `hover:text-brand-orange transition font-medium ${isActive(href) ? 'text-brand-orange' : ''}`;
+const linkCls = (href: string) => `hover:text-brand-orange transition font-medium ${isActive(href) ? 'text-brand-orange' : ''}`;
 ---
 
 <header class="bg-brand-dark text-white shadow-lg fixed w-full z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-20 items-center">
-      <a href="/" class="flex-shrink-0 flex items-center gap-2" aria-label="GOWELLDE home">
+      <a href={`${prefix}/`} class="flex-shrink-0 flex items-center gap-2" aria-label="GOWELLDE home">
         <Icon name="bolt" class="w-8 h-8 text-brand-orange" />
         <span class="text-2xl font-black tracking-tighter hover:text-brand-orange transition italic">GOWELLDE</span>
       </a>
 
       <!-- PC 菜单 -->
       <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
-        <a href="/" class={linkCls('/')}>Home</a>
+        <a href={`${prefix}/`} class={linkCls(`${prefix}/`)}>{t(locale, 'nav.home')}</a>
 
         {navCategories.map((cat) => (
           <div class="relative group">
             <button class="hover:text-brand-orange transition font-medium inline-flex items-center gap-1" aria-haspopup="true">
-              Products
+              {t(locale, 'nav.products')}
               <Icon name="chevron-down" class="w-4 h-4 group-hover:rotate-180 transition" />
             </button>
             <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="bg-white text-gray-800 rounded shadow-2xl min-w-52 py-2 border-t-2 border-brand-orange">
                 {cat.children.length > 0 ? (
                   cat.children.map((child) => (
-                    <a href={`/products/${child.slug}/`} class="block px-5 py-2.5 hover:bg-brand-light hover:text-brand-orange font-medium whitespace-nowrap">
+                    <a href={`${prefix}/products/${child.slug}/`} class="block px-5 py-2.5 hover:bg-brand-light hover:text-brand-orange font-medium whitespace-nowrap">
                       {child.name}
                     </a>
                   ))
                 ) : (
-                  <a href={`/products/${cat.slug}/`} class="block px-5 py-2.5 hover:bg-brand-light hover:text-brand-orange font-medium whitespace-nowrap">
+                  <a href={`${prefix}/products/${cat.slug}/`} class="block px-5 py-2.5 hover:bg-brand-light hover:text-brand-orange font-medium whitespace-nowrap">
                     {cat.name}
                   </a>
                 )}
-                <a href="/products/" class="block px-5 py-2.5 border-t border-gray-100 text-sm text-gray-500 hover:text-brand-orange hover:bg-brand-light font-medium">
-                  View all products →
+                <a href={`${prefix}/products/`} class="block px-5 py-2.5 border-t border-gray-100 text-sm text-gray-500 hover:text-brand-orange hover:bg-brand-light font-medium">
+                  {t(locale, 'nav.viewAll')}
                 </a>
               </div>
             </div>
           </div>
         ))}
 
-        <a href="/about/" class={linkCls('/about/')}>Factory</a>
-        <a href="/blog/" class={linkCls('/blog/')}>Blog</a>
-        <a href="/faq/" class={linkCls('/faq/')}>FAQ</a>
-        <a href="/contact/" class="px-5 py-2 bg-brand-orange rounded hover:bg-orange-600 transition font-bold shadow-lg">
-          Get Quote
+        <a href={`${prefix}/compare/`} class={linkCls(`${prefix}/compare/`)}>{t(locale, 'nav.compare')}</a>
+        <a href={`${prefix}/about/`} class={linkCls(`${prefix}/about/`)}>{t(locale, 'nav.factory')}</a>
+        <a href="/blog/" class={linkCls('/blog/')}>{t(locale, 'nav.blog')}</a>
+        <a href={`${prefix}/faq/`} class={linkCls(`${prefix}/faq/`)}>{t(locale, 'nav.faq')}</a>
+        <a href={`${prefix}/contact/`} class="px-5 py-2 bg-brand-orange rounded hover:bg-orange-600 transition font-bold shadow-lg">
+          {t(locale, 'nav.getQuote')}
         </a>
       </nav>
 
@@ -72,19 +82,20 @@ const linkCls = (href: string) =>
           <Icon name="menu" class="w-7 h-7" />
         </summary>
         <nav class="absolute right-0 top-full mt-2 bg-brand-gray w-56 rounded shadow-2xl py-2 border border-gray-700" aria-label="Mobile navigation">
-          <a href="/" class="block px-5 py-2.5 hover:bg-gray-700">Home</a>
+          <a href={`${prefix}/`} class="block px-5 py-2.5 hover:bg-gray-700">{t(locale, 'nav.home')}</a>
           {navCategories.flatMap((cat) =>
             cat.children.length > 0
               ? cat.children.map((child) => (
-                  <a href={`/products/${child.slug}/`} class="block px-5 py-2.5 hover:bg-gray-700">{child.name}</a>
+                  <a href={`${prefix}/products/${child.slug}/`} class="block px-5 py-2.5 hover:bg-gray-700">{child.name}</a>
                 ))
-              : [<a href={`/products/${cat.slug}/`} class="block px-5 py-2.5 hover:bg-gray-700">{cat.name}</a>]
+              : [<a href={`${prefix}/products/${cat.slug}/`} class="block px-5 py-2.5 hover:bg-gray-700">{cat.name}</a>]
           )}
-          <a href="/products/" class="block px-5 py-2.5 hover:bg-gray-700 text-sm text-gray-400">All Products →</a>
-          <a href="/about/" class="block px-5 py-2.5 hover:bg-gray-700">Factory</a>
-          <a href="/blog/" class="block px-5 py-2.5 hover:bg-gray-700">Blog</a>
-          <a href="/faq/" class="block px-5 py-2.5 hover:bg-gray-700">FAQ</a>
-          <a href="/contact/" class="block px-5 py-2.5 text-brand-orange font-bold hover:bg-gray-700">Get Quote</a>
+          <a href={`${prefix}/products/`} class="block px-5 py-2.5 hover:bg-gray-700 text-sm text-gray-400">{t(locale, 'nav.viewAll')}</a>
+          <a href={`${prefix}/compare/`} class="block px-5 py-2.5 hover:bg-gray-700">{t(locale, 'nav.compare')}</a>
+          <a href={`${prefix}/about/`} class="block px-5 py-2.5 hover:bg-gray-700">{t(locale, 'nav.factory')}</a>
+          <a href="/blog/" class="block px-5 py-2.5 hover:bg-gray-700">{t(locale, 'nav.blog')}</a>
+          <a href={`${prefix}/faq/`} class="block px-5 py-2.5 hover:bg-gray-700">{t(locale, 'nav.faq')}</a>
+          <a href={`${prefix}/contact/`} class="block px-5 py-2.5 text-brand-orange font-bold hover:bg-gray-700">{t(locale, 'nav.getQuote')}</a>
         </nav>
       </details>
     </div>
