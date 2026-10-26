@@ -14,7 +14,9 @@
       "unit": "",
       "filterable": true,
       "labelEs": "Tensión de entrada",
-      "labelRu": "Напряжение питания"
+      "labelRu": "Напряжение питания",
+      "labelVi": "Điện áp vào",
+      "labelAr": "جهد الدخل"
     },
     {
       "key": "ratedCurrent",
@@ -22,7 +24,9 @@
       "unit": "A",
       "filterable": true,
       "labelEs": "Corriente nominal",
-      "labelRu": "Номинальный ток"
+      "labelRu": "Номинальный ток",
+      "labelVi": "Dòng định mức",
+      "labelAr": "التيار المقنن"
     },
     {
       "key": "dutyCycleAt40c",
@@ -30,7 +34,9 @@
       "unit": "%",
       "filterable": true,
       "labelEs": "Ciclo de trabajo @40°C",
-      "labelRu": "ПВ при 40°C"
+      "labelRu": "ПВ при 40°C",
+      "labelVi": "Chu kỳ tải @40°C",
+      "labelAr": "دورة التشغيل عند 40°م"
     },
     {
       "key": "rodDiameterMm",
@@ -38,7 +44,9 @@
       "unit": "mm",
       "filterable": false,
       "labelEs": "Diámetro de electrodo",
-      "labelRu": "Диаметр электрода"
+      "labelRu": "Диаметр электрода",
+      "labelVi": "Đường kính que hàn",
+      "labelAr": "قطر القطب الكهربائي"
     },
     {
       "key": "wireDiameterMm",
@@ -46,7 +54,9 @@
       "unit": "mm",
       "filterable": false,
       "labelEs": "Diámetro de alambre",
-      "labelRu": "Диаметр проволоки"
+      "labelRu": "Диаметр проволоки",
+      "labelVi": "Đường kính dây hàn",
+      "labelAr": "قطر سلك اللحام"
     },
     {
       "key": "dimensionsMm",
@@ -54,7 +64,9 @@
       "unit": "mm",
       "filterable": false,
       "labelEs": "Dimensiones (L×An×Al)",
-      "labelRu": "Габариты (Д×Ш×В)"
+      "labelRu": "Габариты (Д×Ш×В)",
+      "labelVi": "Kích thước (D×R×C)",
+      "labelAr": "الأبعاد (ط×ع×ا)"
     },
     {
       "key": "netWeightKg",
@@ -62,7 +74,9 @@
       "unit": "kg",
       "filterable": false,
       "labelEs": "Peso neto",
-      "labelRu": "Вес нетто"
+      "labelRu": "Вес нетто",
+      "labelVi": "Khối lượng",
+      "labelAr": "الوزن الصافي"
     },
     {
       "key": "igbtConfig",
@@ -70,7 +84,9 @@
       "unit": "",
       "filterable": false,
       "labelEs": "Etapa de potencia (IGBT)",
-      "labelRu": "Силовая ступень (IGBT)"
+      "labelRu": "Силовая ступень (IGBT)",
+      "labelVi": "Công suất (IGBT)",
+      "labelAr": "مرحلة القدرة (IGBT)"
     }
   ],
   "i18n": {
@@ -85,6 +101,18 @@
       "intro": "GOWELLDE производит инверторные сварочные аппараты IGBT для дистрибьюторов и промышленных клиентов по всему миру. Линейка включает аппараты MMA от 160 до 630 А и MIG/MAG с двухприводной подачей до 630 А. Каждая плата проходит 100% тест на старение, все аппараты нормированы при 40°C. С поддержкой OEM/ODM, соответствием CE и логистикой FOB Циндао мы поставляем в Египет, Индию, Пакистан, Вьетнам и ещё 20+ стран.",
       "seoTitle": "Инверторные сварочные аппараты - MMA и MIG/MAG | GOWELLDE",
       "seoDescription": "Инверторные аппараты IGBT с завода в Китае: MMA 160-630 А и MIG/MAG с двухприводной подачей. 100% тест плат, OEM/ODM, соответствие CE."
+    },
+    "vi": {
+      "name": "Máy hàn",
+      "intro": "GOWELLDE sản xuất máy hàn biến tần IGBT cho đại lý và người dùng công nghiệp trên toàn thế giới. Dòng sản phẩm bao gồm máy hàn que (MMA) từ 160A đến 630A và máy hàn MIG/MAG với bộ đẩy dây kép đến 630A. Mỗi bo mạch đều qua test lão hóa 100% trước khi lắp ráp, mọi máy đều định mức chu kỳ tải tại 40°C. Với hỗ trợ OEM/ODM, thiết kế đạt CE và xuất hàng FOB Thanh Đảo, chúng tôi cung cấp thiết bị hàn cho Ai Cập, Ấn Độ, Pakistan, Việt Nam và hơn 20 thị trường.",
+      "seoTitle": "Nhà máy máy hàn biến tần - MMA & MIG/MAG | GOWELLDE",
+      "seoDescription": "Máy hàn biến tần IGBT từ xưởng Trung Quốc: MMA 160-630A và MIG/MAG bộ đẩy dây kép. Test lão hóa bo 100%, OEM/ODM, đạt CE."
+    },
+    "ar": {
+      "name": "ماكينات اللحام",
+      "intro": "تصنع GOWELLDE ماكينات لحام إنفرتر IGBT للموزعين والمستخدمين الصناعيين حول العالم. تشمل التشكيلة ماكينات قطب كهربائي (MMA) من 160 إلى 630 أمبير وماكينات MIG/MAG بوحدة تغذية مزدوجة تصل إلى 630 أمبير. كل لوحة إلكترونية تخضع لاختبار تعتيق 100% قبل التجميع، وجميع الماكينات مقومة دورة تشغيلها عند 40°م. مع دعم OEM/ODM وتصميم مطابق لمعيار CE ولوجستيات FOB ميناء تشينغداو، نوفر معدات اللحام لمصر والهند وباكستان وفيتنام وأكثر من 20 سوقًا.",
+      "seoTitle": "ماكينات لحام إنفرتر - MMA وMIG/MAG | GOWELLDE",
+      "seoDescription": "ماكينات لحام إنفرتر IGBT من مصنع صيني: MMA بقدرة 160-630 أمبير وMIG/MAG بوحدة تغذية مزدوجة. اختبار تعتيق 100% للوحات، OEM/ODM، ومطابقة CE."
     }
   }
 }

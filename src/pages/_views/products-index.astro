@@ -41,12 +41,20 @@ const totalCount = sections.reduce((n, s) => n + s.children.reduce((m, c) => m +
     ? 'Todas las soldadoras - Soldadoras inversoras MMA y MIG/MAG | GOWELLDE'
     : locale === 'ru'
       ? 'Вся продукция - Инверторные сварочные аппараты MMA и MIG/MAG | GOWELLDE'
-      : 'All Welding Machines - MMA & MIG/MAG Inverter Welders | GOWELLDE'}
+      : locale === 'vi'
+        ? 'Tất cả máy hàn - Máy hàn biến tần MMA và MIG/MAG | GOWELLDE'
+        : locale === 'ar'
+          ? 'جميع ماكينات اللحام - ماكينات إنفرتر MMA وMIG/MAG | GOWELLDE'
+          : 'All Welding Machines - MMA & MIG/MAG Inverter Welders | GOWELLDE'}
   description={locale === 'es'
     ? `Catálogo de ${totalCount} soldadoras inversoras directas de fábrica: MMA de 160-630 A y MIG/MAG con alimentador de doble tracción. Precios mayoristas, OEM/ODM, certificación CE.`
     : locale === 'ru'
       ? `Каталог из ${totalCount} инверторных сварочных аппаратов напрямую с завода: MMA 160-630 А и MIG/MAG с двухприводной подачей. Оптовые цены, OEM/ODM, CE.`
-      : `Browse ${totalCount} factory-direct inverter welding machines: MMA arc welders 160-630A and MIG/MAG welders with dual-drive feeders. Wholesale prices, OEM/ODM, CE certified.`}
+      : locale === 'vi'
+        ? `Danh mục ${totalCount} mẫu máy hàn biến tần bán trực tiếp từ xưởng: MMA 160-630A và MIG/MAG với bộ đẩy dây kép. Giá sỉ, OEM/ODM, chứng nhận CE.`
+        : locale === 'ar'
+          ? `كتالوج ${totalCount} طراز ماكينة لحام إنفرتر مباشرة من المصنع: MMA بقدرة 160-630 أمبير وMIG/MAG بوحدة تغذية مزدوجة. أسعار جملة، OEM/ODM، وشهادة CE.`
+          : `Browse ${totalCount} factory-direct inverter welding machines: MMA arc welders 160-630A and MIG/MAG welders with dual-drive feeders. Wholesale prices, OEM/ODM, CE certified.`}
   path={`${prefix}/products/`}
   locale={locale}
 >

@@ -71,6 +71,8 @@ const categories = defineCollection({
         filterable: z.boolean().default(false), // 品类页是否展示为筛选/快览参数
         labelEs: z.string().optional(), // 西语表头（缺则用英文）
         labelRu: z.string().optional(), // 俄语表头（缺则用英文）
+        labelVi: z.string().optional(), // 越南语表头
+        labelAr: z.string().optional(), // 阿拉伯语表头
       })
     ),
     // 可选多语言内容（i18n.es.name / i18n.es.intro / i18n.es.seoTitle / i18n.es.seoDescription）

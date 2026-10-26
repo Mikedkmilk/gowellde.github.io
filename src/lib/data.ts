@@ -31,9 +31,12 @@ export function catSeoTitle(c: Category, l: Locale): string {
 export function catSeoDesc(c: Category, l: Locale): string {
   return pick(c.data, l, 'seoDescription', c.data.seoDescription ?? c.data.intro.slice(0, 155));
 }
-export function specLabel(s: { label: string; labelEs?: string; labelRu?: string }, l: Locale): string {
-  if (l === 'es' && s.labelEs) return s.labelEs;
-  if (l === 'ru' && s.labelRu) return s.labelRu;
+export function specLabel(s: { label: string } & Record<string, unknown>, l: Locale): string {
+  if (l !== 'en') {
+    const k = 'label' + l[0].toUpperCase() + l.slice(1);
+    const v = s[k];
+    if (typeof v === 'string' && v) return v;
+  }
   return s.label;
 }
 export function prodSummary(p: Product, l: Locale): string {

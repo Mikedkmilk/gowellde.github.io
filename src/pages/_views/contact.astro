@@ -27,12 +27,20 @@ const pageTitle = locale === 'es'
   ? 'Contactar GOWELLDE - Cotizaciones mayoristas en 24 h'
   : locale === 'ru'
     ? 'Контакты GOWELLDE - Оптовый запрос за 24 часа'
-    : 'Contact GOWELLDE - Get Wholesale Welding Machine Quotes in 24h';
+    : locale === 'vi'
+      ? 'Liên hệ GOWELLDE - Báo giá sỉ trong 24 giờ'
+      : locale === 'ar'
+        ? 'اتصل بـ GOWELLDE - عروض أسعار الجملة خلال 24 ساعة'
+        : 'Contact GOWELLDE - Get Wholesale Welding Machine Quotes in 24h';
 const pageDesc = locale === 'es'
   ? 'Contacte la fábrica GOWELLDE para precios mayoristas, proyectos OEM/ODM y soporte técnico. WhatsApp, correo o formulario — respondemos en 24 horas.'
   : locale === 'ru'
     ? 'Свяжитесь с заводом GOWELLDE: оптовые цены, OEM/ODM, техподдержка. WhatsApp, email или форма — ответ в течение 24 часов.'
-    : 'Contact the GOWELLDE welding machine factory for wholesale prices, OEM/ODM projects and technical support. WhatsApp, email or inquiry form — we reply within 24 hours.';
+    : locale === 'vi'
+      ? 'Liên hệ nhà máy GOWELLDE để nhận giá sỉ, dự án OEM/ODM và hỗ trợ kỹ thuật. WhatsApp, email hoặc biểu mẫu — phản hồi trong 24 giờ.'
+      : locale === 'ar'
+        ? 'تواصل مع مصنع GOWELLDE للحصول على أسعار الجملة ومشاريع OEM/ODM والدعم الفني. واتساب أو البريد أو النموذج — نرد خلال 24 ساعة.'
+        : 'Contact the GOWELLDE welding machine factory for wholesale prices, OEM/ODM projects and technical support. WhatsApp, email or inquiry form — we reply within 24 hours.';
 ---
 
 <BaseLayout title={pageTitle} description={pageDesc} path={`${prefix}/contact/`} locale={locale}>

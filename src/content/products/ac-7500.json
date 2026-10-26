@@ -3,7 +3,9 @@
   "name": "AC-7500 Belt-Drive Piston Air Compressor 5.5kW",
   "category": "air-compressors",
   "series": "AC",
-  "tags": ["HIGH POWER"],
+  "tags": [
+    "HIGH POWER"
+  ],
   "status": "coming-soon",
   "badges": [],
   "featured": false,
@@ -20,10 +22,21 @@
   },
   "summary": "Top-of-range 150L belt-drive compressor for industrial air demand.",
   "description": "The AC-7500 tops the upcoming range with a 5.5kW motor and 600 L/min on a 150L tank — industrial air supply for continuous plasma stations and multi-bay workshops.",
-  "features": ["5.5kW industrial motor", "150L tank", "600 L/min displacement", "Belt-drive pump with oil sight glass"],
-  "applications": ["Continuous plasma cutting stations", "Multi-bay workshops", "Industrial pneumatic equipment"],
+  "features": [
+    "5.5kW industrial motor",
+    "150L tank",
+    "600 L/min displacement",
+    "Belt-drive pump with oil sight glass"
+  ],
+  "applications": [
+    "Continuous plasma cutting stations",
+    "Multi-bay workshops",
+    "Industrial pneumatic equipment"
+  ],
   "downloads": [],
-  "related": ["ac-5500"],
+  "related": [
+    "ac-5500"
+  ],
   "priceDisplay": "",
   "moq": "20 pcs",
   "leadTimeDays": "TBD",
@@ -39,6 +52,18 @@
       "description": "AC-7500 возглавляет линейку: двигатель 5,5 кВт и 600 л/мин на ресивере 150 л — промышленная подача воздуха для непрерывных постов плазменной резки и многопостовых цехов.",
       "features": "Промышленный двигатель 5,5 кВт|Ресивер 150 л|Производительность 600 л/мин|Ремённая головка с масляным щупом-окном",
       "applications": "Непрерывные посты плазменной резки|Многопостовые цеха|Промышленное пневмооборудование"
+    },
+    "vi": {
+      "summary": "Đỉnh dải: máy nén dây đai bình 150L cho nhu cầu khí công nghiệp.",
+      "description": "AC-7500 đứng đầu dải sắp ra mắt với động cơ 5,5kW và 600 L/phút trên bình 150L — nguồn khí công nghiệp cho trạm plasma liên tục và xưởng nhiều vị trí.",
+      "features": "Động cơ công nghiệp 5,5kW|Bình 150L|Lưu lượng 600 L/phút|Bơm dây đai có kính xem dầu",
+      "applications": "Trạm cắt plasma liên tục|Xưởng nhiều vị trí|Thiết bị khí công nghiệp"
+    },
+    "ar": {
+      "summary": "قمة التشكيلة: ضاغط بحزام وخزان 150 لترًا للاحتياجات الصناعية.",
+      "description": "يتصدر AC-7500 التشكيلة القادمة بمحرك 5.5 كيلوواط وتدفق 600 لتر/دقيقة على خزان 150 لترًا — إمداد هواء صناعي لمراكز البلازما المستمرة والورش متعددة المواقف.",
+      "features": "محرك صناعي 5.5 كيلوواط|خزان 150 لترًا|تدفق 600 لتر/دقيقة|مضخة حزام بزجاج معايرة الزيت",
+      "applications": "مراكز قطع بلازما مستمرة|ورش متعددة المواقف|المعدات الهوائية الصناعية"
     }
   }
 }

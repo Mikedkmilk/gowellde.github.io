@@ -6,9 +6,13 @@ import '@fontsource/roboto/700.css';
 import '@fontsource/roboto/900.css';
 import '@fontsource/roboto-mono/400.css';
 import '@fontsource/roboto-mono/500.css';
+import '@fontsource/tajawal/400.css';
+import '@fontsource/tajawal/500.css';
+import '@fontsource/tajawal/700.css';
+import '@fontsource/tajawal/900.css';
 import '../styles/global.css';
 import { SITE, CONTACT, ANALYTICS } from '../config';
-import type { Locale } from '../i18n/ui';
+import { locales, type Locale } from '../i18n/ui';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
@@ -36,21 +40,20 @@ const {
   alternates = true,
 } = Astro.props;
 const canonical = `${SITE.url}${path}`;
-const ogLocale = { en: 'en_US', es: 'es_ES', ru: 'ru_RU' }[locale];
-// hreflang：各语言互指（含自身 + x-default 指英文）。path 传入的应是不含语言前缀的页面路径。
-const basePath = path.startsWith('/es/') || path.startsWith('/ru/') ? path.slice(3) : path;
+const ogLocaleMap: Record<Locale, string> = { en: 'en_US', es: 'es_ES', ru: 'ru_RU', vi: 'vi_VN', ar: 'ar_AR' };
+const ogLocale = ogLocaleMap[locale];
+// hreflang：各语言互指（含 x-default 指英文），语种清单来自 i18n/ui.ts——新增语言自动带上
+const basePath = path.replace(/^\/(es|ru|vi|ar)(?=\/)/, '');
 const alternatesList = alternates
   ? [
-      { lang: 'en', href: `${SITE.url}${basePath}` },
-      { lang: 'es', href: `${SITE.url}/es${basePath}` },
-      { lang: 'ru', href: `${SITE.url}/ru${basePath}` },
+      ...locales.map((l) => ({ lang: l, href: `${SITE.url}${l === 'en' ? basePath : `/${l}${basePath}`}` })),
       { lang: 'x-default', href: `${SITE.url}${basePath}` },
     ]
   : [];
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

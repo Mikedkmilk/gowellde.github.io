@@ -156,7 +156,7 @@ for (const cat of cats) {
     table.classList.remove('hidden');
 
     const cell = (v: string) => `<td class="px-4 py-3 border-b border-gray-100 font-mono font-medium">${v || '—'}</td>`;
-    let html = '<thead><tr><th class="px-4 py-3 text-left text-gray-400 text-xs uppercase w-40"></th>';
+    let html = '<thead><tr><th class="px-4 py-3 text-start text-gray-400 text-xs uppercase w-40"></th>';
     for (const p of picked) {
       html += `<th class="px-4 py-3 text-left border-b-2 border-brand-orange">
         ${p.image ? `<img src="${p.image}" alt="${p.model}" class="h-20 object-contain mb-2" loading="lazy"/>` : ''}
@@ -166,7 +166,7 @@ for (const cat of cats) {
     html += '</tr></thead><tbody>';
 
     const row = (label: string, cells: string[]) =>
-      `<tr><th class="px-4 py-3 text-left font-semibold text-gray-500 border-b border-gray-100">${label}</th>${cells.map(cell).join('')}</tr>`;
+      `<tr><th class="px-4 py-3 text-start font-semibold text-gray-500 border-b border-gray-100">${label}</th>${cells.map(cell).join('')}</tr>`;
 
     html += row(T.price, picked.map((p) => p.price || T.comingsoon));
     html += row(T.moq, picked.map((p) => p.moq));

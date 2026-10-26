@@ -17,9 +17,21 @@ interface Props {
 }
 const { model = '', id = 'inquiry', locale = 'en' } = Astro.props;
 const hasKey = FORM.web3formsKey.length > 0;
-const waMsg = model
-  ? `Hello GOWELLDE, I am interested in ${model}.`
-  : 'Hello GOWELLDE, I am interested in your welding machines.';
+const waMsgs: Record<string, string> = {
+  en: 'Hello GOWELLDE, I am interested in your welding machines.',
+  es: 'Hola GOWELLDE, me interesan sus máquinas. ¿Pueden enviarme el catálogo y los precios?',
+  ru: 'Здравствуйте GOWELLDE, интересуют ваши сварочные аппараты. Пришлите каталог и цены, пожалуйста.',
+  vi: 'Xin chào GOWELLDE, tôi quan tâm đến máy hàn của quý công ty. Vui lòng gửi catalog và bảng giá.',
+  ar: 'مرحبًا GOWELLDE، أنا مهتم بماكينات اللحام لديكم. هل يمكنكم إرسال الكتالوج والأسعار؟',
+};
+const waAsk: Record<string, string> = {
+  en: 'Hello GOWELLDE, I am interested in',
+  es: 'Hola GOWELLDE, me interesa',
+  ru: 'Здравствуйте GOWELLDE, меня интересует',
+  vi: 'Xin chào GOWELLDE, tôi quan tâm đến máy hàn',
+  ar: 'مرحبًا GOWELLDE، أنا مهتم بماكينة لحام',
+};
+const waMsg = model ? `${waAsk[locale]} ${model}` : waMsgs[locale];
 const mailSubject = `Wholesale Inquiry${model ? ` for ${model}` : ''}`;
 ---
 

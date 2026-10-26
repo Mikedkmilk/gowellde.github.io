@@ -3,7 +3,10 @@
   "name": "AC-3500 Oil-Free Silent Air Compressor 2.2kW",
   "category": "air-compressors",
   "series": "AC",
-  "tags": ["OIL-FREE", "SILENT"],
+  "tags": [
+    "OIL-FREE",
+    "SILENT"
+  ],
   "status": "coming-soon",
   "badges": [],
   "featured": false,
@@ -20,10 +23,22 @@
   },
   "summary": "Mid-size silent compressor with 50L tank — pairs with 60A plasma cutting and continuous air-tool work.",
   "description": "The AC-3500 doubles tank capacity to 50L and raises displacement to 240 L/min, covering 60A plasma cutting and longer pneumatic tool runs while staying around 60 dB.",
-  "features": ["Oil-free silent pump, 60 dB class", "50L tank for longer tool runs", "240 L/min displacement", "Wheel kit and handle for workshop mobility"],
-  "applications": ["60A plasma cutting", "Impact wrenches & spray guns", "General workshop air"],
+  "features": [
+    "Oil-free silent pump, 60 dB class",
+    "50L tank for longer tool runs",
+    "240 L/min displacement",
+    "Wheel kit and handle for workshop mobility"
+  ],
+  "applications": [
+    "60A plasma cutting",
+    "Impact wrenches & spray guns",
+    "General workshop air"
+  ],
   "downloads": [],
-  "related": ["ac-2500", "ac-5500"],
+  "related": [
+    "ac-2500",
+    "ac-5500"
+  ],
   "priceDisplay": "",
   "moq": "30 pcs",
   "leadTimeDays": "TBD",
@@ -39,6 +54,18 @@
       "description": "AC-3500 удваивает объём ресивера до 50 л и подаёт 240 л/мин — закрывает плазменную резку 60 А и длительную работу с пневмоинструментом, оставаясь на уровне около 60 дБ.",
       "features": "Безмасляная бесшумная головка, класс 60 дБ|Ресивер 50 л для длительной работы|Производительность 240 л/мин|Колёса и ручка для перемещения по цеху",
       "applications": "Плазменная резка 60 А|Гайковёрты и краскопульты|Общецеховой воздух"
+    },
+    "vi": {
+      "summary": "Máy nén yên tĩnh cỡ trung bình bình 50L — đi cùng cắt plasma 60A và dụng cụ khí liên tục.",
+      "description": "AC-3500 gấp đôi dung tích bình lên 50L và nâng lưu lượng lên 240 L/phút, phủ cắt plasma 60A và các phiên làm việc dụng cụ khí dài hơn mà vẫn khoảng 60 dB.",
+      "features": "Đầu nén không dầu, tầm 60 dB|Bình 50L cho phiên dài|Lưu lượng 240 L/phút|Bộ bánh xe và tay đẩy di chuyển trong xưởng",
+      "applications": "Cắt plasma 60A|Máy vặn & súng phun|Khí tổng hợp cho xưởng"
+    },
+    "ar": {
+      "summary": "ضاغط صامت متوسط بخزان 50 لترًا — يرافق قطع بلازما 60 أمبير والعمل الهوائي المتواصل.",
+      "description": "يضاعف AC-3500 سعة الخزان إلى 50 لترًا ويرفع التدفق إلى 240 لترًا/دقيقة، فيغطي قطع البلازما 60 أمبير وجولات أدوات أطول مع البقاء قرب 60 ديسيبل.",
+      "features": "رأس صامت بلا زيت بفئة 60 ديسيبل|خزان 50 لترًا لجولات أطول|تدفق 240 لترًا/دقيقة|طقم عجلات ومقبض للتنقل داخل الورشة",
+      "applications": "قطع بلازما 60 أمبير|مفاتيح ربط ومسدسات رش|هواء الورشة العام"
     }
   }
 }

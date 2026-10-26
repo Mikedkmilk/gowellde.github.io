@@ -25,14 +25,14 @@ npm run preview    # 预览构建结果
 | 界面文字翻译（按钮/导航/表单等） | `src/i18n/ui.ts`（en/es/ru 三语词典，缺 key 自动回落英文） |
 | 产品/品类的西语俄语内容 | 各 content JSON 的 `i18n.es` / `i18n.ru` 字段 |
 
-## 多语言（/es/ /ru/）
+## 多语言（/es/ /ru/ /vi/ /ar/）
 
-- 英语在根路径，西语 `/es/`、俄语 `/ru/` 镜像整站（产品/品类/首页/关于/联系/FAQ/对比）。
-- 界面文字在 `src/i18n/ui.ts`；内容翻译在各 JSON 的 `i18n` 字段（无翻译时自动显示英文）。
-- 页面结构：一套视图 `src/pages/_views/*.astro`，三套路由包装 `src/pages/`、`src/pages/es/`、`src/pages/ru/`——**新增语言 = 复制一套包装目录 + ui.ts 加一个词典 + 内容 JSON 加 i18n 字段**。
-- 博客暂仅英文（多语言页导航的 Blog 链接指向英文博客）。
-- `/compare/` 对比页标记 noindex（工具页不参与收录）。
-- 批量注入翻译的脚本：`node scripts/inject-i18n.mjs`（一次性，后续手改 JSON 即可）。
+- 英语在根路径，西语 `/es/`、俄语 `/ru/`、越南语 `/vi/`、阿拉伯语 `/ar/` 镜像整站（首页/产品/品类/详情/关于/联系/FAQ/对比），共 163 页。
+- **阿语整站 RTL**：`<html dir="rtl">` 自动生效，参数表/对比表用逻辑对齐（text-start），阿语页面用 Tajawal 字体（Roboto 不含阿文字形）。新增 RTL 语言照此模式即可。
+- 界面文字在 `src/i18n/ui.ts`（五语词典，缺 key 自动回落英文）；内容翻译在各 JSON 的 `i18n` 字段（无翻译时自动显示英文）。
+- 页面结构：一套视图 `src/pages/_views/*.astro`，五套路由包装（`src/pages/`、`es/`、`ru/`、`vi/`、`ar/`）——**新增语言 = 复制一套包装目录 + ui.ts 加词典 + locales 加一项 + 内容 JSON 加 i18n 字段**（hreflang 会自动包含新语言）。
+- 博客暂仅英文；`/compare/` 标记 noindex。
+- 批量注入翻译脚本：`node scripts/inject-i18n.mjs`（es/ru）、`node scripts/inject-i18n-vi-ar.mjs`（vi/ar）——一次性，后续手改 JSON 即可。
 
 ## 品类筛选与对比页
 

@@ -19,12 +19,20 @@ const pageTitle = locale === 'es'
   ? 'Sobre la fábrica de soldadoras GOWELLDE | 15+ años, OEM/ODM, CE e ISO9001'
   : locale === 'ru'
     ? 'О заводе сварочных аппаратов GOWELLDE | 15+ лет, OEM/ODM, CE и ISO9001'
-    : 'About GOWELLDE Welding Machine Factory | 15+ Years, OEM/ODM, CE & ISO9001';
+    : locale === 'vi'
+      ? 'Về nhà máy máy hàn GOWELLDE | Hơn 15 năm, OEM/ODM, CE & ISO9001'
+      : locale === 'ar'
+        ? 'عن مصنع GOWELLDE لماكينات اللحام | أكثر من 15 عامًا، OEM/ODM، CE وISO9001'
+        : 'About GOWELLDE Welding Machine Factory | 15+ Years, OEM/ODM, CE & ISO9001';
 const pageDesc = locale === 'es'
   ? 'GOWELLDE opera una fábrica de soldadoras inversoras de 10.000㎡ en Tengzhou, Shandong. Más de 15 años de fabricación, prueba de envejecimiento 100%, sistema ISO9001, servicios OEM/ODM.'
   : locale === 'ru'
     ? 'Завод GOWELLDE площадью 10 000 м² в Тэнчжоу, Шаньдун. Более 15 лет производства, 100% тест плат, система ISO9001, услуги OEM/ODM.'
-    : 'GOWELLDE operates a 10,000㎡ inverter welding machine factory in Tengzhou, Shandong. 15+ years of manufacturing, 100% board aging test, ISO9001 quality system, OEM/ODM services for global distributors.';
+    : locale === 'vi'
+      ? 'GOWELLDE vận hành nhà máy máy hàn biến tần 10.000㎡ tại Tengzhou, Sơn Đông. Hơn 15 năm sản xuất, test lão hóa 100%, hệ thống ISO9001, dịch vụ OEM/ODM.'
+      : locale === 'ar'
+        ? 'يدير GOWELLDE مصنعًا لماكينات اللحام الإنفرتر بمساحة 10,000م² في تينغجو، شاندونغ. أكثر من 15 عامًا في التصنيع، اختبار تعتيق 100%، نظام ISO9001، وخدمات OEM/ODM.'
+        : 'GOWELLDE operates a 10,000㎡ inverter welding machine factory in Tengzhou, Shandong. 15+ years of manufacturing, 100% board aging test, ISO9001 quality system, OEM/ODM services for global distributors.';
 
 const stats = [
   { value: '15+', label: t(locale, 'ab.s1l') },

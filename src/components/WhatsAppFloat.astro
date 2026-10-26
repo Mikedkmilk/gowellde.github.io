@@ -7,16 +7,17 @@ interface Props {
   locale?: Locale;
 }
 const { locale = 'en' } = Astro.props;
-const msg =
-  locale === 'es'
-    ? 'Hola GOWELLDE, me interesan sus soldadoras. ¿Pueden enviarme el catálogo y la lista de precios?'
-    : locale === 'ru'
-      ? 'Здравствуйте GOWELLDE, интересуют ваши сварочные аппараты. Пришлите каталог и прайс-лист, пожалуйста.'
-      : 'Hello GOWELLDE, I am interested in your welding machines. Could you send me your catalog and price list?';
+const msgs: Record<Locale, string> = {
+  en: 'Hello GOWELLDE, I am interested in your welding machines. Could you send me your catalog and price list?',
+  es: 'Hola GOWELLDE, me interesan sus soldadoras. ¿Pueden enviarme el catálogo y la lista de precios?',
+  ru: 'Здравствуйте GOWELLDE, интересуют ваши сварочные аппараты. Пришлите каталог и прайс-лист, пожалуйста.',
+  vi: 'Xin chào GOWELLDE, tôi quan tâm đến máy hàn của quý công ty. Vui lòng gửi catalog và bảng giá.',
+  ar: 'مرحبًا GOWELLDE، أنا مهتم بماكينات اللحام لديكم. هل يمكنكم إرسال الكتالوج وقائمة الأسعار؟',
+};
 ---
 
 <a
-  href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(msg)}`}
+  href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(msgs[locale])}`}
   target="_blank"
   rel="noopener"
   class="whatsapp-float"

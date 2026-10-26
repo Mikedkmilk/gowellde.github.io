@@ -14,7 +14,9 @@
       "unit": "",
       "filterable": true,
       "labelEs": "Tensión de entrada",
-      "labelRu": "Напряжение питания"
+      "labelRu": "Напряжение питания",
+      "labelVi": "Điện áp vào",
+      "labelAr": "جهد الدخل"
     },
     {
       "key": "ratedCurrent",
@@ -22,7 +24,9 @@
       "unit": "A",
       "filterable": true,
       "labelEs": "Corriente nominal",
-      "labelRu": "Номинальный ток"
+      "labelRu": "Номинальный ток",
+      "labelVi": "Dòng định mức",
+      "labelAr": "التيار المقنن"
     },
     {
       "key": "dutyCycleAt40c",
@@ -30,7 +34,9 @@
       "unit": "%",
       "filterable": true,
       "labelEs": "Ciclo de trabajo @40°C",
-      "labelRu": "ПВ при 40°C"
+      "labelRu": "ПВ при 40°C",
+      "labelVi": "Chu kỳ tải @40°C",
+      "labelAr": "دورة التشغيل عند 40°م"
     },
     {
       "key": "rodDiameterMm",
@@ -38,7 +44,9 @@
       "unit": "mm",
       "filterable": false,
       "labelEs": "Diámetro de electrodo",
-      "labelRu": "Диаметр электрода"
+      "labelRu": "Диаметр электрода",
+      "labelVi": "Đường kính que hàn",
+      "labelAr": "قطر القطب الكهربائي"
     },
     {
       "key": "dimensionsMm",
@@ -46,7 +54,9 @@
       "unit": "mm",
       "filterable": false,
       "labelEs": "Dimensiones (L×An×Al)",
-      "labelRu": "Габариты (Д×Ш×В)"
+      "labelRu": "Габариты (Д×Ш×В)",
+      "labelVi": "Kích thước (D×R×C)",
+      "labelAr": "الأبعاد (ط×ع×ا)"
     },
     {
       "key": "netWeightKg",
@@ -54,7 +64,9 @@
       "unit": "kg",
       "filterable": false,
       "labelEs": "Peso neto",
-      "labelRu": "Вес нетто"
+      "labelRu": "Вес нетто",
+      "labelVi": "Khối lượng",
+      "labelAr": "الوزن الصافي"
     },
     {
       "key": "igbtConfig",
@@ -62,7 +74,9 @@
       "unit": "",
       "filterable": false,
       "labelEs": "Etapa de potencia (IGBT)",
-      "labelRu": "Силовая ступень (IGBT)"
+      "labelRu": "Силовая ступень (IGBT)",
+      "labelVi": "Công suất (IGBT)",
+      "labelAr": "مرحلة القدرة (IGBT)"
     }
   ],
   "i18n": {
@@ -77,6 +91,18 @@
       "intro": "Аппараты ручной дуговой сварки для стройки, металлоконструкций и ремонта. Инверторы MMA GOWELLDE на модулях IGBT: от переносных 160 А (4,1 кг) до трёхфазных промышленных 630 А. Горячий старт и антизалипание в базе, каждый аппарат проходит тест на старение перед отгрузкой. Популярные модели для арматуры и уличной работы: серии ARC-400 и ARC-500.",
       "seoTitle": "Инверторные сварочные аппараты ММА 160А-630А | Завод GOWELLDE",
       "seoDescription": "ММА-инверторы напрямую с завода: переносные от 160 А до трёхфазных 630 А. Горячий старт, антизалипание, 100% тест плат, доступен OEM."
+    },
+    "vi": {
+      "name": "Máy hàn que (MMA)",
+      "intro": "Máy hàn que cho công trường, gia công kết cấu thép và bảo trì sửa chữa. Máy biến tần MMA của GOWELLDE dùng module IGBT từ dòng di động 160A (4,1 kg) đến máy công nghiệp 3 pha 630A. Chức năng khởi động nóng và chống dính que là tiêu chuẩn, và mỗi máy đều được test lão hóa trước khi xuất xưởng. Các mẫu phổ biến cho hàn cốt thép và thi công ngoài trời: dòng ARC-400 và ARC-500.",
+      "seoTitle": "Máy hàn que biến tần 160A-630A | Xưởng GOWELLDE",
+      "seoDescription": "Máy hàn que MMA biến tần trực tiếp từ xưởng: từ 160A di động đến 630A 3 pha hạng nặng. Khởi động nóng, chống dính que, test lão hóa 100%, nhận OEM."
+    },
+    "ar": {
+      "name": "ماكينات MMA / قطب كهربائي",
+      "intro": "ماكينات لحام بالقطب الكهربائي للمواقع الإنشائية وتصنيع الهياكل الفولاذية والصيانة. تعمل ماكينات MMA الإنفرتر من GOWELLDE بوحدات IGBT من الأنواع المحمولة بقدرة 160 أمبير (4.1 كجم) إلى الماكينات الصناعية ثلاثية الطور بقدرة 630 أمبير. ميزتا البدء الساخن ومنع التصاق القطب قياسيتان، وكل ماكينة تخضع لاختبار تعتيق قبل مغادرتها المصنع. الطُرز الشائعة للحديد التسليح والعمل الخارجي: سلسلتا ARC-400 وARC-500.",
+      "seoTitle": "ماكينات لحام قطب كهربائي إنفرتر 160-630 أمبير | مصنع GOWELLDE",
+      "seoDescription": "ماكينات MMA إنفرتر مباشرة من المصنع: من 160 أمبير محمولة إلى 630 أمبير ثلاثية الطور للأعمال الشاقة. بدء ساخن، منع التصاق، اختبار تعتيق 100%، ومتوفر OEM."
     }
   }
 }

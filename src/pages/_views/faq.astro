@@ -23,12 +23,20 @@ const pageTitle = locale === 'es'
   ? 'Preguntas frecuentes - Pedidos, OEM, envíos y garantía | GOWELLDE'
   : locale === 'ru'
     ? 'Частые вопросы - заказы, OEM, доставка и гарантия | GOWELLDE'
-    : 'FAQ - Welding Machine Orders, OEM, Shipping & Warranty | GOWELLDE';
+    : locale === 'vi'
+      ? 'Câu hỏi thường gặp - Đặt hàng, OEM, vận chuyển & bảo hành | GOWELLDE'
+      : locale === 'ar'
+        ? 'الأسئلة الشائعة - الطلبات، OEM، الشحن والضمان | GOWELLDE'
+        : 'FAQ - Welding Machine Orders, OEM, Shipping & Warranty | GOWELLDE';
 const pageDesc = locale === 'es'
   ? 'Respuestas sobre pedidos de soldadoras en GOWELLDE: MOQ, OEM/ODM, pagos, plazos, FOB Qingdao, certificación CE, garantía y muestras.'
   : locale === 'ru'
     ? 'Ответы на частые вопросы о заказе сварочных аппаратов GOWELLDE: MOQ, OEM/ODM, оплата, сроки, FOB Циндао, CE, гарантия и образцы.'
-    : 'Answers to common questions about ordering welding machines from GOWELLDE: MOQ, OEM/ODM, payment terms, lead time, FOB Qingdao shipping, CE certification, warranty and samples.';
+    : locale === 'vi'
+      ? 'Giải đáp về việc đặt máy hàn tại GOWELLDE: MOQ, OEM/ODM, thanh toán, thời gian giao, FOB Thanh Đảo, chứng nhận CE, bảo hành và lấy mẫu.'
+      : locale === 'ar'
+        ? 'إجابات عن الأسئلة الشائعة حول طلب ماكينات اللحام من GOWELLDE: الحد الأدنى للطلب، OEM/ODM، الدفع، مدة التجهيز، FOB تشينغداو، شهادة CE، الضمان والعينات.'
+        : 'Answers to common questions about ordering welding machines from GOWELLDE: MOQ, OEM/ODM, payment terms, lead time, FOB Qingdao shipping, CE certification, warranty and samples.';
 ---
 
 <BaseLayout title={pageTitle} description={pageDesc} path={`${prefix}/faq/`} locale={locale}>

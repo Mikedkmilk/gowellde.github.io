@@ -18,12 +18,20 @@ const pageTitle = locale === 'es'
   ? 'Comparar soldadoras - MMA, MIG/MAG | GOWELLDE'
   : locale === 'ru'
     ? 'Сравнение сварочных аппаратов - MMA, MIG/MAG | GOWELLDE'
-    : 'Compare Welding Machines - MMA & MIG/MAG | GOWELLDE';
+    : locale === 'vi'
+      ? 'So sánh máy hàn - MMA, MIG/MAG | GOWELLDE'
+      : locale === 'ar'
+        ? 'مقارنة ماكينات اللحام - MMA وMIG/MAG | GOWELLDE'
+        : 'Compare Welding Machines - MMA & MIG/MAG | GOWELLDE';
 const pageDesc = locale === 'es'
   ? 'Compare hasta 3 modelos de soldadoras lado a lado: corriente, ciclo de trabajo, peso y precio FOB. Herramienta de selección para compradores mayoristas.'
   : locale === 'ru'
     ? 'Сравните до 3 сварочных аппаратов рядом: ток, ПВ, вес и цена FOB. Инструмент выбора для оптовых покупателей.'
-    : 'Compare up to 3 welding machines side by side: current, duty cycle, weight and FOB price. A selection tool for wholesale buyers.';
+    : locale === 'vi'
+      ? 'So sánh tối đa 3 mẫu máy hàn song song: dòng điện, chu kỳ tải, trọng lượng và giá FOB. Công cụ lựa chọn cho người mua sỉ.'
+      : locale === 'ar'
+        ? 'قارن حتى 3 طُرز من ماكينات اللحام جنبًا إلى جنب: التيار ودورة التشغيل والوزن وسعر FOB. أداة اختيار لمشتري الجملة.'
+        : 'Compare up to 3 welding machines side by side: current, duty cycle, weight and FOB price. A selection tool for wholesale buyers.';
 ---
 
 <BaseLayout title={pageTitle} description={pageDesc} path={`${prefix}/compare/`} locale={locale} noindex>

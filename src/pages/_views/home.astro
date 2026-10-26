@@ -29,13 +29,21 @@ const productCount = (await getProducts()).length;
 const pageTitle =
   locale === 'en'
     ? 'China Inverter Welding Machine Manufacturer | Wholesale MIG & MMA Welders - GOWELLDE'
-    : `${t(locale, 'hero.title1')} ${t(locale, 'hero.titleAccent')} ${t(locale, 'hero.title2')} - GOWELLDE`;
+    : locale === 'vi'
+      ? 'Nhà máy sản xuất máy hàn biến tần Trung Quốc | Bán sỉ máy hàn MIG & MMA - GOWELLDE'
+      : locale === 'ar'
+        ? 'مصنع ماكينات لحام إنفرتر في الصين | جملة ماكينات MIG وMMA - GOWELLDE'
+        : `${t(locale, 'hero.title1')} ${t(locale, 'hero.titleAccent')} ${t(locale, 'hero.title2')} - GOWELLDE`;
 const pageDesc =
   locale === 'es'
     ? 'GOWELLDE es una fábrica profesional china de soldadoras inversoras: MMA y MIG/MAG IGBT de 160 a 630 A, prueba de envejecimiento 100%, CE/ISO9001, OEM/ODM. Exportamos a Egipto, India, Vietnam y todo el mundo.'
     : locale === 'ru'
       ? 'GOWELLDE — профессиональный китайский завод инверторных сварочных аппаратов: MMA и MIG/MAG IGBT 160-630 А, 100% тест плат, CE/ISO9001, OEM/ODM. Экспорт в Египет, Индию, Вьетнам и по всему миру.'
-      : 'GOWELLDE is a professional China inverter welding machine factory. Wholesale IGBT MIG/MAG and MMA welders 160-630A, 100% board aging test, CE/ISO9001 certified, OEM/ODM. Exporting to Egypt, India, Vietnam and worldwide.';
+      : locale === 'vi'
+        ? 'GOWELLDE là nhà máy sản xuất máy hàn biến tần chuyên nghiệp tại Trung Quốc: máy hàn IGBT MMA và MIG/MAG 160-630A, test lão hóa 100%, chứng nhận CE/ISO9001, nhận OEM/ODM. Xuất khẩu sang Ai Cập, Ấn Độ, Việt Nam và toàn cầu.'
+        : locale === 'ar'
+          ? 'GOWELLDE مصنع محترف لماكينات اللحام الإنفرتر في الصين: ماكينات IGBT نوع MMA وMIG/MAG بقدرة 160-630 أمبير، اختبار تعتيق 100%، شهادات CE/ISO9001، وخدمات OEM/ODM. تصدير إلى مصر والهند وفيتنام والعالم.'
+          : 'GOWELLDE is a professional China inverter welding machine factory. Wholesale IGBT MIG/MAG and MMA welders 160-630A, 100% board aging test, CE/ISO9001 certified, OEM/ODM. Exporting to Egypt, India, Vietnam and worldwide.';
 
 const orgLd = {
   '@context': 'https://schema.org',

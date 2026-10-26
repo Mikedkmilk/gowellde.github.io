@@ -14,7 +14,9 @@
       "unit": "",
       "filterable": true,
       "labelEs": "Tensión de entrada",
-      "labelRu": "Напряжение питания"
+      "labelRu": "Напряжение питания",
+      "labelVi": "Điện áp vào",
+      "labelAr": "جهد الدخل"
     },
     {
       "key": "ratedCurrent",
@@ -22,7 +24,9 @@
       "unit": "A",
       "filterable": true,
       "labelEs": "Corriente nominal",
-      "labelRu": "Номинальный ток"
+      "labelRu": "Номинальный ток",
+      "labelVi": "Dòng định mức",
+      "labelAr": "التيار المقنن"
     },
     {
       "key": "dutyCycleAt40c",
@@ -30,7 +34,9 @@
       "unit": "%",
       "filterable": true,
       "labelEs": "Ciclo de trabajo @40°C",
-      "labelRu": "ПВ при 40°C"
+      "labelRu": "ПВ при 40°C",
+      "labelVi": "Chu kỳ tải @40°C",
+      "labelAr": "دورة التشغيل عند 40°م"
     },
     {
       "key": "wireDiameterMm",
@@ -38,7 +44,9 @@
       "unit": "mm",
       "filterable": false,
       "labelEs": "Diámetro de alambre",
-      "labelRu": "Диаметр проволоки"
+      "labelRu": "Диаметр проволоки",
+      "labelVi": "Đường kính dây hàn",
+      "labelAr": "قطر سلك اللحام"
     },
     {
       "key": "dimensionsMm",
@@ -46,7 +54,9 @@
       "unit": "mm",
       "filterable": false,
       "labelEs": "Dimensiones (L×An×Al)",
-      "labelRu": "Габариты (Д×Ш×В)"
+      "labelRu": "Габариты (Д×Ш×В)",
+      "labelVi": "Kích thước (D×R×C)",
+      "labelAr": "الأبعاد (ط×ع×ا)"
     },
     {
       "key": "netWeightKg",
@@ -54,7 +64,9 @@
       "unit": "kg",
       "filterable": false,
       "labelEs": "Peso neto",
-      "labelRu": "Вес нетто"
+      "labelRu": "Вес нетто",
+      "labelVi": "Khối lượng",
+      "labelAr": "الوزن الصافي"
     },
     {
       "key": "igbtConfig",
@@ -62,7 +74,9 @@
       "unit": "",
       "filterable": false,
       "labelEs": "Etapa de potencia (IGBT)",
-      "labelRu": "Силовая ступень (IGBT)"
+      "labelRu": "Силовая ступень (IGBT)",
+      "labelVi": "Công suất (IGBT)",
+      "labelAr": "مرحلة القدرة (IGBT)"
     },
     {
       "key": "accessories",
@@ -70,7 +84,9 @@
       "unit": "",
       "filterable": false,
       "labelEs": "Paquete estándar",
-      "labelRu": "Комплект поставки"
+      "labelRu": "Комплект поставки",
+      "labelVi": "Phụ kiện chuẩn",
+      "labelAr": "الحزمة القياسية"
     }
   ],
   "i18n": {
@@ -85,6 +101,18 @@
       "intro": "Аппараты механизированной сварки MIG/MAG в защитном газе с двухприводной подачей для непрерывного производства. Серия MIG/MMA также переключается на ММА — один аппарат закрывает два процесса в цехе. ПВ до 100% при номинальном токе для металлоконструкций и производственных линий; каждый аппарат поставляется с горелкой, кабелями, зажимом и CO2-редуктором.",
       "seoTitle": "Аппараты MIG/MAG с двухприводной подачей | GOWELLDE",
       "seoDescription": "Сварочные полуавтоматы 250А-630А напрямую с завода: двухприводная подача и функция ММА. ПВ до 100%, полный комплект, OEM/ODM из Китая."
+    },
+    "vi": {
+      "name": "Máy hàn MIG / MAG",
+      "intro": "Máy hàn MIG/MAG bảo vệ khí với bộ đẩy dây kép cho hàn sản xuất liên tục. Dòng MIG/MMA còn chuyển sang hàn que, một máy phục vụ hai phương pháp trên cùng sàn xưởng. Chu kỳ tải lên đến 100% tại dòng định mức phục vụ nhà thép kết cấu và dây chuyền gia công, mỗi máy giao đủ bộ: tay hàn, cáp, kẹp mát và bình giảm áp CO2.",
+      "seoTitle": "Máy hàn MIG/MAG bộ đẩy dây kép | GOWELLDE",
+      "seoDescription": "Máy hàn MIG/MAG trực tiếp từ xưởng 250A-630A với bộ đẩy dây kép và chức năng MMA. Chu kỳ tải đến 100%, đủ bộ phụ kiện, OEM/ODM từ Trung Quốc."
+    },
+    "ar": {
+      "name": "ماكينات MIG / MAG",
+      "intro": "ماكينات لحام MIG/MAG بالغاز الواقي ووحدة تغذية سلك مزدوجة الدفع للّحام الإنتاجي المستمر. سلسلة MIG/MMA تتحول أيضًا إلى لحام بالقطب، فتغطي الماكينة الواحدة طريقتين في ورشة واحدة. دورات تشغيل تصل إلى 100% عند التيار المقنن لمدن الهياكل الفولاذية وخطوط التصنيع، وتُشحن كل وحدة كاملة: مشعلة وكابلات ومشبس أرضي ومنظم CO2.",
+      "seoTitle": "ماكينات MIG/MAG بوحدة تغذية مزدوجة | GOWELLDE",
+      "seoDescription": "ماكينات MIG/MAG مباشرة من المصنع 250-630 أمبير بوحدة تغذية مزدوجة ووظيفة MMA. دورة تشغيل حتى 100%، حزمة ملحقات كاملة، OEM/ODM من الصين."
     }
   }
 }

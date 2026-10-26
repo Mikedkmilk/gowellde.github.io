@@ -54,6 +54,11 @@ section {
   }
 }
 
+/* 阿拉伯语：Tajawal 字体（Roboto 无阿文字形），字号略收窄 */
+html[lang='ar'] body {
+  font-family: 'Tajawal', 'Roboto', system-ui, sans-serif;
+}
+
 /* FAQ 折叠面板 */
 details.faq-item summary {
   cursor: pointer;

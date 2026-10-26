@@ -1,0 +1,15 @@
+---
+import CatalogView from '../../_views/catalog.astro';
+import { getCategories, getProducts } from '../../../lib/data';
+
+export async function getStaticPaths() {
+  const [cats, prods] = await Promise.all([getCategories(), getProducts()]);
+  return [
+    ...cats.map((c) => ({ params: { slug: c.data.slug }, props: { kind: 'category' as const, slug: c.data.slug } })),
+    ...prods.map((p) => ({ params: { slug: p.id }, props: { kind: 'product' as const, slug: p.id } })),
+  ];
+}
+const { kind, slug } = Astro.props;
+---
+
+<CatalogView kind={kind} slug={slug} locale="vi" />
