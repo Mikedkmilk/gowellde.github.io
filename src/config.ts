@@ -27,13 +27,14 @@ export const CONTACT = {
  * "拉起邮件客户端并预填内容"的兜底模式（仍比旧站 mailto 表单可靠）。
  */
 export const FORM = {
-  web3formsKey: '', // 例：'a1b2c3d4-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+  // Web3Forms 免费表单服务：提交后转发到 CONTACT.email 的邮箱
+  // （该 key 属公开设计，可放心出现在前端代码中）
+  web3formsKey: '500afdf7-2374-47e2-9e63-336a991ca034',
 };
 
 /**
- * Google Analytics 4：https://analytics.google.com
- * 填 G- 开头的衡量 ID 后统计代码自动启用；留空则完全不加载。
+ * Google Analytics 4
  */
 export const ANALYTICS = {
-  ga4Id: '', // 例：'G-XXXXXXXXXX'
+  ga4Id: 'G-N29KTPB84C',
 };

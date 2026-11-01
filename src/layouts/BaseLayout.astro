@@ -84,12 +84,11 @@ const alternatesList = alternates
     {
       ANALYTICS.ga4Id && (
         <script is:inline define:vars={{ ga4Id: ANALYTICS.ga4Id }}>
+          // 注意：本内联脚本刻意不写花括号——Astro define:vars 模板会破坏 {} 转义
           window.dataLayer = window.dataLayer || [];
-          function gtag() {'{'}
-          dataLayer.push(arguments);
-          {'}'}
-          gtag('js', new Date());
-          gtag('config', ga4Id);
+          window.gtag = (...args) => window.dataLayer.push(args);
+          window.gtag('js', new Date());
+          window.gtag('config', ga4Id);
         </script>
       )
     }
